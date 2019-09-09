@@ -17,4 +17,8 @@ public class MainActivity extends AppCompatActivity {
     public void text(View view) {
         TextActivity.start(this);
     }
+
+    public void textarea(View view) {
+        TextAreaActivity.start(this);
+    }
 }
