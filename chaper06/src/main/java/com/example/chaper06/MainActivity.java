@@ -21,4 +21,12 @@ public class MainActivity extends AppCompatActivity {
     public void textarea(View view) {
         TextAreaActivity.start(this);
     }
+
+    public void top2baseline(View view) {
+        Top2BaseLineActivity.start(this);
+    }
+
+    public void center2baseline(View view) {
+        Center2BaseLineActivity.start(this);
+    }
 }

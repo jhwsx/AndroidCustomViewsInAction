@@ -22,4 +22,18 @@
        android:layout_width="match_parent"
        android:layout_height="wrap_content"/>
 
+   <Button
+       android:id="@+id/btn_top2baseline"
+       android:text="Top2BaseLine"
+       android:onClick="top2baseline"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"/>
+
+   <Button
+       android:id="@+id/btn_center2baseline"
+       android:text="Center2BaseLine"
+       android:onClick="center2baseline"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"/>
+
 </LinearLayout>

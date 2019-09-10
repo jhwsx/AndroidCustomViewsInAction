@@ -9,6 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Center2BaseLineActivity">
+        </activity>
+        <activity android:name=".Top2BaseLineActivity">
+        </activity>
         <activity android:name=".TextAreaActivity">
         </activity>
         <activity android:name=".TextActivity">
