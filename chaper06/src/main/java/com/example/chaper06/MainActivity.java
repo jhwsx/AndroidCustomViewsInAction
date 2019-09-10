@@ -29,4 +29,8 @@ public class MainActivity extends AppCompatActivity {
     public void center2baseline(View view) {
         Center2BaseLineActivity.start(this);
     }
+
+    public void paintbasic(View view) {
+        PaintBasicActivity.start(this);
+    }
 }

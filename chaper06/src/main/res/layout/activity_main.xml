@@ -36,4 +36,11 @@
        android:layout_width="match_parent"
        android:layout_height="wrap_content"/>
 
+   <Button
+       android:id="@+id/btn_paintbasic"
+       android:text="PaintBasic"
+       android:onClick="paintbasic"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"/>
+
 </LinearLayout>
