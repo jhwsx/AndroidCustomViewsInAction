@@ -1,7 +1,6 @@
 package com.example.chaper06;
 
 import android.os.Bundle;
-import android.view.View;
 
 import androidx.annotation.LayoutRes;
 import androidx.annotation.Nullable;
@@ -26,6 +25,9 @@ public class MainActivity extends AppCompatActivity {
         pageModels.add(new PageModel(R.string.title_draw_text_rect, R.layout.practice_text_rect));
         pageModels.add(new PageModel(R.string.title_text_top_baseline, R.layout.practice_text_top_baseline));
         pageModels.add(new PageModel(R.string.title_text_center_baseline, R.layout.practice_text_center_baseline));
+        pageModels.add(new PageModel(R.string.title_paint_set_stroke_cap, R.layout.practice_paint_set_stroke_cap));
+        pageModels.add(new PageModel(R.string.title_paint_set_stroke_join, R.layout.practice_paint_set_stroke_join));
+        pageModels.add(new PageModel(R.string.title_paint_set_path_effect, R.layout.practice_paint_set_path_effect));
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {

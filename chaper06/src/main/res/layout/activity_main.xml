@@ -11,6 +11,7 @@
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:tabTextAppearance="@style/TextAppearance.MaterialComponents.Caption"
         android:background="@android:color/white"
         app:tabMode="scrollable" />
 
