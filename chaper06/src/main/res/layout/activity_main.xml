@@ -1,46 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-   <Button
-       android:id="@+id/btn_text"
-       android:text="Text"
-       android:onClick="text"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"/>
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        app:tabMode="scrollable" />
 
-   <Button
-       android:id="@+id/btn_text_area"
-       android:text="TextArea"
-       android:onClick="textarea"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"/>
-
-   <Button
-       android:id="@+id/btn_top2baseline"
-       android:text="Top2BaseLine"
-       android:onClick="top2baseline"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"/>
-
-   <Button
-       android:id="@+id/btn_center2baseline"
-       android:text="Center2BaseLine"
-       android:onClick="center2baseline"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"/>
-
-   <Button
-       android:id="@+id/btn_paintbasic"
-       android:text="PaintBasic"
-       android:onClick="paintbasic"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"/>
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </LinearLayout>
