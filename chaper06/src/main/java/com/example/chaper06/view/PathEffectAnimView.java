@@ -22,7 +22,7 @@ import androidx.annotation.Nullable;
 public class PathEffectAnimView extends View {
     public PathEffectAnimView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
-        ValueAnimator valueAnimator = ValueAnimator.ofInt(0, 75);
+        ValueAnimator valueAnimator = ValueAnimator.ofInt(0, 75); // 这个 75 是下面的 intervals 数组元素的和，不然会有一跳一跳的效果出现，不好。
         valueAnimator.setDuration(200L);
         valueAnimator.setInterpolator(new LinearInterpolator());
         valueAnimator.setRepeatCount(ValueAnimator.INFINITE);
@@ -45,7 +45,7 @@ public class PathEffectAnimView extends View {
         paint.setStrokeWidth(5f);
         paint.setColor(Color.GREEN);
         paint.setStyle(Paint.Style.STROKE);
-
+        paint.setLinearText(false);
         Path path = new Path();
         RectF rect = new RectF(getWidth()* 0.2f, getHeight() * 0.3f, getWidth() * 0.8f, getHeight() * 0.7f ) ;
         path.addRect(rect, Path.Direction.CCW);
