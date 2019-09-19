@@ -1,4 +1,4 @@
-package com.example.chaper07;
+package com.example.chaper07.part1;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -14,8 +14,8 @@ import androidx.annotation.Nullable;
  * @author wangzhichao
  * @date 2019/09/19
  */
-public class PathrQuadToView extends View {
-    public PathrQuadToView(Context context, @Nullable AttributeSet attrs) {
+public class PathQuadToView extends View {
+    public PathQuadToView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
     }
 
@@ -29,9 +29,12 @@ public class PathrQuadToView extends View {
         paint.setStyle(Paint.Style.STROKE);
 
         Path path = new Path();
+        // 这个点就是起点了，如果不指定的话是0, 0
         path.moveTo(100, 300);
-        path.rQuadTo(100, -100, 200, 0); // 相对的是 100, 300 这个点
-        path.rQuadTo(100, 100, 200, 0); // 相对的是上一个的终点
+        // x1, y1 是控制点；x2, y2 是终点
+        path.quadTo(200, 200, 300, 300);
+        // 它的起点是 300, 300, 因为是连续调用 quadTo 方法的
+        path.quadTo(400, 400, 500, 300);
 
         canvas.drawPath(path, paint);
 
@@ -47,11 +50,10 @@ public class PathrQuadToView extends View {
         paint.setStyle(Paint.Style.STROKE);
         path.reset();
         path.moveTo(100, 300);
-        path.rLineTo(100, -100);
-        path.rLineTo(100, 100);
-        path.rLineTo(100, 100);
-        path.rLineTo(100, -100);
+        path.lineTo(200, 200);
+        path.lineTo(300, 300);
+        path.lineTo(400, 400);
+        path.lineTo(500, 300);
         canvas.drawPath(path, paint);
-
     }
 }

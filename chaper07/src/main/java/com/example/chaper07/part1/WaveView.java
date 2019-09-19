@@ -1,4 +1,4 @@
-package com.example.chaper07;
+package com.example.chaper07.part1;
 
 import android.animation.ValueAnimator;
 import android.content.Context;
