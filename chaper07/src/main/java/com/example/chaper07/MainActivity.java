@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
         pageModels.add(new PageModel(R.string.title_finger_lineto_path_view, R.layout.practice_finger_lineto_path_view));
         pageModels.add(new PageModel(R.string.title_finger_quadto_path_view, R.layout.practice_finger_quadto_path_view));
         pageModels.add(new PageModel(R.string.title_path_computebounds, R.layout.practice_path_computebounds));
+        pageModels.add(new PageModel(R.string.title_path_rquadto, R.layout.practice_path_rquadto_view));
+        pageModels.add(new PageModel(R.string.title_wave_view, R.layout.practice_wave_view));
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {

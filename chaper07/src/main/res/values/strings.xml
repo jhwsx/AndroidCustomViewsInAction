@@ -4,4 +4,6 @@
     <string name="title_finger_lineto_path_view">FingerLinetoPathView</string>
     <string name="title_finger_quadto_path_view">FingerQuadtoPathView</string>
     <string name="title_path_computebounds">computeBounds()</string>
+    <string name="title_path_rquadto">rQuadTo()</string>
+    <string name="title_wave_view">WaveView</string>
 </resources>

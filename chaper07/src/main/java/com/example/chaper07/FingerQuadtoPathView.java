@@ -13,6 +13,7 @@ import android.view.View;
 import androidx.annotation.Nullable;
 
 /**
+ * 关键是要找出控制点和终点
  * @author wangzhichao
  * @date 2019/09/19
  */
@@ -67,6 +68,7 @@ public class FingerQuadtoPathView extends View {
 //                path.lineTo(x, y);
                 float endX = (lastX + x) / 2;
                 float endY = (lastY + y) / 2;
+                // 将上一个触点作为控制点
                 path.quadTo(lastX, lastY, endX, endY);
                 postInvalidate();
                 lastX = x;
