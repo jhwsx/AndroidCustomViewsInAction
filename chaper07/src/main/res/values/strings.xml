@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">chaper07</string>
+    <string name="title_path_quadto">quadTo()</string>
+    <string name="title_finger_lineto_path_view">FingerLinetoPathView</string>
+    <string name="title_finger_quadto_path_view">FingerQuadtoPathView</string>
+    <string name="title_path_computebounds">computeBounds()</string>
 </resources>
