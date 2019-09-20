@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BitmapShadowView">
+        <attr name="bsv_src" format="reference" />
+        <attr name="bsv_shadowDx" format="integer" />
+        <attr name="bsv_shadowDy" format="integer" />
+        <attr name="bsv_shadowColor" format="color" />
+        <attr name="bsv_shadowRadius" format="integer" />
+    </declare-styleable>
+</resources>

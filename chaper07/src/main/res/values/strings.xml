@@ -10,4 +10,5 @@
     <string name="title_textview_setshadowlayer_viewgroup">TextView.setShadowLayer()</string>
     <string name="title_paint_setmaskfilter_view">Paint.setMaskFilter()</string>
     <string name="title_bitmap_extractalpha_view">Bitmap.extractAlpha()</string>
+    <string name="title_bitmap_shadow_view">BitmapShadowView</string>
 </resources>
