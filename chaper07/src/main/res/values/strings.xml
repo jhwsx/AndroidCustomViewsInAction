@@ -6,4 +6,5 @@
     <string name="title_path_computebounds">computeBounds()</string>
     <string name="title_path_rquadto">rQuadTo()</string>
     <string name="title_wave_view">WaveView</string>
+    <string name="title_paint_setshadowlayer_viewgroup">Paint.setShadowLayer()</string>
 </resources>
