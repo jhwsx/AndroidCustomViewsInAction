@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         pageModels.add(new PageModel(R.string.title_path_rquadto, R.layout.practice_path_rquadto_view));
         pageModels.add(new PageModel(R.string.title_wave_view, R.layout.practice_wave_view));
         pageModels.add(new PageModel(R.string.title_paint_setshadowlayer_viewgroup, R.layout.practice_paint_setshadowlayer_viewgroup));
+        pageModels.add(new PageModel(R.string.title_textview_setshadowlayer_viewgroup, R.layout.practice_textview_setshadowlayer_viewgroup));
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
