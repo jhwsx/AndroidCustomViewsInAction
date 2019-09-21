@@ -34,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
         pageModels.add(new PageModel(R.string.title_bitmap_shadow_view, R.layout.practice_bitmap_shadow_view));
         pageModels.add(new PageModel(R.string.title_paint_setshader_bitmapshader, R.layout.practice_paint_setshader_bitmapshader_viewgroup));
         pageModels.add(new PageModel(R.string.title_telescope_view, R.layout.practice_telescope_view));
+        pageModels.add(new PageModel(R.string.title_avatar_view_demo, R.layout.practice_avatar_view_demo));
+        pageModels.add(new PageModel(R.string.title_avatar_view, R.layout.practice_avatar_viewgroup));
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {

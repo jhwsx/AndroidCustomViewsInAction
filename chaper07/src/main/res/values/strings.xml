@@ -13,4 +13,6 @@
     <string name="title_bitmap_shadow_view">BitmapShadowView</string>
     <string name="title_paint_setshader_bitmapshader">Paint.setShader(BitmapShader)</string>
     <string name="title_telescope_view">TelescopeView</string>
+    <string name="title_avatar_view_demo">AvatarViewDemo</string>
+    <string name="title_avatar_view">AvatarView</string>
 </resources>

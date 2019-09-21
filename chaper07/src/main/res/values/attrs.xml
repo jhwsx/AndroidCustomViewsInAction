@@ -7,4 +7,12 @@
         <attr name="bsv_shadowColor" format="color" />
         <attr name="bsv_shadowRadius" format="integer" />
     </declare-styleable>
+    <declare-styleable name="AvatarView">
+        <attr name="av_src" format="reference" />
+        <attr name="av_type" format="enum">
+            <enum name="circle" value="0" />
+            <enum name="rectangle" value="1" />
+        </attr>
+        <attr name="av_rectangle_radius" format="integer" />
+    </declare-styleable>
 </resources>
