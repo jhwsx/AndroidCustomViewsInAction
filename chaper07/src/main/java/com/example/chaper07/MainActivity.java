@@ -6,7 +6,6 @@ import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 
@@ -33,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         pageModels.add(new PageModel(R.string.title_paint_setmaskfilter_view, R.layout.practice_paint_setmaskfilter_view));
         pageModels.add(new PageModel(R.string.title_bitmap_extractalpha_view, R.layout.practice_bitmap_extractalpha_view));
         pageModels.add(new PageModel(R.string.title_bitmap_shadow_view, R.layout.practice_bitmap_shadow_view));
+        pageModels.add(new PageModel(R.string.title_paint_setshader_bitmapshader, R.layout.practice_paint_setshader_bitmapshader_viewgroup));
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
