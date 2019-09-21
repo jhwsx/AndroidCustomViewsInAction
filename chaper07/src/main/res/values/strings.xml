@@ -12,4 +12,5 @@
     <string name="title_bitmap_extractalpha_view">Bitmap.extractAlpha()</string>
     <string name="title_bitmap_shadow_view">BitmapShadowView</string>
     <string name="title_paint_setshader_bitmapshader">Paint.setShader(BitmapShader)</string>
+    <string name="title_telescope_view">TelescopeView</string>
 </resources>
