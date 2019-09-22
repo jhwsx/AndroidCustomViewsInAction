@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         pageModels.add(new PageModel(R.string.title_paint_setshader_lineargradient, R.layout.practice_paint_setshader_lineargradient_viewgroup));
         pageModels.add(new PageModel(R.string.title_shimmer_textview, R.layout.practice_shimmer_textview));
         pageModels.add(new PageModel(R.string.title_paint_setshader_radialgradient, R.layout.practice_paint_setshader_radialgradient_viewgroup));
+        pageModels.add(new PageModel(R.string.title_ripple_view, R.layout.practice_ripple_viewgroup));
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
