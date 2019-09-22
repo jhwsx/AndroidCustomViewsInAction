@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">chapter08</string>
+    <string name="title_paint_setxfermode_porterduffxfermode">Paint.setXfermode(PorterDuffXfermode)</string>
 </resources>

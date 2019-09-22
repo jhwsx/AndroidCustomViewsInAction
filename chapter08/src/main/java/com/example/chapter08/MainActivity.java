@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private List<PageModel> pageModels = new ArrayList<>();
 
     {
-
+        pageModels.add(new PageModel(R.string.title_paint_setxfermode_porterduffxfermode, R.layout.practice_paint_setxfermode_porterduffxfermode_view));
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
