@@ -1,4 +1,4 @@
-package com.example.chaper07;
+package com.example.chapter08;
 
 import android.content.Context;
 import android.util.AttributeSet;
