@@ -15,4 +15,31 @@
         </attr>
         <attr name="av_rectangle_radius" format="integer" />
     </declare-styleable>
+    <declare-styleable name="PaintSetshaderLinearGradientView">
+        <attr name="pslv_type" format="enum">
+            <enum name="double_color" value="0" />
+            <enum name="multi_color" value="1" />
+        </attr>
+        <attr name="pslv_x0" format="enum">
+            <enum name="zero" value="0" />
+            <enum name="half_width" value="1" />
+            <enum name="width" value="2" />
+        </attr>
+        <attr name="pslv_y0" format="enum">
+            <enum name="zero" value="0" />
+            <enum name="half_height" value="3" />
+            <enum name="height" value="4" />
+        </attr>
+        <attr name="pslv_x1" format="enum">
+            <enum name="zero" value="0" />
+            <enum name="half_width" value="1" />
+            <enum name="width" value="2" />
+        </attr>
+        <attr name="pslv_y1" format="enum">
+            <enum name="zero" value="0" />
+            <enum name="half_height" value="3" />
+            <enum name="height" value="4" />
+        </attr>
+
+    </declare-styleable>
 </resources>
