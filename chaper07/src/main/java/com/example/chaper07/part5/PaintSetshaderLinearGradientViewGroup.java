@@ -1,11 +1,10 @@
-package com.example.chaper07.part4;
+package com.example.chaper07.part5;
 
 import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
 
 import androidx.annotation.Nullable;
 
