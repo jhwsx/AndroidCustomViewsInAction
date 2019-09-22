@@ -16,4 +16,5 @@
     <string name="title_avatar_view_demo">AvatarViewDemo</string>
     <string name="title_avatar_view">AvatarView</string>
     <string name="title_paint_setshader_lineargradient">Paint.setShader(LinearGradient)</string>
+    <string name="title_shimmer_textview">ShimmerTextView</string>
 </resources>
