@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">chapter07</string>
+    <string name="title_path_quadto">quadTo()</string>
+    <string name="title_finger_lineto_path_view">FingerLinetoPathView</string>
+    <string name="title_finger_quadto_path_view">FingerQuadtoPathView</string>
+    <string name="title_path_computebounds">computeBounds()</string>
+    <string name="title_path_rquadto">rQuadTo()</string>
+    <string name="title_wave_view">WaveView</string>
+    <string name="title_paint_setshadowlayer_viewgroup">Paint.setShadowLayer()</string>
+    <string name="title_textview_setshadowlayer_viewgroup">TextView.setShadowLayer()</string>
+    <string name="title_paint_setmaskfilter_view">Paint.setMaskFilter()</string>
+    <string name="title_bitmap_extractalpha_view">Bitmap.extractAlpha()</string>
+    <string name="title_bitmap_shadow_view">BitmapShadowView</string>
+    <string name="title_paint_setshader_bitmapshader">Paint.setShader(BitmapShader)</string>
+    <string name="title_telescope_view">TelescopeView</string>
+    <string name="title_avatar_view_demo">AvatarViewDemo</string>
+    <string name="title_avatar_view">AvatarView</string>
+    <string name="title_paint_setshader_lineargradient">Paint.setShader(LinearGradient)</string>
+    <string name="title_shimmer_textview">ShimmerTextView</string>
+    <string name="title_paint_setshader_radialgradient">Paint.setShader(RadialGradient)</string>
+    <string name="title_ripple_view">RippleView</string>
+</resources>

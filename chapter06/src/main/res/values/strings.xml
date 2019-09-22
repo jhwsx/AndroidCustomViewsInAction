@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">chapter06</string>
+    <string name="title_draw_text_line">draw text line</string>
+    <string name="title_draw_text_rect">draw text rect</string>
+    <string name="title_text_top_baseline">由顶线求基线</string>
+    <string name="title_text_center_baseline">由中线求基线</string>
+    <string name="title_paint_set_stroke_cap">setStrokeCap()</string>
+    <string name="title_paint_set_stroke_join">setStrokeJoin()</string>
+    <string name="title_paint_set_path_effect">setPathEffect()</string>
+    <string name="title_path_effect_anim">PathEffect Anim</string>
+</resources>

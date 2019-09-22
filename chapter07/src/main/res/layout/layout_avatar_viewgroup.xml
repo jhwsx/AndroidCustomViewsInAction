@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.example.chapter07.part4.AvatarView
+            app:av_src="@drawable/avator"
+            app:av_type="circle"
+            android:layout_width="100dp"
+            android:layout_height="100dp" />
+
+        <com.example.chapter07.part4.AvatarView
+            app:av_src="@drawable/dog"
+            app:av_type="circle"
+            android:layout_width="100dp"
+            android:layout_height="100dp" />
+
+        <com.example.chapter07.part4.AvatarView
+            app:av_src="@drawable/dog2"
+            app:av_type="circle"
+            android:layout_width="100dp"
+            android:layout_height="100dp" />
+
+        <com.example.chapter07.part4.AvatarView
+            app:av_src="@drawable/avator"
+            app:av_type="circle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.example.chapter07.part4.AvatarView
+            app:av_src="@drawable/dog"
+            app:av_type="circle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.example.chapter07.part4.AvatarView
+            app:av_src="@drawable/dog2"
+            app:av_type="circle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.example.chapter07.part4.AvatarView
+            app:av_src="@drawable/avator"
+            app:av_type="circle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.example.chapter07.part4.AvatarView
+            app:av_src="@drawable/dog"
+            app:av_type="circle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.example.chapter07.part4.AvatarView
+            app:av_src="@drawable/dog2"
+            app:av_type="circle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.example.chapter07.part4.AvatarView
+            app:av_src="@drawable/avator"
+            app:av_type="circle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.example.chapter07.part4.AvatarView
+            app:av_src="@drawable/dog"
+            app:av_type="circle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.example.chapter07.part4.AvatarView
+            app:av_src="@drawable/dog2"
+            app:av_type="circle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.example.chapter07.part4.AvatarView
+            app:av_src="@drawable/avator"
+            app:av_type="circle"
+            android:layout_width="200dp"
+            android:layout_height="200dp" />
+
+        <com.example.chapter07.part4.AvatarView
+            app:av_src="@drawable/dog"
+            app:av_type="circle"
+            android:layout_width="200dp"
+            android:layout_height="200dp" />
+
+        <com.example.chapter07.part4.AvatarView
+            app:av_src="@drawable/dog2"
+            app:av_type="circle"
+            android:layout_width="200dp"
+            android:layout_height="200dp" />
+
+        <com.example.chapter07.part4.AvatarView
+            app:av_src="@drawable/avator"
+            app:av_type="rectangle"
+            app:av_rectangle_radius="10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.example.chapter07.part4.AvatarView
+            app:av_src="@drawable/dog"
+            app:av_type="rectangle"
+            app:av_rectangle_radius="10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.example.chapter07.part4.AvatarView
+            app:av_src="@drawable/dog2"
+            app:av_type="rectangle"
+            app:av_rectangle_radius="10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</ScrollView>
