@@ -21,8 +21,11 @@ public class MainActivity extends AppCompatActivity {
     private List<PageModel> pageModels = new ArrayList<>();
 
     {
-        pageModels.add(new PageModel(R.string.title_paint_setxfermode_porterduffxfermode, R.layout.practice_paint_setxfermode_porterduffxfermode_view));
+        pageModels.add(new PageModel(R.string.title_paint_setxfermode_porterduffxfermode, R.layout.practice_paint_setxfermode_porterduffxfermode_viewgroup));
+        pageModels.add(new PageModel(R.string.title_light_book_view, R.layout.practice_light_book_view));
+        pageModels.add(new PageModel(R.string.title_twitter_view, R.layout.practice_twitter_viewgroup));
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
