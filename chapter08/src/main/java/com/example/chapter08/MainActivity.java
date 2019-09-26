@@ -28,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
         pageModels.add(new PageModel(R.string.title_invertedimageview_srcin, R.layout.practice_invertedimageview_srcin));
         pageModels.add(new PageModel(R.string.title_eraserview_srcout, R.layout.practice_eraserview_srcout));
         pageModels.add(new PageModel(R.string.title_scratchingcardview_srcout, R.layout.practice_scratchingcardview_srcout));
+        pageModels.add(new PageModel(R.string.title_roundimageview_srcatop, R.layout.practice_roundimageview_srcatop));
+        pageModels.add(new PageModel(R.string.title_invertedimageview_srcatop, R.layout.practice_invertedimageview_srcatop));
     }
 
     @Override

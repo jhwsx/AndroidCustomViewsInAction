@@ -7,4 +7,6 @@
     <string name="title_invertedimageview_srcin">InvertedImageView_SRCIN</string>
     <string name="title_eraserview_srcout">EraserView_SRCOUT</string>
     <string name="title_scratchingcardview_srcout">ScratchingCardView_SRCOUT</string>
+    <string name="title_roundimageview_srcatop">RoundImageView_SRCATOP</string>
+    <string name="title_invertedimageview_srcatop">InvertedImageView_SRCATOP</string>
 </resources>

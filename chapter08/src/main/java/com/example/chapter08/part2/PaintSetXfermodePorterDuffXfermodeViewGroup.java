@@ -49,8 +49,10 @@ public class PaintSetXfermodePorterDuffXfermodeViewGroup extends LinearLayout {
                 "Keeps the source pixels that cover the destination pixels,discards the remaining source and destination pixels."));
         MODE_MODELS.add(new ModeModel(PorterDuff.Mode.SRC_OUT, "Mode.SRC_OUT", "计算公式为：[Sa * (1 - Da), Sc * (1 - Da)]。以目标图像的透明度的补值来调节源图像的透明度和色彩饱和度。即当目标图像为空白像素时，就完全显示源图像，当目标图像的透明度为100%时，交合区域为空像素。" +
                 "Keeps the source pixels that do not cover destination pixels.Discards source pixels that cover destination pixels. Discards all destination pixels."));
-        MODE_MODELS.add(new ModeModel(PorterDuff.Mode.SRC_OVER, "Mode.SRC_OVER", "The source pixels are drawn over the destination pixels."));
-        MODE_MODELS.add(new ModeModel(PorterDuff.Mode.SRC_ATOP, "Mode.SRC_ATOP", "Discards the source pixels that do not cover destination pixels.Draws remaining source pixels over destination pixels."));
+        MODE_MODELS.add(new ModeModel(PorterDuff.Mode.SRC_OVER, "Mode.SRC_OVER", "计算公式为：[Sa + (1 - Sa)*Da, Rc = Sc + (1 - Sa)*Dc]。在目标图像的顶部绘制源图像。" +
+                "The source pixels are drawn over the destination pixels."));
+        MODE_MODELS.add(new ModeModel(PorterDuff.Mode.SRC_ATOP, "Mode.SRC_ATOP", "计算公式为：[Da, Sc * Da + (1 - Sa) * Dc]。当透明度只有100%和0%时，SRC_ATOP是SRC_IN是通用的；当透明度不只有100%和0%时，SRC_ATOP相比SRC_IN源图像的饱和度会增加，即会显得更亮！" +
+                "Discards the source pixels that do not cover destination pixels.Draws remaining source pixels over destination pixels."));
         // 3, DST相关模式 - 5 种
         MODE_MODELS.add(new ModeModel(PorterDuff.Mode.DST, "Mode.DST", "The source pixels are discarded, leaving the destination intact."));
         MODE_MODELS.add(new ModeModel(PorterDuff.Mode.DST_IN, "Mode.DST_IN", "Keeps the destination pixels that cover source pixels,discards the remaining source and destination pixels."));
