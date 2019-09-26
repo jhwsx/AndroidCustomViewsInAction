@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         pageModels.add(new PageModel(R.string.title_paint_setxfermode_porterduffxfermode, R.layout.practice_paint_setxfermode_porterduffxfermode_viewgroup));
         pageModels.add(new PageModel(R.string.title_light_book_view, R.layout.practice_light_book_view));
         pageModels.add(new PageModel(R.string.title_twitter_view, R.layout.practice_twitter_viewgroup));
+        pageModels.add(new PageModel(R.string.title_roundimageview_srcin, R.layout.practice_roundimageview_srcin));
     }
 
     @Override
@@ -32,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         viewPager = findViewById(R.id.pager);
         tabLayout = findViewById(R.id.tabLayout);
-        viewPager.setNoScroll(true);
         viewPager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
             @Override
             public Fragment getItem(int position) {

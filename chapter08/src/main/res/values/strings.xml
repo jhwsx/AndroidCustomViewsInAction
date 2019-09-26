@@ -3,4 +3,5 @@
     <string name="title_paint_setxfermode_porterduffxfermode">Paint.setXfermode(PorterDuffXfermode)</string>
     <string name="title_light_book_view">LightBookView</string>
     <string name="title_twitter_view">TwitterView</string>
+    <string name="title_roundimageview_srcin">RoundImageView_SRCIN</string>
 </resources>
