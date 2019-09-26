@@ -47,7 +47,8 @@ public class PaintSetXfermodePorterDuffXfermodeViewGroup extends LinearLayout {
                 "The source pixels replace the destination pixels."));
         MODE_MODELS.add(new ModeModel(PorterDuff.Mode.SRC_IN, "Mode.SRC_IN", "计算公式为：[Sa * Da, Sc * Da]。在相交时利用目标图像的透明度来改变源图像的透明度和饱和度。当目标图像透明度为0时，源图像就完全不显示。" +
                 "Keeps the source pixels that cover the destination pixels,discards the remaining source and destination pixels."));
-        MODE_MODELS.add(new ModeModel(PorterDuff.Mode.SRC_OUT, "Mode.SRC_OUT", "Keeps the source pixels that do not cover destination pixels.Discards source pixels that cover destination pixels. Discards all destination pixels."));
+        MODE_MODELS.add(new ModeModel(PorterDuff.Mode.SRC_OUT, "Mode.SRC_OUT", "计算公式为：[Sa * (1 - Da), Sc * (1 - Da)]。以目标图像的透明度的补值来调节源图像的透明度和色彩饱和度。即当目标图像为空白像素时，就完全显示源图像，当目标图像的透明度为100%时，交合区域为空像素。" +
+                "Keeps the source pixels that do not cover destination pixels.Discards source pixels that cover destination pixels. Discards all destination pixels."));
         MODE_MODELS.add(new ModeModel(PorterDuff.Mode.SRC_OVER, "Mode.SRC_OVER", "The source pixels are drawn over the destination pixels."));
         MODE_MODELS.add(new ModeModel(PorterDuff.Mode.SRC_ATOP, "Mode.SRC_ATOP", "Discards the source pixels that do not cover destination pixels.Draws remaining source pixels over destination pixels."));
         // 3, DST相关模式 - 5 种

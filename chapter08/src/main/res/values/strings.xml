@@ -4,4 +4,5 @@
     <string name="title_light_book_view">LightBookView</string>
     <string name="title_twitter_view">TwitterView</string>
     <string name="title_roundimageview_srcin">RoundImageView_SRCIN</string>
+    <string name="title_invertedimageview_srcin">InvertedImageView_SRCIN</string>
 </resources>
