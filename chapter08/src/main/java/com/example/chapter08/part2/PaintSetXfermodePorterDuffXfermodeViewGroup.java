@@ -43,19 +43,28 @@ public class PaintSetXfermodePorterDuffXfermodeViewGroup extends LinearLayout {
                 "Adds the source and destination pixels, then subtracts the source pixels multiplied by the destination."));
         // 2，SRC相关模式 - 5 种
         // 在处理结果时，以原图像的显示为主
-        MODE_MODELS.add(new ModeModel(PorterDuff.Mode.SRC, "Mode.SRC", "计算公式为：[Sa, Sc]。在处理源图像所在区域的相交问题时，全部以源图像显示。" +
+        MODE_MODELS.add(new ModeModel(PorterDuff.Mode.SRC, "Mode.SRC", "计算公式为：[Sa, Sc]。" +
+                "在处理源图像所在区域的相交问题时，全部以源图像显示。" +
                 "The source pixels replace the destination pixels."));
-        MODE_MODELS.add(new ModeModel(PorterDuff.Mode.SRC_IN, "Mode.SRC_IN", "计算公式为：[Sa * Da, Sc * Da]。在相交时利用目标图像的透明度来改变源图像的透明度和饱和度。当目标图像透明度为0时，源图像就完全不显示。" +
+        MODE_MODELS.add(new ModeModel(PorterDuff.Mode.SRC_IN, "Mode.SRC_IN", "计算公式为：[Sa * Da, Sc * Da]。" +
+                "在相交时利用目标图像的透明度来改变源图像的透明度和饱和度。当目标图像透明度为0时，源图像就完全不显示。" +
                 "Keeps the source pixels that cover the destination pixels,discards the remaining source and destination pixels."));
-        MODE_MODELS.add(new ModeModel(PorterDuff.Mode.SRC_OUT, "Mode.SRC_OUT", "计算公式为：[Sa * (1 - Da), Sc * (1 - Da)]。以目标图像的透明度的补值来调节源图像的透明度和色彩饱和度。即当目标图像为空白像素时，就完全显示源图像，当目标图像的透明度为100%时，交合区域为空像素。" +
+        MODE_MODELS.add(new ModeModel(PorterDuff.Mode.SRC_OUT, "Mode.SRC_OUT", "计算公式为：[Sa * (1 - Da), Sc * (1 - Da)]。" +
+                "以目标图像的透明度的补值来调节源图像的透明度和色彩饱和度。即当目标图像为空白像素时，就完全显示源图像，当目标图像的透明度为100%时，交合区域为空像素。" +
                 "Keeps the source pixels that do not cover destination pixels.Discards source pixels that cover destination pixels. Discards all destination pixels."));
-        MODE_MODELS.add(new ModeModel(PorterDuff.Mode.SRC_OVER, "Mode.SRC_OVER", "计算公式为：[Sa + (1 - Sa)*Da, Rc = Sc + (1 - Sa)*Dc]。在目标图像的顶部绘制源图像。" +
+        MODE_MODELS.add(new ModeModel(PorterDuff.Mode.SRC_OVER, "Mode.SRC_OVER", "计算公式为：[Sa + (1 - Sa)*Da, Rc = Sc + (1 - Sa)*Dc]。" +
+                "在目标图像的顶部绘制源图像。" +
                 "The source pixels are drawn over the destination pixels."));
-        MODE_MODELS.add(new ModeModel(PorterDuff.Mode.SRC_ATOP, "Mode.SRC_ATOP", "计算公式为：[Da, Sc * Da + (1 - Sa) * Dc]。当透明度只有100%和0%时，SRC_ATOP是SRC_IN是通用的；当透明度不只有100%和0%时，SRC_ATOP相比SRC_IN源图像的饱和度会增加，即会显得更亮！" +
+        MODE_MODELS.add(new ModeModel(PorterDuff.Mode.SRC_ATOP, "Mode.SRC_ATOP", "计算公式为：[Da, Sc * Da + (1 - Sa) * Dc]。" +
+                "当透明度只有100%和0%时，SRC_ATOP是SRC_IN是通用的；当透明度不只有100%和0%时，SRC_ATOP相比SRC_IN源图像的饱和度会增加，即会显得更亮！" +
                 "Discards the source pixels that do not cover destination pixels.Draws remaining source pixels over destination pixels."));
         // 3, DST相关模式 - 5 种
-        MODE_MODELS.add(new ModeModel(PorterDuff.Mode.DST, "Mode.DST", "The source pixels are discarded, leaving the destination intact."));
-        MODE_MODELS.add(new ModeModel(PorterDuff.Mode.DST_IN, "Mode.DST_IN", "Keeps the destination pixels that cover source pixels,discards the remaining source and destination pixels."));
+        MODE_MODELS.add(new ModeModel(PorterDuff.Mode.DST, "Mode.DST", "计算公式为：[Da, Dc]。" +
+                "在处理源图像所在区域的相交问题时，正好与Mode.SRC相反，全部以目标图像显示。" +
+                "The source pixels are discarded, leaving the destination intact."));
+        MODE_MODELS.add(new ModeModel(PorterDuff.Mode.DST_IN, "Mode.DST_IN", "计算公式为：[Da * Sa,Dc * Sa]。" +
+                "与 SRC_IN 相反，DST_IN 是在相交时利用源图像的透明度来改变目标图像的透明度和饱和度。当源图像透明度为0时，目标图像就完全不显式。" +
+                "Keeps the destination pixels that cover source pixels,discards the remaining source and destination pixels."));
         MODE_MODELS.add(new ModeModel(PorterDuff.Mode.DST_OUT, "Mode.DST_OUT", "Keeps the destination pixels that are not covered by source pixels. Discards destination pixels that are covered by source pixels. Discards all source pixels."));
         MODE_MODELS.add(new ModeModel(PorterDuff.Mode.DST_OVER, "Mode.DST_OVER", "The source pixels are drawn behind the destination pixels."));
         MODE_MODELS.add(new ModeModel(PorterDuff.Mode.DST_ATOP, "Mode.DST_ATOP", "Discards the destination pixels that are not covered by source pixels. Draws remaining destination pixels over source pixels."));

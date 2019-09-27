@@ -9,4 +9,6 @@
     <string name="title_scratchingcardview_srcout">ScratchingCardView_SRCOUT</string>
     <string name="title_roundimageview_srcatop">RoundImageView_SRCATOP</string>
     <string name="title_invertedimageview_srcatop">InvertedImageView_SRCATOP</string>
+    <string name="title_roundimageview_dstin">RoundImageView_DSTIN</string>
+    <string name="title_invertedimageview_dstin">InvertedImageView_DSTIN</string>
 </resources>
