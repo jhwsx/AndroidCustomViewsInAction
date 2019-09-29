@@ -87,10 +87,14 @@ public class AreaWaveView_DSTIN extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+        canvas.drawColor(Color.BLACK);
         // 先清空 dstBmp 上的图像，再绘制 path
         Canvas c = new Canvas(dstBmp);
         c.drawColor(Color.BLACK, PorterDuff.Mode.CLEAR);
         c.drawPath(path, paint);
+
+        // 绘制src图像，才能显示文字全貌
+        canvas.drawBitmap(srcBmp, 0, 0, paint);
         // 离屏缓冲
         // 新建图层
         int layerId = canvas.saveLayer(0, 0, getWidth(), getHeight(), paint, Canvas.ALL_SAVE_FLAG);
@@ -100,7 +104,7 @@ public class AreaWaveView_DSTIN extends View {
         // 给画笔添加混合模式DST_IN
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
         // 绘制源图像，在上层，不规则区域图像
-        canvas.drawBitmap(srcBmp, 0,0, paint);
+        canvas.drawBitmap(srcBmp, 0, 0, paint);
         // 清除画笔的混合模式
         paint.setXfermode(null);
         // 还原图层
