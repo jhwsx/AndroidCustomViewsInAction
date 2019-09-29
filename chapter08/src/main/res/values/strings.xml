@@ -13,4 +13,5 @@
     <string name="title_invertedimageview_dstin">InvertedImageView_DSTIN</string>
     <string name="title_areawaveview_dstin">AreaWaveView_DSTIN</string>
     <string name="title_heartmapview_dstin">HeartMapView_DSTIN</string>
+    <string name="title_irregularwaveview_dstin">IrregularWaveView_DSTIN</string>
 </resources>
