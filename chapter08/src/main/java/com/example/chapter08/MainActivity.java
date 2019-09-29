@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         pageModels.add(new PageModel(R.string.title_invertedimageview_srcatop, R.layout.practice_invertedimageview_srcatop));
         pageModels.add(new PageModel(R.string.title_roundimageview_dstin, R.layout.practice_roundimageview_dstin));
         pageModels.add(new PageModel(R.string.title_invertedimageview_dstin, R.layout.practice_invertedimageview_dstin));
+        pageModels.add(new PageModel(R.string.title_areawaveview_dstin, R.layout.practice_areawaveview_dstin));
     }
 
     @Override

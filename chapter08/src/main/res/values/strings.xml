@@ -11,4 +11,5 @@
     <string name="title_invertedimageview_srcatop">InvertedImageView_SRCATOP</string>
     <string name="title_roundimageview_dstin">RoundImageView_DSTIN</string>
     <string name="title_invertedimageview_dstin">InvertedImageView_DSTIN</string>
+    <string name="title_areawaveview_dstin">AreaWaveView_DSTIN</string>
 </resources>
