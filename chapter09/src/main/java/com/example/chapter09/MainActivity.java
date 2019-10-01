@@ -2,17 +2,17 @@ package com.example.chapter09;
 
 import android.os.Bundle;
 
+import com.google.android.material.tabs.TabLayout;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import androidx.annotation.LayoutRes;
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentPagerAdapter;
-
-import com.google.android.material.tabs.TabLayout;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     {
         pageModels.add(new PageModel(R.string.title_ondrawdispatchdraworderviewgroup, R.layout.practice_ondrawdispatchdraworderviewgroup));
+        pageModels.add(new PageModel(R.string.title_bitmap_canvas_view, R.layout.practice_bitmap_canvas_view));
     }
 
     @Override
