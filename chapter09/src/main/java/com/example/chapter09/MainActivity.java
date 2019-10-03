@@ -24,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
         pageModels.add(new PageModel(R.string.title_ondrawdispatchdraworderviewgroup, R.layout.practice_ondrawdispatchdraworderviewgroup));
         pageModels.add(new PageModel(R.string.title_bitmap_canvas_view, R.layout.practice_bitmap_canvas_view));
         pageModels.add(new PageModel(R.string.title_xfermode_view, R.layout.practice_xfermode_view));
+        pageModels.add(new PageModel(R.string.title_savelayer_useexample, R.layout.practice_savelayer_useexample));
+        pageModels.add(new PageModel(R.string.title_savelayer_useexample2, R.layout.practice_savelayer_useexample2));
     }
 
     @Override

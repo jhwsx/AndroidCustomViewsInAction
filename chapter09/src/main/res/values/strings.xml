@@ -3,4 +3,6 @@
     <string name="title_ondrawdispatchdraworderviewgroup">OnDrawDispatchDrawOrder</string>
     <string name="title_bitmap_canvas_view">BitmapCanvasView</string>
     <string name="title_xfermode_view">XfermodeView</string>
+    <string name="title_savelayer_useexample">SaveLayerUseExample</string>
+    <string name="title_savelayer_useexample2">SaveLayerUseExample2</string>
 </resources>
