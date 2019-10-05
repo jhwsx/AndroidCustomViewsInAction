@@ -5,5 +5,6 @@
     <string name="title_xfermode_view">XfermodeView</string>
     <string name="title_savelayer_useexample">SaveLayerUseExample</string>
     <string name="title_savelayer_useexample2">SaveLayerUseExample2</string>
+    <string name="title_savelayer_useexample3">SaveLayerUseExample3</string>
     <string name="title_savelayeralpha_useexample">SaveLayerAlphaUseExample</string>
 </resources>
