@@ -34,3 +34,10 @@ public class OnDrawDispatchDrawOrderViewGroup extends LinearLayout {
         super.dispatchDraw(canvas);
     }
 }
+
+/**
+ * onDraw 是绘制自身，dispatchDraw 是绘制子视图
+ * onDraw 先调用，dispatchDraw 后调用
+ * 在 ViewGroup 中，onDraw 不是每次都调用的，dispatchDraw 是每次都调用的
+ * 在 View 中，onDraw，dispatchDraw 每次都会调用
+ */

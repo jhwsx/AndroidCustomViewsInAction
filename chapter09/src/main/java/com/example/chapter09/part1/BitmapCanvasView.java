@@ -33,7 +33,7 @@ public class BitmapCanvasView extends View {
         super.onDraw(canvas);
         paint.setTextSize(50);
         c.drawText("欢迎光临", 0, 100, paint);
-
+        // 不写下面这行，是不会画到 View 上的。
         canvas.drawBitmap(bitmap, 0, 0, paint);
     }
 }
