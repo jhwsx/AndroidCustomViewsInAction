@@ -7,4 +7,8 @@
     <string name="title_savelayer_useexample2">SaveLayerUseExample2</string>
     <string name="title_savelayer_useexample3">SaveLayerUseExample3</string>
     <string name="title_savelayeralpha_useexample">SaveLayerAlphaUseExample</string>
+    <string name="title_matrix_save_flag_view">MATRIX_SAVE_FLAG_View</string>
+    <string name="title_matrix_save_flag_view2">MATRIX_SAVE_FLAG_View2</string>
+    <string name="title_matrix_save_flag_view3">MATRIX_SAVE_FLAG_View3</string>
+    <string name="title_matrix_save_flag_view4">MATRIX_SAVE_FLAG_View4</string>
 </resources>

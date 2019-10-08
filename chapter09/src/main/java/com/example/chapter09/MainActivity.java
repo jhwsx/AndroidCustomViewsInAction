@@ -28,6 +28,10 @@ public class MainActivity extends AppCompatActivity {
         pageModels.add(new PageModel(R.string.title_savelayer_useexample2, R.layout.practice_savelayer_useexample2));
         pageModels.add(new PageModel(R.string.title_savelayer_useexample3, R.layout.practice_savelayer_useexample3));
         pageModels.add(new PageModel(R.string.title_savelayeralpha_useexample, R.layout.practice_savelayeralphauseexample));
+        pageModels.add(new PageModel(R.string.title_matrix_save_flag_view, R.layout.practice_matrix_save_flag_view));
+        pageModels.add(new PageModel(R.string.title_matrix_save_flag_view2, R.layout.practice_matrix_save_flag_view2));
+        pageModels.add(new PageModel(R.string.title_matrix_save_flag_view3, R.layout.practice_matrix_save_flag_view3));
+        pageModels.add(new PageModel(R.string.title_matrix_save_flag_view4, R.layout.practice_matrix_save_flag_view4));
     }
 
     @Override
