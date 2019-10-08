@@ -50,7 +50,7 @@ public class PaintSetXfermodePorterDuffXfermodeView extends View {
         // 这里是核心绘制代码
         // 绘制目标图像，圆形的，在底部
         canvas.drawBitmap(dstBmp, 0,0, paint);
-        // 设置图像混合模式
+        // 设置图像混合模式，注意的是：这行代码之前画布上所有的内容都作为目标图像
         paint.setXfermode(new PorterDuffXfermode(mode));
         // 绘制源图像，方形的，在上面
         canvas.drawBitmap(srcBmp, width / 2, height / 2, paint);
