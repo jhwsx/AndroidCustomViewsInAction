@@ -6,12 +6,12 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
 import com.example.chapter09.R;
 
-import androidx.annotation.Nullable;
 
 /**
  * saveLayer函数指定的矩形大小就是新建的画布大小.

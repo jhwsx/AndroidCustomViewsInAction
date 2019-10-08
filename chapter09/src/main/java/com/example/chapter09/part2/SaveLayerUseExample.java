@@ -6,12 +6,12 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
 import com.example.chapter09.R;
 
-import androidx.annotation.Nullable;
 
 /**
  * saveLayer函数会新建一个全新的画布，其后的所有动作都只对新建画布有效，对原画布没有影响。

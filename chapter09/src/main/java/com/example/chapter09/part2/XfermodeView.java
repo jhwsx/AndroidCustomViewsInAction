@@ -8,10 +8,10 @@ import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.RectF;
+import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
-import androidx.annotation.Nullable;
 
 /**
  * 演示 saveLayer() 函数

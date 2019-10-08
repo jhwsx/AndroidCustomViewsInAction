@@ -6,12 +6,12 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
 import com.example.chapter09.R;
 
-import androidx.annotation.Nullable;
 
 /**
  * saveLayerAlpha函数新建的画布是有透明度的.
