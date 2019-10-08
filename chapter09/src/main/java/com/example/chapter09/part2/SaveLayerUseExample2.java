@@ -32,9 +32,10 @@ public class SaveLayerUseExample2 extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         canvas.drawBitmap(bitmap, 0, 0, paint);
-
+        // 新建图层
         int layerId = canvas.saveLayer(0, 0, 200, 200, paint, Canvas.ALL_SAVE_FLAG);
         canvas.drawColor(Color.GRAY);
+        canvas.drawRect(0,0,500,600, paint);
         canvas.restoreToCount(layerId);
     }
 }

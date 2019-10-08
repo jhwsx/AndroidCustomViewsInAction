@@ -14,7 +14,7 @@ import com.example.chapter09.R;
 import androidx.annotation.Nullable;
 
 /**
- * saveLayerAlpha函数指定的矩形大小就是新建的画布大小.
+ * saveLayerAlpha函数新建的画布是有透明度的.
  * @author wzc
  * @date 2019/10/4
  */

@@ -25,7 +25,6 @@ public class SaveLayerUseExample extends View {
         super(context, attrs);
         bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.dog);
         paint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        paint.setColor(Color.RED);
     }
 
     @Override
@@ -34,8 +33,12 @@ public class SaveLayerUseExample extends View {
         canvas.drawBitmap(bitmap, 0, 0, paint);
 
         int layerId = canvas.saveLayer(0, 0, getWidth(), getHeight(), paint, Canvas.ALL_SAVE_FLAG);
+        paint.setColor(Color.RED);
         canvas.skew(1.732f, 0);
         canvas.drawRect(0, 0, 150, 160, paint);
         canvas.restoreToCount(layerId);
+
+        paint.setColor(Color.GREEN);
+        canvas.drawText("我在原画布上，我不会歪斜。",50,50, paint);
     }
 }

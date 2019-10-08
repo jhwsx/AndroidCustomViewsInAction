@@ -33,10 +33,16 @@ public class SaveLayerUseExample3 extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         canvas.drawBitmap(bitmap, 0, 0, paint);
+        // 这里的作用是裁剪画布，虽然裁剪了，但是坐标系没有变化。
         canvas.clipRect(new Rect(100, bitmap.getHeight(), 200, bitmap.getHeight() + 100));
         canvas.drawColor(Color.GREEN);
-//        int layerId = canvas.saveLayer(0, 0, 200, 200, paint, Canvas.ALL_SAVE_FLAG);
-//        canvas.drawColor(Color.GRAY);
-//        canvas.restoreToCount(layerId);
+        int layerId = canvas.saveLayer(0, 0, 200, 200, paint, Canvas.ALL_SAVE_FLAG);
+        // 画的颜色不在裁剪后的画布上，所以是看不见的。
+        canvas.drawColor(Color.GRAY);
+        canvas.restoreToCount(layerId);
+        int layerId2 = canvas.saveLayer(100, bitmap.getHeight(), 150, bitmap.getHeight() + 50, paint, Canvas.ALL_SAVE_FLAG);
+        // 画的颜色在裁剪后的画布上，所以可以看见。
+        canvas.drawARGB(100, 255, 0, 0);
+        canvas.restoreToCount(layerId2);
     }
 }
