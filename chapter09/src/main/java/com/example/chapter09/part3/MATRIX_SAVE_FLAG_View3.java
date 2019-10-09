@@ -37,3 +37,8 @@ public class MATRIX_SAVE_FLAG_View3 extends View {
         canvas.drawRect(100, 0, 200, 100, paint);
     }
 }
+
+/**
+ * 总结：
+ * 当使用canvas.saveLayer(Canvas.MATRIX_SAVE_FLAG)时，需要与Canvas.HAS_ALPHA_LAYER_SAVE_FLAG一起使用，不然新建画布所在区域原来的图像将被清空。
+ */

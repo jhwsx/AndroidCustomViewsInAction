@@ -41,5 +41,7 @@ public class MATRIX_SAVE_FLAG_View2 extends View {
  * 总结：
  * 1，演示 canvas.save(Canvas.MATRIX_SAVE_FLAG);： 只保存了 Canvas 的位置，也只恢复 Canvas 的位置；
  * 没有保存 Canvas 的大小，当然也不会恢复 Canvas 的大小。
+ * 2，在4.4上和7.0上，是可以达到预期的，画布的大小是不可以恢复的；但是，在6.0上和8.0上，效果却是全部屏幕是黄色的。也就是说，在6.0和8.0上，
+ * 画布的大小也恢复了。
  */
 
