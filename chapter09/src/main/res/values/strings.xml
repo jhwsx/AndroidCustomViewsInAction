@@ -11,4 +11,8 @@
     <string name="title_matrix_save_flag_view2">MATRIX_SAVE_FLAG_View2</string>
     <string name="title_matrix_save_flag_view3">MATRIX_SAVE_FLAG_View3</string>
     <string name="title_matrix_save_flag_view4">MATRIX_SAVE_FLAG_View4</string>
+    <string name="title_clip_save_flag_view">CLIP_SAVE_FLAG_View</string>
+    <string name="title_clip_save_flag_view2">CLIP_SAVE_FLAG_View2</string>
+    <string name="title_clip_save_flag_view3">CLIP_SAVE_FLAG_View3</string>
+    <string name="title_clip_save_flag_view4">CLIP_SAVE_FLAG_View4</string>
 </resources>
