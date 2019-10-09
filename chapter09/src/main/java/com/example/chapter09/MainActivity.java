@@ -40,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
         pageModels.add(new PageModel(R.string.title_has_alpha_layer_save_flag_view, R.layout.practice_has_alpha_layer_save_flag_view));
         pageModels.add(new PageModel(R.string.title_alpha_layer_save_flag_view, R.layout.practice_alpha_layer_save_flag_view));
         pageModels.add(new PageModel(R.string.title_alpha_layer_save_flag_view2, R.layout.practice_alpha_layer_save_flag_view2));
+        pageModels.add(new PageModel(R.string.title_clip_to_layer_save_flag_view, R.layout.practice_clip_to_layer_save_flag_view));
+        pageModels.add(new PageModel(R.string.title_clip_to_layer_save_flag_view2, R.layout.practice_clip_to_layer_save_flag_view2));
     }
 
     @Override

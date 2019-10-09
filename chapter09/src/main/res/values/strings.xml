@@ -19,4 +19,6 @@
     <string name="title_has_alpha_layer_save_flag_view">HAS_ALPHA_LAYER_SAVE_FLAG_View</string>
     <string name="title_alpha_layer_save_flag_view">ALPHA_LAYER_SAVE_FLAG_View</string>
     <string name="title_alpha_layer_save_flag_view2">ALPHA_LAYER_SAVE_FLAG_View2</string>
+    <string name="title_clip_to_layer_save_flag_view">CLIP_TO_LAYER_SAVE_FLAG_View</string>
+    <string name="title_clip_to_layer_save_flag_view2">CLIP_TO_LAYER_SAVE_FLAG_View2</string>
 </resources>
