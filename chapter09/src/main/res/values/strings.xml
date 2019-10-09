@@ -15,4 +15,8 @@
     <string name="title_clip_save_flag_view2">CLIP_SAVE_FLAG_View2</string>
     <string name="title_clip_save_flag_view3">CLIP_SAVE_FLAG_View3</string>
     <string name="title_clip_save_flag_view4">CLIP_SAVE_FLAG_View4</string>
+    <string name="title_full_color_layer_save_flag_view">FULL_COLOR_LAYER_SAVE_FLAG_View</string>
+    <string name="title_has_alpha_layer_save_flag_view">HAS_ALPHA_LAYER_SAVE_FLAG_View</string>
+    <string name="title_alpha_layer_save_flag_view">ALPHA_LAYER_SAVE_FLAG_View</string>
+    <string name="title_alpha_layer_save_flag_view2">ALPHA_LAYER_SAVE_FLAG_View2</string>
 </resources>
