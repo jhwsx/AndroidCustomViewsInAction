@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     {
         pageModels.add(new PageModel(R.string.title_gradientdrawable_shape_viewgroup, R.layout.practice_gradientdrawable_shape_viewgroup));
         pageModels.add(new PageModel(R.string.title_gradientdrawable_shape_viewgroup2, R.layout.practice_gradientdrawable_shape_viewgroup2));
+        pageModels.add(new PageModel(R.string.title_shape_viewgroup1, R.layout.practice_shape_viewgroup));
     }
 
     @Override
