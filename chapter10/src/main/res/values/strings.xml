@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">chapter10</string>
+    <string name="title_gradientdrawable_shape_viewgroup">GradientDrawableShapeViewGroup</string>
+    <string name="title_gradientdrawable_shape_viewgroup2">GradientDrawableShapeViewGroup2</string>
 </resources>
