@@ -3,4 +3,5 @@
     <string name="title_gradientdrawable_shape_viewgroup">GradientDrawableShapeViewGroup</string>
     <string name="title_gradientdrawable_shape_viewgroup2">GradientDrawableShapeViewGroup2</string>
     <string name="title_shape_viewgroup1">RectShape</string>
+    <string name="title_oval_shape_viewgroup">OvalShape</string>
 </resources>
