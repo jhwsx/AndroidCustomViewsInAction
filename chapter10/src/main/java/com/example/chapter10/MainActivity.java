@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         pageModels.add(new PageModel(R.string.title_oval_shape_viewgroup, R.layout.practice_oval_shape_viewgroup));
         pageModels.add(new PageModel(R.string.title_arc_shape_viewgroup, R.layout.practice_arc_shape_viewgroup));
         pageModels.add(new PageModel(R.string.title_roundrect_shape_viewgroup, R.layout.practice_roundrect_shape_viewgroup));
+        pageModels.add(new PageModel(R.string.title_path_shape_viewgroup, R.layout.practice_path_shape_viewgroup));
     }
 
     @Override
