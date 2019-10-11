@@ -11,6 +11,8 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
+import com.example.chapter10.Utils;
+
 /**
  * @author wangzhichao
  * @date 2019/10/11
@@ -20,7 +22,7 @@ public class ArcShapeView extends View {
     public ArcShapeView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         drawable = new ShapeDrawable(new ArcShape(0f,90f));
-        drawable.setBounds(new Rect(50,50,200,100));
+        drawable.setBounds(new Rect(Utils.dp2px(50), Utils.dp2px(50), Utils.dp2px(200), Utils.dp2px(100)));
         drawable.getPaint().setColor(Color.YELLOW);
     }
 

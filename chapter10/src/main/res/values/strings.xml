@@ -5,4 +5,5 @@
     <string name="title_shape_viewgroup1">RectShape</string>
     <string name="title_oval_shape_viewgroup">OvalShape</string>
     <string name="title_arc_shape_viewgroup">ArcShape</string>
+    <string name="title_roundrect_shape_viewgroup">RoundRectShape</string>
 </resources>
