@@ -5,7 +5,37 @@
     android:background="@android:color/darker_gray"
     android:layout_height="match_parent">
 
+    <Button
+        android:id="@+id/button1"
+        android:text="stdWidth=100,stdHeight=100"
+        android:textAllCaps="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/button2"
+        android:text="stdWidth=100,stdHeight=200"
+        android:textAllCaps="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/button3"
+        android:text="stdWidth=200,stdHeight=100"
+        android:textAllCaps="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tv"
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
     <com.example.chapter10.part1.PathShapeView
+        android:layout_marginTop="8dp"
+        android:id="@+id/pathshapeview"
         android:background="@android:color/white"
         android:layout_width="250dp"
         android:layout_height="150dp" />

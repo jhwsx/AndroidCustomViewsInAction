@@ -19,10 +19,12 @@ import com.example.chapter10.Utils;
  */
 public class PathShapeView extends View {
     private ShapeDrawable drawable;
+    private final Path path;
+
     public PathShapeView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         setLayerType(View.LAYER_TYPE_SOFTWARE, null);
-        Path path = new Path();
+        path = new Path();
         path.moveTo(0, 0);
         path.lineTo(100, 0);
         path.lineTo(100, 100);
@@ -32,7 +34,8 @@ public class PathShapeView extends View {
         PathShape pathShape = new PathShape(path, 100, 100);
 //        PathShape pathShape = new PathShape(path, 100, 200);
 
-        drawable = new ShapeDrawable(pathShape);
+        drawable = new ShapeDrawable();
+        drawable.setShape(pathShape);
         drawable.setBounds(new Rect(0, 0, Utils.dp2px(250), Utils.dp2px(150)));
         drawable.getPaint().setColor(Color.YELLOW);
     }
@@ -41,6 +44,12 @@ public class PathShapeView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         drawable.draw(canvas);
+    }
+
+    public void updateStdWidthAndStdHeight(int stdWidth, int stdHeight) {
+        PathShape pathShape = new PathShape(path, stdWidth, stdHeight);
+        drawable.setShape(pathShape);
+        invalidate();
     }
 }
 
