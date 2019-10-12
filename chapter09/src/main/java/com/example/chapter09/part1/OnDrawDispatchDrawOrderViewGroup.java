@@ -35,6 +35,7 @@ public class OnDrawDispatchDrawOrderViewGroup extends LinearLayout {
     }
 }
 
+// TODO: 2019/10/12 为什么 ViewGroup 的 onDraw 不是每次都调用的？
 /**
  * onDraw 是绘制自身，dispatchDraw 是绘制子视图
  * onDraw 先调用，dispatchDraw 后调用

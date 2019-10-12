@@ -36,9 +36,11 @@ public class SaveLayerUseExample extends View {
         paint.setColor(Color.RED);
         canvas.skew(1.732f, 0);
         canvas.drawRect(0, 0, 150, 160, paint);
+        paint.setColor(Color.YELLOW);
+        canvas.drawText("我在新画布上，你看我扭成啥了",0,50, paint);
         canvas.restoreToCount(layerId);
 
         paint.setColor(Color.GREEN);
-        canvas.drawText("我在原画布上，我不会歪斜。",50,50, paint);
+        canvas.drawText("我在原画布上，我不会歪斜。",50,100, paint);
     }
 }

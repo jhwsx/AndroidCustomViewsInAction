@@ -34,7 +34,10 @@ public class SaveLayerUseExample2 extends View {
         canvas.drawBitmap(bitmap, 0, 0, paint);
         // 新建图层
         int layerId = canvas.saveLayer(0, 0, 200, 200, paint, Canvas.ALL_SAVE_FLAG);
+        // 灰色区域就是新建画布的大小
         canvas.drawColor(Color.GRAY);
+        // 即便后面绘制了更大的红色矩形，也只能显示出新建画布的区域
+        paint.setAlpha(100);
         canvas.drawRect(0,0,500,600, paint);
         canvas.restoreToCount(layerId);
     }

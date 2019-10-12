@@ -12,6 +12,8 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
+import com.example.chapter09.Utils;
+
 
 /**
  * 演示 saveLayer() 函数
@@ -19,8 +21,8 @@ import android.view.View;
  * @date 2019/10/03
  */
 public class XfermodeView extends View {
-    private int width = 400;
-    private int height = 400;
+    private int width = Utils.dp2px(100);
+    private int height = Utils.dp2px(100);
     private Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
     private Bitmap dstBmp;
     private Bitmap srcBmp;
@@ -38,7 +40,8 @@ public class XfermodeView extends View {
         canvas.drawColor(Color.GREEN);
 
         // 使用离屏缓存
-        // 新建图层
+        // 新建图层，这句代码调用后会生成一个全新的画布（bitmap），它是全透明的
+        // 如果不写这行，那么就不会新建一个画布，而是直接在原画布上绘制圆形的，这样目标图像就是绿色的背景加上圆形了
         int layerId = canvas.saveLayer(0, 0, width * 2, height * 2, paint, Canvas.ALL_SAVE_FLAG);
         // 这里是核心绘制代码
         // 绘制目标图像，圆形的，在底部
