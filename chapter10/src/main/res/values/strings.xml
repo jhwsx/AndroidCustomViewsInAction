@@ -7,4 +7,5 @@
     <string name="title_arc_shape_viewgroup">ArcShape</string>
     <string name="title_roundrect_shape_viewgroup">RoundRectShape</string>
     <string name="title_path_shape_viewgroup">PathShape</string>
+    <string name="title_region_shape_viewgroup">RegionShape</string>
 </resources>

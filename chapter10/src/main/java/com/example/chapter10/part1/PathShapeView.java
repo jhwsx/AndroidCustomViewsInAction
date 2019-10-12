@@ -56,4 +56,6 @@ public class PathShapeView extends View {
 /**
  * 总结：
  * 1，PathShape 是继承于 Shape 的。
+ * 2, PathShape 的参数 stdWidth 和 stdHeight 理解成宽度分成多少份，高度分成多少份；而 Path 路径的宽，高也应该
+ * 理解成份数，而不是 px。Path 的宽和高与 stdWidth 和 stdHeight 一致的话，就会填满整个控件。
  */
