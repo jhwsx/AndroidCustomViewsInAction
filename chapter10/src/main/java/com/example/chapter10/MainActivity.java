@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         pageModels.add(new PageModel(R.string.title_path_shape_viewgroup, R.layout.practice_path_shape_viewgroup));
         pageModels.add(new PageModel(R.string.title_region_shape_viewgroup, R.layout.practice_region_shape_viewgroup));
         pageModels.add(new PageModel(R.string.title_shape_shader_view, R.layout.practice_shape_shader_view));
+        pageModels.add(new PageModel(R.string.title_magnifier_view, R.layout.practice_magnifier_view));
     }
 
     @Override
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         viewPager = findViewById(R.id.pager);
+        viewPager.setNoScroll(true);
         tabLayout = findViewById(R.id.tabLayout);
         viewPager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
             @Override
