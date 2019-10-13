@@ -60,6 +60,9 @@ public class PaintSetshaderRadialGradientViewGroup extends LinearLayout {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 view.setDrawRect(isChecked);
+                if (!isChecked) {
+                    cbSmallRect.setChecked(false);
+                }
                 cbSmallRect.setVisibility(isChecked ? View.VISIBLE : View.INVISIBLE);
             }
         });

@@ -57,5 +57,6 @@
         android:id="@+id/view"
         android:layout_width="200dp"
         android:layout_height="400dp"
+        android:background="@android:color/darker_gray"
         android:layout_gravity="center_horizontal" />
 </LinearLayout>

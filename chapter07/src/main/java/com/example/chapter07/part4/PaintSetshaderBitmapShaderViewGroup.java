@@ -73,12 +73,12 @@ public class PaintSetshaderBitmapShaderViewGroup extends LinearLayout {
     private Shader.TileMode mapTileMode(int position) {
         switch (position) {
             case 0:
-                return Shader.TileMode.REPEAT;
+                return Shader.TileMode.REPEAT; // 重复原图像来填充多余空间
             case 1:
-                return Shader.TileMode.MIRROR;
+                return Shader.TileMode.MIRROR; // 重复使用镜像模式的图像来填充多余空间
             case 2:
             default:
-                return Shader.TileMode.CLAMP;
+                return Shader.TileMode.CLAMP; // 用边缘色彩来填充多余空间
 
         }
     }

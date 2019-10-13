@@ -67,3 +67,4 @@ public class PaintSetshaderBitmapShaderView extends View {
  * 1，绘制是从控件的左上角开始的；
  * 2，填充顺序是先填充 Y 轴，再填充 X 轴，这一点是从都是 CLAMP 的效果看出来；
  */
+// TODO: 2019/10/13 关于填充顺序，理解成先填充 X 轴，再填充 Y 轴，对不对？

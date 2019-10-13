@@ -76,8 +76,8 @@ public class AvatarView extends View {
         float scaleX = getWidth() * 1F / bitmap.getWidth();
         float scaleY = getHeight()* 1F  / bitmap.getHeight();
         float scale = Math.max(scaleX, scaleY);
-        matrix.setScale(scale, scale);
-        shader.setLocalMatrix(matrix);
+        matrix.setScale(scale, scale); // 利用 Matrix 缩放图片到要求的尺寸
+        shader.setLocalMatrix(matrix); // TODO: 2019/10/13 setLocalMatrix 这里怎么理解？
         paint.setShader(shader);
 
         if (Type.CIRCLE.equals(type)) {
@@ -97,3 +97,4 @@ public class AvatarView extends View {
         }
     }
 }
+// TODO: 2019/10/13 查看一下github上圆形图像的代码
