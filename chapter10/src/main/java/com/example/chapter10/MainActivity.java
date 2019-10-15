@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         pageModels.add(new PageModel(R.string.title_region_shape_viewgroup, R.layout.practice_region_shape_viewgroup));
         pageModels.add(new PageModel(R.string.title_shape_shader_view, R.layout.practice_shape_shader_view));
         pageModels.add(new PageModel(R.string.title_magnifier_view, R.layout.practice_magnifier_view));
+        pageModels.add(new PageModel(R.string.title_circled_drawable, R.layout.practice_circled_drawable_viewgroup));
     }
 
     @Override

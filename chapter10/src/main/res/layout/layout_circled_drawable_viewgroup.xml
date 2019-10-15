@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:background="@android:color/darker_gray"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_margin="8dp"
+            android:id="@+id/iv0"
+            android:background="@android:color/white"
+            android:layout_width="250dp"
+            android:layout_height="150dp" />
+
+        <ImageView
+            android:layout_margin="8dp"
+            android:id="@+id/iv1"
+            android:scaleType="center"
+            android:background="@android:color/white"
+            android:layout_width="250dp"
+            android:layout_height="150dp" />
+
+        <ImageView
+            android:layout_margin="8dp"
+            android:id="@+id/iv2"
+            android:scaleType="fitStart"
+            android:background="@android:color/white"
+            android:layout_width="250dp"
+            android:layout_height="150dp" />
+
+        <ImageView
+            android:layout_margin="8dp"
+            android:id="@+id/iv3"
+            android:scaleType="fitCenter"
+            android:background="@android:color/white"
+            android:layout_width="250dp"
+            android:layout_height="150dp" />
+
+        <ImageView
+            android:layout_margin="8dp"
+            android:id="@+id/iv4"
+            android:scaleType="fitEnd"
+            android:background="@android:color/white"
+            android:layout_width="250dp"
+            android:layout_height="150dp" />
+
+        <ImageView
+            android:layout_margin="8dp"
+            android:id="@+id/iv5"
+            android:scaleType="centerInside"
+            android:background="@android:color/white"
+            android:layout_width="250dp"
+            android:layout_height="150dp" />
+
+        <ImageView
+            android:layout_margin="8dp"
+            android:id="@+id/iv6"
+            android:scaleType="centerCrop"
+            android:background="@android:color/white"
+            android:layout_width="250dp"
+            android:layout_height="150dp" />
+
+        <ImageView
+            android:layout_margin="8dp"
+            android:id="@+id/iv7"
+            android:scaleType="center"
+            android:background="@android:color/white"
+            android:layout_width="250dp"
+            android:layout_height="150dp" />
+
+        <ImageView
+            android:layout_margin="8dp"
+            android:id="@+id/iv8"
+            android:scaleType="fitXY"
+            android:background="@android:color/white"
+            android:layout_width="250dp"
+            android:layout_height="150dp" />
+
+        <TextView
+            android:id="@+id/tv"
+            android:textSize="30sp"
+            android:layout_margin="8dp"
+            android:text="欢迎光临启舰的blog"
+            android:textColor="#ff0000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv1"
+            android:textSize="30sp"
+            android:layout_margin="8dp"
+            android:text="欢迎光临启舰的blog"
+            android:textColor="#ff0000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</ScrollView>
