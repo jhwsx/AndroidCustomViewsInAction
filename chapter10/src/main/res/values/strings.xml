@@ -11,4 +11,5 @@
     <string name="title_shape_shader_view">ShapeShaderView</string>
     <string name="title_magnifier_view">MagnifierView</string>
     <string name="title_circled_drawable">CircledDrawable</string>
+    <string name="title_bitmap_drawable_convert">BitmapDrawableConvert</string>
 </resources>
