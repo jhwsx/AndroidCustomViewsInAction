@@ -12,4 +12,5 @@
     <string name="title_magnifier_view">MagnifierView</string>
     <string name="title_circled_drawable">CircledDrawable</string>
     <string name="title_bitmap_drawable_convert">BitmapDrawableConvert</string>
+    <string name="title_bitmap_compress_format">BitmapCompressFormat</string>
 </resources>

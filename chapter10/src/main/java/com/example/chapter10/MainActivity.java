@@ -1,12 +1,17 @@
 package com.example.chapter10;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 
 import java.util.ArrayList;
@@ -32,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         pageModels.add(new PageModel(R.string.title_magnifier_view, R.layout.practice_magnifier_view));
         pageModels.add(new PageModel(R.string.title_circled_drawable, R.layout.practice_circled_drawable_viewgroup));
         pageModels.add(new PageModel(R.string.title_bitmap_drawable_convert, R.layout.practice_bitmap_drawable_convert));
+        pageModels.add(new PageModel(R.string.title_bitmap_compress_format, R.layout.practice_bitmap_compress_format));
     }
 
     @Override
@@ -41,6 +47,24 @@ public class MainActivity extends AppCompatActivity {
         viewPager = findViewById(R.id.pager);
         viewPager.setNoScroll(true);
         tabLayout = findViewById(R.id.tabLayout);
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+        } else {
+            setupViewPager();
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == 1) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                setupViewPager();
+            }
+        }
+    }
+
+    private void setupViewPager() {
         viewPager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
             @Override
             public Fragment getItem(int position) {
