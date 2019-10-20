@@ -66,6 +66,7 @@ public class BitmapFactoryDecodeByteArrayView extends View {
         if (httpURLConnection.getResponseCode() == 200) {
             InputStream inputStream = httpURLConnection.getInputStream();
             result = readStream(inputStream);
+//            result = readStream2(inputStream);
             inputStream.close();
         }
         return result;
@@ -81,5 +82,12 @@ public class BitmapFactoryDecodeByteArrayView extends View {
         inputStream.close();
         baos.close();
         return baos.toByteArray();
+    }
+
+    private byte[] readStream2(InputStream inputStream) throws Exception{
+        byte[] result = new byte[inputStream.available()];
+        inputStream.read(result);
+        inputStream.close();
+        return result;
     }
 }

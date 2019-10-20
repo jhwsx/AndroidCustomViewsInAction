@@ -15,4 +15,5 @@
     <string name="title_bitmap_compress_format">BitmapCompressFormat</string>
     <string name="title_bitmapfactory_decoderesource">BitmapFactory.decodeResource</string>
     <string name="title_bitmapfactory_decodebytearray">BitmapFactory.decodeByteArray</string>
+    <string name="title_bitmapfactory_decodefiledescriptor">BitmapFactory.decodeFileDescriptor</string>
 </resources>

@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         pageModels.add(new PageModel(R.string.title_bitmap_compress_format, R.layout.practice_bitmap_compress_format));
         pageModels.add(new PageModel(R.string.title_bitmapfactory_decoderesource, R.layout.practice_bitmapfactory_decoderesource));
         pageModels.add(new PageModel(R.string.title_bitmapfactory_decodebytearray, R.layout.practice_bitmapfactory_decodebytearray));
+        pageModels.add(new PageModel(R.string.title_bitmapfactory_decodefiledescriptor, R.layout.practice_bitmapfactory_decodefiledescriptor));
     }
 
     @Override
