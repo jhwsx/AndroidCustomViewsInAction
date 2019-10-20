@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         pageModels.add(new PageModel(R.string.title_circled_drawable, R.layout.practice_circled_drawable_viewgroup));
         pageModels.add(new PageModel(R.string.title_bitmap_drawable_convert, R.layout.practice_bitmap_drawable_convert));
         pageModels.add(new PageModel(R.string.title_bitmap_compress_format, R.layout.practice_bitmap_compress_format));
+        pageModels.add(new PageModel(R.string.title_bitmapfactory_decoderesource, R.layout.practice_bitmapfactory_decoderesource));
     }
 
     @Override
