@@ -1,4 +1,4 @@
-package com.example.chapter10.part1;
+package com.example.chapter10.part2;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -16,6 +16,7 @@ import android.view.View;
 
 import com.example.chapter10.R;
 import com.example.chapter10.Utils;
+import com.example.chapter10.part1.CircledDrawable;
 
 /**
  * https://blog.csdn.net/l_lhc/article/details/50923372

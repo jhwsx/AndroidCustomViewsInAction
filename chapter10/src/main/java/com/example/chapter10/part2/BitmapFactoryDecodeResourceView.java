@@ -1,4 +1,4 @@
-package com.example.chapter10.part1;
+package com.example.chapter10.part2;
 
 import android.content.Context;
 import android.graphics.Bitmap;
