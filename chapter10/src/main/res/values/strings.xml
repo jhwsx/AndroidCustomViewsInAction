@@ -14,4 +14,5 @@
     <string name="title_bitmap_drawable_convert">BitmapDrawableConvert</string>
     <string name="title_bitmap_compress_format">BitmapCompressFormat</string>
     <string name="title_bitmapfactory_decoderesource">BitmapFactory.decodeResource</string>
+    <string name="title_bitmapfactory_decodebytearray">BitmapFactory.decodeByteArray</string>
 </resources>
