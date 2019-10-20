@@ -16,4 +16,5 @@
     <string name="title_bitmapfactory_decoderesource">BitmapFactory.decodeResource</string>
     <string name="title_bitmapfactory_decodebytearray">BitmapFactory.decodeByteArray</string>
     <string name="title_bitmapfactory_decodefiledescriptor">BitmapFactory.decodeFileDescriptor</string>
+    <string name="title_bitmapfactory_decodestream">BitmapFactory.decodeStream</string>
 </resources>
