@@ -18,4 +18,5 @@
     <string name="title_bitmapfactory_decodefiledescriptor">BitmapFactory.decodeFileDescriptor</string>
     <string name="title_bitmapfactory_decodestream">BitmapFactory.decodeStream</string>
     <string name="title_bitmapfactory_options_injustdecodebounds">BitmapFactory.Options.inJustDeocodeBounds</string>
+    <string name="title_bitmapfactory_options_insamplesize">BitmapFactory.Options.inSampleSize</string>
 </resources>
