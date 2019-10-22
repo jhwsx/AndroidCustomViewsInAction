@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         pageModels.add(new PageModel(R.string.title_bitmapfactory_decodestream, R.layout.practice_bitmapfactory_decodestream));
         pageModels.add(new PageModel(R.string.title_bitmapfactory_options_injustdecodebounds, R.layout.practice_bitmapfactoryoptions_injustdecodebounds));
         pageModels.add(new PageModel(R.string.title_bitmapfactory_options_insamplesize, R.layout.practice_bitmapfactoryoptions_insamplesize));
+        pageModels.add(new PageModel(R.string.title_densitydpi_view, R.layout.practice_densitydpi_view));
     }
 
     @Override
