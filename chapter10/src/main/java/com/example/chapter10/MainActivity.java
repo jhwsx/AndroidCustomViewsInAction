@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         pageModels.add(new PageModel(R.string.title_sdcardbitmap_drawablebitmap, R.layout.practice_sdcardbitmap_drawablebitmap_view));
         pageModels.add(new PageModel(R.string.title_bitmapfactory_options_inscaled, R.layout.practice_bitmapfactory_options_inscaled));
         pageModels.add(new PageModel(R.string.title_bitmapfactoryoptionsindensityintargetdensityview, R.layout.practice_bitmapfactoryoptionsindensityintargetdensityview));
+        pageModels.add(new PageModel(R.string.title_bitmapfactoryoptionsinpreferredconfigview, R.layout.practice_bitmapfactoryoptionsinpreferredconfigview));
     }
 
     @Override
