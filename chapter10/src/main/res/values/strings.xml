@@ -21,4 +21,5 @@
     <string name="title_bitmapfactory_options_insamplesize">BitmapFactory.Options.inSampleSize</string>
     <string name="title_densitydpi_view">densityDpi</string>
     <string name="title_sdcardbitmap_drawablebitmap">sdcardbitmap vs drawablebitmap</string>
+    <string name="title_bitmapfactory_options_inscaled">BitmapFactory.Options.inScaled</string>
 </resources>
