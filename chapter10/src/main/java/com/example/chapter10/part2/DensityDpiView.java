@@ -24,17 +24,24 @@ public class DensityDpiView extends View {
 
     private final String info;
     private TextPaint paint = new TextPaint(Paint.ANTI_ALIAS_FLAG);
+
     public DensityDpiView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         DisplayMetrics displayMetrics = new DisplayMetrics();
         WindowManager windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
         windowManager.getDefaultDisplay().getMetrics(displayMetrics);
+        float widthInch = displayMetrics.widthPixels / displayMetrics.xdpi;
+        float heightInch = displayMetrics.heightPixels / displayMetrics.ydpi;
+        float screenInch = (float) Math.sqrt(Math.pow(widthInch, 2) + Math.pow(heightInch, 2));
         info = "density: " + displayMetrics.density + "\n"
                 + "densityDpi: " + displayMetrics.densityDpi + "\n"
                 + "heightPixels: " + displayMetrics.heightPixels + "\n"
                 + "widthPixels: " + displayMetrics.widthPixels + "\n"
                 + "xdpi: " + displayMetrics.xdpi + "\n"
-                + "ydpi: " + displayMetrics.ydpi;
+                + "ydpi: " + displayMetrics.ydpi + "\n"
+                + "widthInch: " + widthInch + "\n"
+                + "heightInch: " + heightInch + "\n"
+                + "screenInch: " + screenInch;
         paint.setColor(Color.GREEN);
         paint.setTextSize(Utils.dp2px(24));
         paint.setStyle(Paint.Style.FILL);
