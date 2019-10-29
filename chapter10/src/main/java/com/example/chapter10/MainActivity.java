@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         pageModels.add(new PageModel(R.string.title_bitmapfactoryoptionsinpreferredconfigview, R.layout.practice_bitmapfactoryoptionsinpreferredconfigview));
         pageModels.add(new PageModel(R.string.title_bitmap_createbitmap_lineargradientview, R.layout.practice_bitmap_createbitmap_lineargradientview));
         pageModels.add(new PageModel(R.string.title_bitmap_createbitmap_clipimageview, R.layout.practice_bitmapcreatebitmapclipimageview));
+        pageModels.add(new PageModel(R.string.title_bitmap_createbitmap_colorview, R.layout.practice_bitmapcreatebitmapcolorview));
     }
 
     @Override
