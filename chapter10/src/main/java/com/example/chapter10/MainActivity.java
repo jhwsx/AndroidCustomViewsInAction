@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         pageModels.add(new PageModel(R.string.title_bitmap_createbitmap_colorview, R.layout.practice_bitmapcreatebitmapcolorview));
         pageModels.add(new PageModel(R.string.title_bitmap_createscaledbitmap, R.layout.practice_bitmapcreatescaledbitmapview));
         pageModels.add(new PageModel(R.string.title_bitmap_copy, R.layout.practice_bitmap_copy_view));
+        pageModels.add(new PageModel(R.string.title_bitmap_extraalpha, R.layout.practice_bitmap_extractalpha));
     }
 
     @Override
