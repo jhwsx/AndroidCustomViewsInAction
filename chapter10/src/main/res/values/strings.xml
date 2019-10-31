@@ -28,4 +28,5 @@
     <string name="title_bitmap_createbitmap_clipimageview">Bitmap.createBitmap-ClipImageView</string>
     <string name="title_bitmap_createbitmap_colorview">Bitmap.createBitmap-ColorView</string>
     <string name="title_bitmap_createscaledbitmap">Bitmap.createScaledBitmap</string>
+    <string name="title_bitmap_copy">bitmap.copy(Config config, boolean isMutable)</string>
 </resources>

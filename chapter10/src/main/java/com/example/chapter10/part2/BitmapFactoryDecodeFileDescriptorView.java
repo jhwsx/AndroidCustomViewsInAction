@@ -36,7 +36,9 @@ public class BitmapFactoryDecodeFileDescriptorView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        canvas.drawBitmap(bitmap, 0,0, paint);
+        if (bitmap != null) {
+            canvas.drawBitmap(bitmap, 0,0, paint);
+        }
     }
 }
 
