@@ -13,6 +13,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.ImageView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         pageModels.add(new PageModel(R.string.title_bitmap_copy, R.layout.practice_bitmap_copy_view));
         pageModels.add(new PageModel(R.string.title_bitmap_extractalpha, R.layout.practice_bitmap_extractalpha));
         pageModels.add(new PageModel(R.string.title_bitmap_extractalpha_withparms, R.layout.practice_bitmap_extractalpha_withparams));
+        pageModels.add(new PageModel(R.string.title_bitmap_extractalpha_stroke_image, R.layout.practice_bitmap_extractalpha_stroke_image_viewgroup));
     }
 
     @Override
