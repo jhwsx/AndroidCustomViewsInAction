@@ -47,3 +47,9 @@ public class BitmapExtractAlphaView extends View {
         canvas.drawBitmap(bitmap, null, new Rect(0, getHeight() / 2, getWidth(), getHeight()), null);
     }
 }
+/**
+ * 总结：
+ * 1，canvas.drawBitmap 的 paint 参数：
+ * 对于 ARGB 信息完整的 Bitmap 而言，paint 参数对绘制的 Bitmap 没有影响；
+ * 对于只有 Alpha 通道的 Bitmap 而言，paint 参数意义重大：paint 的颜色就是用来填充 Bitmap 颜色的。
+ */
