@@ -33,4 +33,5 @@
     <string name="title_bitmap_extractalpha_withparms">bitmap.extractAlpha(Paint paint, int[] offsetXY)</string>
     <string name="title_bitmap_extractalpha_stroke_image">StrokeImage(单击描边效果)</string>
     <string name="title_bitmap_size_view">获取 Bitmap Size</string>
+    <string name="title_bitmap_setdensity">Bitmap setDensity(),getDensity()</string>
 </resources>
