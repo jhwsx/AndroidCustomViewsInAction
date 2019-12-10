@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
         pageModels.add(new PageModel(R.string.title_bitmap_size_view, R.layout.practice_bitmap_size_view));
         pageModels.add(new PageModel(R.string.title_bitmap_setdensity, R.layout.practice_bitmap_setdensity_viewgroup));
         pageModels.add(new PageModel(R.string.title_bitmap_setpixel, R.layout.practice_bitmap_setpixel_viewgroup));
+        pageModels.add(new PageModel(R.string.title_bitmap_compress, R.layout.practice_bitmap_compress_viewgroup));
     }
 
     @Override

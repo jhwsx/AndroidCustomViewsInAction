@@ -35,4 +35,5 @@
     <string name="title_bitmap_size_view">获取 Bitmap Size</string>
     <string name="title_bitmap_setdensity">Bitmap setDensity(),getDensity()</string>
     <string name="title_bitmap_setpixel">Bitmap setPixel(),getPixel()</string>
+    <string name="title_bitmap_compress">Bitmap compress()</string>
 </resources>
