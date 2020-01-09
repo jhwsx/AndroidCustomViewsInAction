@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 
 /**
@@ -39,6 +40,11 @@ public class DrawTextView extends View {
 
         // 绘制 Text 四线格的各线位置
         Paint.FontMetrics fm = paint.getFontMetrics();
+        // 打印结果：fm.ascent = -111.328125,fm.descent = 29.296875,fm.top = -126.73828,fm.bottom = 32.51953
+        Log.d("DrawTextView", "fm.ascent = " + fm.ascent + "," // fm.ascent 为负数
+                + "fm.descent = " + fm.descent + "," // fm.descent 为正数
+                + "fm.top = " + fm.top + "," // fm.top 为负数
+                + "fm.bottom = " + fm.bottom); // fm.bottom 为正数
         float ascent = baseLineY + fm.ascent;
         float descent = baseLineY + fm.descent;
         float top = baseLineY + fm.top;

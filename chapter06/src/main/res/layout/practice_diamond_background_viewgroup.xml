@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.example.chapter06.view.DiamondBackgroundTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:dbv_background_color="#80E5C8C8"
+        app:dbv_padding="4dp"
+        app:dbv_text="每日答题"
+        app:dbv_text_color="#FF7F101D"
+        app:dbv_text_size="24sp" />
+
+    <com.example.chapter06.view.DiamondBackgroundTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:dbv_background_color="#440000ff"
+        app:dbv_padding="4dp"
+        app:dbv_text="新春快乐"
+        app:dbv_text_color="#ff00ff00"
+        app:dbv_text_size="24sp" />
+
+    <com.example.chapter06.view.DiamondBackgroundTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:dbv_background_color="#440000ff"
+        app:dbv_padding="4dp"
+        app:dbv_text="新"
+        app:dbv_text_color="#ff00ff00"
+        app:dbv_text_size="24sp" />
+
+    <com.example.chapter06.view.DiamondBackgroundTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:dbv_background_color="#44ff0000"
+        app:dbv_padding="4dp"
+        app:dbv_text="中华人民共和国"
+        app:dbv_text_color="#ffffff00"
+        app:dbv_text_size="12sp" />
+</LinearLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="DiamondBackgroundTextView">
+        <attr name="dbv_text" format="string" />
+        <attr name="dbv_text_color" format="color" />
+        <attr name="dbv_text_size" format="dimension" />
+        <attr name="dbv_background_color" format="color" />
+        <attr name="dbv_padding" format="dimension" />
+    </declare-styleable>
+</resources>

@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         pageModels.add(new PageModel(R.string.title_paint_set_stroke_join, R.layout.practice_paint_set_stroke_join));
         pageModels.add(new PageModel(R.string.title_paint_set_path_effect, R.layout.practice_paint_set_path_effect));
         pageModels.add(new PageModel(R.string.title_path_effect_anim, R.layout.practice_path_effect_anim_view));
+        pageModels.add(new PageModel(R.string.title_diamond_background_view, R.layout.practice_diamond_background_viewgroup));
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
