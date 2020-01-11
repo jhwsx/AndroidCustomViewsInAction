@@ -30,7 +30,7 @@ public class TextAreaView extends View {
 
         Paint paint = new Paint();
         paint.setTextSize(120);
-        String text = "harvic\'s blog";
+        String text = "                harvic\'s blog";
         canvas.drawText(text,baseLineX,baseLineY,paint);
 
         Paint.FontMetricsInt fm = paint.getFontMetricsInt();
@@ -49,7 +49,7 @@ public class TextAreaView extends View {
         paint.setStyle(Paint.Style.STROKE);
         canvas.drawRect(area, paint);
 
-        // 最小矩形
+        // 最小矩形,左右两端若有空格是不包括在内的。
         Rect minRect = new Rect();
         // 注意：获取指定字符串所对应的的最小矩形，以（0,0）点所在位置为基线
         paint.getTextBounds(text, 0, text.length(), minRect);

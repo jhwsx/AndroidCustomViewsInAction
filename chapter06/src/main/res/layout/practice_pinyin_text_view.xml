@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.example.chapter06.view.PinyinTextView
+        android:background="#4400ff00"
+        android:id="@+id/ptv_1"
+        app:ptv_text_size="14sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:ptv_text_color="#333333"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

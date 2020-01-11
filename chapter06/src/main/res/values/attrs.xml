@@ -7,4 +7,9 @@
         <attr name="dbv_background_color" format="color" />
         <attr name="dbv_padding" format="dimension" />
     </declare-styleable>
+
+    <declare-styleable name="PinyinTextView">
+        <attr name="ptv_text_color" format="color" />
+        <attr name="ptv_text_size" format="dimension" />
+    </declare-styleable>
 </resources>
