@@ -5,38 +5,32 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.Rect;
 import android.graphics.RectF;
-import android.text.TextPaint;
 import android.text.TextUtils;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 
 
 import com.example.chapter06.R;
 
-import java.util.ArrayList;
-
 
 public class PinyinTextView extends View {
-
+    private static final String TAG = "PinyinTextView";
     private String[] pinyinArr;
     private String[] hanziArr;
 
-    private TextPaint textPaint = new TextPaint(Paint.ANTI_ALIAS_FLAG);
+    private Paint textPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
     private Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
     // 对应 <br>
     public static final String BREAK_TAG = "#";
     // 对应 <p>
     public static final String PARAGRAPH_TAG = "&";
-    /**
-     * 统计标点长度
-     */
-    private ArrayList<String> punctuationList = new ArrayList<>();
 
     int row = 1;
 
     float density;
+    private Paint.FontMetrics fontMetrics;
 
     public PinyinTextView(Context context) {
         this(context, null);
@@ -51,6 +45,9 @@ public class PinyinTextView extends View {
         init(context, attrs);
     }
 
+    private float lineHeight;
+    private float pinyinHeight;
+    private float hanziHeight;
     private void init(Context context, AttributeSet attrs) {
         TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.PinyinTextView);
         int textColor = ta.getColor(R.styleable.PinyinTextView_ptv_text_color, 0x333333);
@@ -60,6 +57,10 @@ public class PinyinTextView extends View {
         textPaint.setTextSize(textSize);
         density = getResources().getDisplayMetrics().density;
 
+        fontMetrics = textPaint.getFontMetrics();
+        pinyinHeight = fontMetrics.bottom - fontMetrics.top;
+        hanziHeight = fontMetrics.bottom - fontMetrics.top;
+        lineHeight = pinyinHeight + hanziHeight;
         paint.setColor(Color.RED);
         paint.setStrokeWidth(1f);
         paint.setStyle(Paint.Style.STROKE);
@@ -86,6 +87,13 @@ public class PinyinTextView extends View {
         baselineX = 0f;
         float pinyinRowWidth;
         row = 1;
+//        for (int i = 0; i < 58; i++) {
+//            paint.setColor(Color.MAGENTA);
+//            int row1 = i + 1;
+//            canvas.drawLine(0, getRowLine(row1), getWidth(), getRowLine(row1), paint);
+//            paint.setTextSize(40);
+//            canvas.drawText(String.valueOf(row1), 0, getRowLine(row1), paint);
+//        }
         for (int index = 0; index < pinyinArr.length; index++) {
             if (!TextUtils.equals(pinyinArr[index], "null") && !TextUtils.equals(pinyinArr[index], " ")) {
                 String pinyin = getPinyinByIndex(index);
@@ -94,20 +102,8 @@ public class PinyinTextView extends View {
                     row++;
                     baselineX = 0;
                 }
-                float baselineY = (row * 2 - 1) * (textPaint.getFontSpacing());
-                canvas.drawText(pinyin, baselineX, baselineY, textPaint);
-                float width = textPaint.measureText(pinyin);
-                Paint.FontMetricsInt fontMetricsInt = textPaint.getFontMetricsInt();
-
-                RectF rect = new RectF();
-                rect.left = baselineX;
-                rect.right = baselineX + width;
-                rect.top = fontMetricsInt.top + baselineY;
-                rect.bottom = fontMetricsInt.bottom + baselineY;
-//                textPaint.getTextBounds(pinyin, 0, pinyin.length(), rect);
-//                rect.set((int) (baselineX +rect.left), (int)(baselineY + rect.top), (int)(baselineX + rect.right), (int)(baselineY + rect.bottom));
-                canvas.drawRect(rect, paint);
-                drawTone(canvas, baselineX, pinyinArr[index], baselineY);
+                drawPinyin(canvas, pinyin);
+                drawTone(canvas, baselineX, pinyinArr[index]);
                 drawHanzi(canvas, baselineX, index);
                 updateBaselineX(textPaint.measureText(getPinyinByIndex(index)));
             } else if (TextUtils.equals(pinyinArr[index], "null")) {
@@ -118,37 +114,84 @@ public class PinyinTextView extends View {
                     row += 2;
                     baselineX = 0;
                 } else {
-                    drawPunctuation(canvas, hanziArr[index]);
+                    drawPunctuationOrSpace(canvas, index);
                     updateBaselineX(textPaint.measureText(hanziArr[index]));
                 }
             }
         }
     }
 
-    private void drawPunctuation(Canvas canvas, String text) {
-        // 绘制标点符号
+    private void drawPinyin(Canvas canvas, String pinyin) {
+        float pinyinBaselineY = getPinyinBaselineY(row);
+        canvas.drawText(pinyin, baselineX, pinyinBaselineY, textPaint);
+        float width = textPaint.measureText(pinyin);
+        Paint.FontMetricsInt fontMetricsInt = textPaint.getFontMetricsInt();
+        paint.setColor(Color.RED);
+        RectF rect = new RectF();
+        rect.left = baselineX;
+        rect.right = baselineX + width;
+        rect.top = fontMetricsInt.top + pinyinBaselineY;
+        rect.bottom = fontMetricsInt.bottom + pinyinBaselineY;
+        canvas.drawRect(rect, paint);
+    }
+
+    private void drawPunctuationOrSpace(Canvas canvas, int index) {
+        // 绘制标点符号,或者空格
+        String text = hanziArr[index];
         float hanziWidth = baselineX + textPaint.measureText(text);
         if (hanziWidth > getWidth()) {
             row++;
             baselineX = 0;
         }
-        canvas.drawText(text, baselineX, (row * 2) * textPaint.getFontSpacing(), textPaint);
+        float baselineY = getHanziBaselineY(row);
+        canvas.drawText(text, baselineX, baselineY, textPaint);
+        float width = textPaint.measureText(text);
+        Paint.FontMetricsInt fontMetricsInt = textPaint.getFontMetricsInt();
+        paint.setColor(Color.BLUE);
+        RectF rect = new RectF();
+        rect.left = baselineX;
+        rect.right = baselineX + width;
+        rect.top = fontMetricsInt.top + baselineY;
+        rect.bottom = fontMetricsInt.bottom + baselineY;
+        canvas.drawRect(rect, paint);
     }
 
+    private float getRowLine(int row) {
+        return  row * lineHeight + (row - 1) * textPaint.getFontSpacing();
+    }
+
+    private float getPinyinBaselineY(int row) {
+        float rowLine = getRowLine(row);
+        return rowLine - hanziHeight - fontMetrics.bottom;
+    }
+
+    private float getHanziBaselineY(int row) {
+        float rowLine = getRowLine(row);
+        return rowLine - fontMetrics.bottom;
+    }
     private void drawHanzi(Canvas canvas, float baselineX, int index) {
         // 由于拼音长度固定，采用居中显示策略，计算拼音实际长度不需要去掉拼音后面空格
         String hanzi = hanziArr[index];
         float hanziBaselineX = baselineX + (textPaint.measureText(getPinyinByIndex(index))
                 - textPaint.measureText(hanzi)) / 2 - moveHalfIfNeed(getPinyinByIndex(index), textPaint);
-        float hanziBaselineY = (row * 2) * (textPaint.getFontSpacing());
+        float hanziBaselineY = getHanziBaselineY(row);
         canvas.drawText(hanzi, hanziBaselineX, hanziBaselineY, textPaint);
+        float width = textPaint.measureText(hanzi);
+        Paint.FontMetricsInt fontMetricsInt = textPaint.getFontMetricsInt();
+        paint.setColor(Color.BLUE);
+        RectF rect = new RectF();
+        rect.left = hanziBaselineX;
+        rect.right = hanziBaselineX + width;
+        rect.top = fontMetricsInt.top + hanziBaselineY;
+        rect.bottom = fontMetricsInt.bottom + hanziBaselineY;
+        canvas.drawRect(rect, paint);
     }
 
     private void updateBaselineX(float width) {
         baselineX += width;
     }
 
-    private void drawTone(Canvas canvas, float baselineX, String pinyinWithTone, float baselineY) {
+    private void drawTone(Canvas canvas, float baselineX, String pinyinWithTone) {
         String tone = " ";
         switch (pinyinWithTone.charAt(pinyinWithTone.length() - 1)) {
             case '1':
@@ -178,7 +221,7 @@ public class PinyinTextView extends View {
                 }
             }
         }
-        // iu同时存在规则
+        // iu同时存在规则: i,u 若是连在一起，谁在后面就标谁
         if (pinyinWithTone.contains("u")
                 && pinyinWithTone.contains("i")
                 && !pinyinWithTone.contains("a")
@@ -186,11 +229,12 @@ public class PinyinTextView extends View {
                 && !pinyinWithTone.contains("e")) {
             stateIndex = pinyinWithTone.indexOf("u") > pinyinWithTone.indexOf("i") ? pinyinWithTone.indexOf("u") : pinyinWithTone.indexOf("i");
         }
+        float baselineY = getPinyinBaselineY(row);
         if (stateIndex != -1) {
             // 没有声母存在时，stateIndex一直为-1 （'嗯' 转成拼音后变成 ng,导致没有声母存在，stateIndex一直为-1，数组越界crash）
-            canvas.drawText(tone, baselineX + textPaint.measureText(pinyinWithTone.substring(0, stateIndex))
-                            + (textPaint.measureText(pinyinWithTone.charAt(stateIndex) + "") - textPaint.measureText(tone + "")) / 2,
-                    baselineY, textPaint);
+            float toneBaselineX = baselineX + textPaint.measureText(pinyinWithTone.substring(0, stateIndex))
+                    + (textPaint.measureText(pinyinWithTone.charAt(stateIndex) + "") - textPaint.measureText(tone + "")) / 2;
+            canvas.drawText(tone, toneBaselineX, baselineY, textPaint);
         }
     }
 
@@ -209,11 +253,10 @@ public class PinyinTextView extends View {
                         if (TextUtils.equals(hanziArr[index], BREAK_TAG) || TextUtils.equals(hanziArr[index], PARAGRAPH_TAG)) {
                             // 没有对应的拼音，对应汉字部分是换行符，段落标签
                             rowTotal += TextUtils.equals(hanziArr[index], BREAK_TAG) ? 1 : 2;
-                            // 重置宽度,初始宽度要么是 null 的宽度，要么是对应拼音的宽度。
-                            calculatedRowWidth = resetCalculatedRowWidth(index);
+                            calculatedRowWidth = 0;
                             continue;
                         } else {
-                            // 没有对应的拼音，则需要加上汉字部分的宽度(指的是标点符号)
+                            // 没有对应的拼音，则需要加上汉字部分的宽度(指的是标点符号,空格等)
                             calculatedRowWidth += textPaint.measureText(hanziArr[index]);
                         }
                     } else {
@@ -226,8 +269,7 @@ public class PinyinTextView extends View {
                         calculatedRowWidth = resetCalculatedRowWidth(index);
                     }
                 }
-                // TODO: 2020/01/11 这句是怎么计算的？
-                result = (int) Math.ceil((rowTotal * 2) * (textPaint.getFontSpacing() + density * 1));
+                result = (int) getRowLine(rowTotal);
             }
             if (heightMode == MeasureSpec.AT_MOST) {
                 result = Math.min(result, heightSize);
@@ -255,7 +297,7 @@ public class PinyinTextView extends View {
     }
 
     private int measureWidth(int widthMeasureSpec) {
-        int result = 0;
+        int result;
         int widthMode = MeasureSpec.getMode(widthMeasureSpec);
         int widthSize = MeasureSpec.getSize(widthMeasureSpec);
         if (widthMode == MeasureSpec.EXACTLY) {
@@ -269,7 +311,7 @@ public class PinyinTextView extends View {
         return result;
     }
 
-    private float moveHalfIfNeed(String pinyinUnit, TextPaint paint) {
+    private float moveHalfIfNeed(String pinyinUnit, Paint paint) {
 
         if (pinyinUnit.trim().length() % 2 == 0) {
             return paint.measureText(" ") / 2;
