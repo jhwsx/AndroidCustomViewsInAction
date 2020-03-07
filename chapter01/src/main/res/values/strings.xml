@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">chapter01</string>
+    <string name="title_basis_view">BasisView</string>
+    <string name="title_basic_antialias_view">setAntiAlias</string>
+    <string name="title_basic_setcolor_view">setColor</string>
+    <string name="title_basic_setstyle_view">setStyle</string>
+    <string name="title_canvas_draw_background_view">画布背景</string>
+    <string name="title_canvas_draw_line_view">Canvas.drawLine</string>
+    <string name="title_canvas_draw_lines_view">Canvas.drawLines</string>
+    <string name="title_canvas_draw_point_view">Canvas.drawPoint</string>
+    <string name="title_canvas_draw_points_view">Canvas.drawPoints</string>
+    <string name="title_rect_pointer_view">RectPointerView</string>
+    <string name="title_rect_contains_rect_view">Rect.contains(Rect)</string>
+    <string name="title_rect_intersects_view">Rect.intersects()</string>
+    <string name="title_rect_intersect_view">Rect.intersect()</string>
+    <string name="title_rect_union_view">Rect.union()</string>
+</resources>
