@@ -1,4 +1,4 @@
-package com.example.chapter01.part1;
+package com.example.chapter01.part1_basic;
 
 import android.content.Context;
 import android.graphics.Canvas;

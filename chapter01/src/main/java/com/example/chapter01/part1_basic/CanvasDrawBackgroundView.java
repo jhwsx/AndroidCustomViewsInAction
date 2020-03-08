@@ -1,9 +1,7 @@
-package com.example.chapter01.part1;
+package com.example.chapter01.part1_basic;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Color;
-import android.support.annotation.ColorInt;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;

@@ -1,4 +1,4 @@
-package com.example.chapter01.part1;
+package com.example.chapter01.part1_basic;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -18,6 +18,7 @@ import android.view.View;
  *      如果调用的矩形不为空，则进行合并，合并规则是：
  *          取最小的左边，上边赋值给调用矩形；
  *          取最大的右边，下边赋值给调用矩形
+ *      如果调用的矩形为空，则返回传入的矩形
  * 与某个点合并
  * public void union(int x, int y)
  * 合并规则： x 比左边小，则取x；x比右边大，则取x；

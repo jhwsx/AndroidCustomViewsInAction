@@ -14,4 +14,14 @@
     <string name="title_rect_intersects_view">Rect.intersects()</string>
     <string name="title_rect_intersect_view">Rect.intersect()</string>
     <string name="title_rect_union_view">Rect.union()</string>
+    <string name="title_canvas_line_path_view">CanvasLinePathView</string>
+    <string name="title_canvas_arc_path_view">CanvasArcPathView</string>
+    <string name="title_canvas_add_rect_path_view">CanvasAddRectPathView</string>
+    <string name="title_canvas_add_round_rect_path_view">CanvasAddRoundRectPathView</string>
+    <string name="title_canvas_add_circle_path_view">CanvasAddCirclePathView</string>
+    <string name="title_canvas_add_oval_path_view">CanvasAddOvalPathView</string>
+    <string name="title_canvas_add_arc_path_view">CanvasAddArcPathView</string>
+    <string name="title_canvas_fill_type_path_view">CanvasFillTypePathView</string>
+    <string name="title_canvas_reset_rewind_path_view">CanvasResetRewindPathView</string>
+    <string name="title_spider_view">SpiderView</string>
 </resources>

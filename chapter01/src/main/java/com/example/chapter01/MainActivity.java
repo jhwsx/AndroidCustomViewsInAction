@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private List<PageModel> pageModels = new ArrayList<>();
 
     {
+        // part1
         pageModels.add(new PageModel(R.string.title_basis_view, R.layout.practice_basis_view));
         pageModels.add(new PageModel(R.string.title_basic_antialias_view, R.layout.practice_basic_antialias_view));
         pageModels.add(new PageModel(R.string.title_basic_setcolor_view, R.layout.practice_basic_setcolor_view));
@@ -35,6 +36,17 @@ public class MainActivity extends AppCompatActivity {
         pageModels.add(new PageModel(R.string.title_rect_intersects_view, R.layout.practice_rect_intersects_view));
         pageModels.add(new PageModel(R.string.title_rect_intersect_view, R.layout.practice_rect_intersect_view));
         pageModels.add(new PageModel(R.string.title_rect_union_view, R.layout.practice_rect_union_view));
+        // part2
+        pageModels.add(new PageModel(R.string.title_canvas_line_path_view, R.layout.practice_canvas_line_path_view));
+        pageModels.add(new PageModel(R.string.title_canvas_arc_path_view, R.layout.practice_canvas_arc_path_view));
+        pageModels.add(new PageModel(R.string.title_canvas_add_rect_path_view, R.layout.practice_canvas_addrect_path_view));
+        pageModels.add(new PageModel(R.string.title_canvas_add_round_rect_path_view, R.layout.practice_canvas_addroundrect_path_view));
+        pageModels.add(new PageModel(R.string.title_canvas_add_circle_path_view, R.layout.practice_canvas_addcircle_path_view));
+        pageModels.add(new PageModel(R.string.title_canvas_add_oval_path_view, R.layout.practice_canvas_addoval_path_view));
+        pageModels.add(new PageModel(R.string.title_canvas_add_arc_path_view, R.layout.practice_canvas_addarc_path_view));
+        pageModels.add(new PageModel(R.string.title_canvas_fill_type_path_view, R.layout.practice_canvas_filltype_path_view));
+        pageModels.add(new PageModel(R.string.title_canvas_reset_rewind_path_view, R.layout.practice_canvas_resetrewind_path_view));
+        pageModels.add(new PageModel(R.string.title_spider_view, R.layout.practice_spider_view));
     }
 
     @Override
