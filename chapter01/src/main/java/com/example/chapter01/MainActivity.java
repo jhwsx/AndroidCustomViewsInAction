@@ -47,6 +47,14 @@ public class MainActivity extends AppCompatActivity {
         pageModels.add(new PageModel(R.string.title_canvas_fill_type_path_view, R.layout.practice_canvas_filltype_path_view));
         pageModels.add(new PageModel(R.string.title_canvas_reset_rewind_path_view, R.layout.practice_canvas_resetrewind_path_view));
         pageModels.add(new PageModel(R.string.title_spider_view, R.layout.practice_spider_view));
+        // part3
+        pageModels.add(new PageModel(R.string.title_text_paint_setstyle_view, R.layout.practice_text_paint_setstyle_view));
+        pageModels.add(new PageModel(R.string.title_text_paint_settextalign_view, R.layout.practice_text_paint_settextalign_view));
+        pageModels.add(new PageModel(R.string.title_text_paint_textstyle_view, R.layout.practice_text_paint_textstyle_view));
+        pageModels.add(new PageModel(R.string.title_canvas_drawtext_view, R.layout.practice_canvas_draw_text_view));
+        pageModels.add(new PageModel(R.string.title_canvas_drawpostext_view, R.layout.practice_canvas_draw_postext_view));
+        pageModels.add(new PageModel(R.string.title_canvas_drawtext_onpath_view, R.layout.practice_canvas_draw_text_onpath_view));
+        pageModels.add(new PageModel(R.string.title_text_paint_settypeface_view, R.layout.practice_text_paint_settypeface_view));
     }
 
     @Override
