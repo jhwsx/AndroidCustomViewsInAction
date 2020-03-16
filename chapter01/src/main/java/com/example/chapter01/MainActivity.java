@@ -55,6 +55,13 @@ public class MainActivity extends AppCompatActivity {
         pageModels.add(new PageModel(R.string.title_canvas_drawpostext_view, R.layout.practice_canvas_draw_postext_view));
         pageModels.add(new PageModel(R.string.title_canvas_drawtext_onpath_view, R.layout.practice_canvas_draw_text_onpath_view));
         pageModels.add(new PageModel(R.string.title_text_paint_settypeface_view, R.layout.practice_text_paint_settypeface_view));
+        // part4-region
+        pageModels.add(new PageModel(R.string.title_region_direct_construct_view, R.layout.practice_region_direct_construct_view));
+        pageModels.add(new PageModel(R.string.title_region_indirect_construct_view, R.layout.practice_region_indirect_construct_view));
+        pageModels.add(new PageModel(R.string.title_region_iterator_view, R.layout.practice_region_iterator_view));
+        pageModels.add(new PageModel(R.string.title_region_union_view, R.layout.practice_region_union_view));
+        pageModels.add(new PageModel(R.string.title_region_operation_view, R.layout.practice_region_operation_viewgroup));
+        pageModels.add(new PageModel(R.string.title_region_other_api_view, R.layout.practice_region_other_api_view));
     }
 
     @Override

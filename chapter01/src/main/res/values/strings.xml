@@ -31,4 +31,12 @@
     <string name="title_canvas_drawpostext_view">Canvas.drawPosText()逐个指定文字位置</string>
     <string name="title_canvas_drawtext_onpath_view">Canvas沿路径绘制文字</string>
     <string name="title_text_paint_settypeface_view">Paint.setTypeface</string>
+    <!--part4-->
+    <string name="title_region_direct_construct_view">Region直接构造</string>
+    <string name="title_region_indirect_construct_view">Region间接构造</string>
+    <string name="title_region_iterator_view">RegionIterator</string>
+    <string name="title_region_union_view">Region合并操作</string>
+    <string name="title_region_operation_view">Region区域操作</string>
+    <string name="title_region_other_api_view">Region其他函数</string>
+
 </resources>
