@@ -40,14 +40,21 @@ public class CanvasAddArcPathView extends View {
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(5f);
 
-        Path ccwPath = new Path();
-        RectF rectF = new RectF(100, 100, 400, 300);
-        ccwPath.addArc(rectF, 0, 90);
-        canvas.drawPath(ccwPath, paint);
+        String text = "好好学习，天天向上";
+        Path path1 = new Path();
+        RectF rectF1 = new RectF(100, 100, 400, 300);
+        path1.addArc(rectF1, 0, 90);
+        canvas.drawPath(path1, paint);
 
-        Path cwPath = new Path();
-        RectF rectF1 = new RectF(500, 100, 800, 300);
-        cwPath.addArc(rectF1, 180, 180);
-        canvas.drawPath(cwPath, paint);
+        Path path2 = new Path();
+        RectF rectF2 = new RectF(500, 100, 800, 300);
+        path2.addArc(rectF2, 180, 180);
+        canvas.drawPath(path2, paint);
+
+        paint.setColor(Color.CYAN);
+        paint.setTextSize(40f);
+        paint.setStyle(Paint.Style.FILL);
+        canvas.drawTextOnPath(text, path1, 0,-10, paint);
+        canvas.drawTextOnPath(text, path2, 0,-10, paint);
     }
 }

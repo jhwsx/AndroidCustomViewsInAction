@@ -12,9 +12,9 @@ import android.view.View;
 /**
  * Canvas 绘制文字：沿路径绘制
  * // 参数一：String text 要绘制的文本，
- * // 参数二：Path path 作为文字沿着为基线的路径
+ * // 参数二：Path path 作为文字沿着为基线的路径(这个是重点)
  * // 参数三：float hOffset 沿着路径添加到文本起始位置的距离, 沿路径方向是正方向
- * // 参数四：float vOffset 用来定位文本的在路径之上（-）或路径之下（+）的距离
+ * // 参数四：float vOffset 用来定位文本的在路径之上（-）或路径之下（+）的距离，也就是在基线之下为正，在基线之上为负。
  * public void drawTextOnPath(@NonNull String text, @NonNull Path path, float hOffset,
  *             float vOffset, @NonNull Paint paint)
  * // 这个方法可以指定文本中的起始点以及绘制字符的个数。

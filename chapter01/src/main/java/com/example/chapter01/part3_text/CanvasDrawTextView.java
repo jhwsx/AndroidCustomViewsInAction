@@ -15,18 +15,15 @@ import android.view.View;
 /**
  * Canvas drawText() 绘制文本
  * // 指定String类型的文本，以及起始点坐标
- * public void drawText(@NonNull String text, float x, float y, @NonNull Paint paint)
+ * public void drawText(@NonNull String text, float x, float y, Paint paint)
  * // 指定String类型的文本，起始点坐标，以及从文本中哪一个索引的字符开始绘制，到哪一个索引的字符为止，是左闭右开区间
- * public void drawText(@NonNull String text, int start, int end, float x, float y,
+ * public void drawText(@NonNull String text, int start, int end, float x, float y,Paint paint)
+ * // 指定 CharSequence 类型的文本， 起始点坐标，以及从文本中哪一个索引的字符开始绘制，到哪一个索引的字符为止，是左闭右开区间
+ * public void drawText(@NonNull CharSequence text, int start, int end, float x, float y, Paint paint)
+ * // 指定字符数组类型的文本, 开始绘制的字符索引 是 index，count 是从指定索引开始绘制几个字符
+ * public void drawText(@NonNull char[] text, int index, int count, float x, float y, Paint paint)
  *
  * @author wangzhichao
- * @NonNull Paint paint)
- * // 指定 CharSequence 类型的文本， 起始点坐标，以及从文本中哪一个索引的字符开始绘制，到哪一个索引的字符为止，是左闭右开区间
- * public void drawText(@NonNull CharSequence text, int start, int end, float x, float y,
- * @NonNull Paint paint)
- * // 指定字符数组类型的文本, 开始绘制的字符索引 是 index，count 是从指定索引开始绘制几个字符
- * public void drawText(@NonNull char[] text, int index, int count, float x, float y,
- * @NonNull Paint paint)
  * @since 20-3-11
  */
 public class CanvasDrawTextView extends View {

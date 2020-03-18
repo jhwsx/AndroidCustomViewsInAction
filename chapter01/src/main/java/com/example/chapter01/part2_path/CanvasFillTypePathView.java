@@ -40,55 +40,55 @@ public class CanvasFillTypePathView extends View {
         paint.setStyle(Paint.Style.FILL);
 
         Path path = new Path();
-        path.addCircle(200, 200, 150, Path.Direction.CW);
-        path.addCircle(400, 200, 150, Path.Direction.CW);
+        path.addCircle(200, 200, 120, Path.Direction.CW);
+        path.addCircle(400, 200, 120, Path.Direction.CW);
         path.setFillType(Path.FillType.WINDING);
         canvas.drawPath(path, paint);
         paint.setStyle(Paint.Style.FILL);
 
         path = new Path();
-        path.addCircle(800, 200, 150, Path.Direction.CW);
-        path.addCircle(1000, 200, 150, Path.Direction.CW);
+        path.addCircle(700, 200, 120, Path.Direction.CW);
+        path.addCircle(900, 200, 120, Path.Direction.CW);
         path.setFillType(Path.FillType.EVEN_ODD);
         canvas.drawPath(path, paint);
 
         path = new Path();
-        path.addCircle(200, 600, 150, Path.Direction.CW);
-        path.addCircle(400, 600, 150, Path.Direction.CCW);
+        path.addCircle(200, 500, 120, Path.Direction.CW);
+        path.addCircle(400, 500, 120, Path.Direction.CCW);
         path.setFillType(Path.FillType.WINDING);
         canvas.drawPath(path, paint);
         paint.setStyle(Paint.Style.FILL);
 
         path = new Path();
-        path.addCircle(800, 600, 150, Path.Direction.CW);
-        path.addCircle(1000, 600, 150, Path.Direction.CCW);
+        path.addCircle(700, 500, 120, Path.Direction.CW);
+        path.addCircle(900, 500, 120, Path.Direction.CCW);
         path.setFillType(Path.FillType.EVEN_ODD);
         canvas.drawPath(path, paint);
         canvas.drawPath(path, paint);
 
         path = new Path();
-        path.addCircle(300, 1000, 150, Path.Direction.CW);
-        path.addCircle(300, 1000, 100, Path.Direction.CW);
+        path.addCircle(300, 800, 120, Path.Direction.CW);
+        path.addCircle(300, 800, 100, Path.Direction.CW);
         path.setFillType(Path.FillType.WINDING);
         canvas.drawPath(path, paint);
         paint.setStyle(Paint.Style.FILL);
 
         path = new Path();
-        path.addCircle(900, 1000, 150, Path.Direction.CW);
-        path.addCircle(900, 1000, 100, Path.Direction.CW);
+        path.addCircle(900, 800, 120, Path.Direction.CW);
+        path.addCircle(900, 800, 100, Path.Direction.CW);
         path.setFillType(Path.FillType.EVEN_ODD);
         canvas.drawPath(path, paint);
 
         path = new Path();
-        path.addCircle(300, 1400, 150, Path.Direction.CW);
-        path.addCircle(300, 1400, 100, Path.Direction.CCW);
+        path.addCircle(300, 1200, 120, Path.Direction.CW);
+        path.addCircle(300, 1200, 100, Path.Direction.CCW);
         path.setFillType(Path.FillType.WINDING);
         canvas.drawPath(path, paint);
         paint.setStyle(Paint.Style.FILL);
 
         path = new Path();
-        path.addCircle(900, 1400, 150, Path.Direction.CW);
-        path.addCircle(900, 1400, 100, Path.Direction.CCW);
+        path.addCircle(900, 1200, 120, Path.Direction.CW);
+        path.addCircle(900, 1200, 100, Path.Direction.CCW);
         path.setFillType(Path.FillType.EVEN_ODD);
         canvas.drawPath(path, paint);
     }

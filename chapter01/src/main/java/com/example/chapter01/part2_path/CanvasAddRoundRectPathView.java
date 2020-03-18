@@ -53,10 +53,10 @@ public class CanvasAddRoundRectPathView extends View {
         Path cwPath = new Path();
         RectF rectF1 = new RectF(500, 100, 800, 300);
         float[] radii = {
-                50, 50,
-                30, 30,
-                60, 20,
-                30, 40
+                0, 0,
+                0, 0,
+                0, 0,
+                100, 20,
         };
         cwPath.addRoundRect(rectF1, radii, Path.Direction.CW);
         canvas.drawPath(cwPath, paint);
@@ -83,7 +83,9 @@ public class CanvasAddRoundRectPathView extends View {
         paint.setColor(0x44ff0000);
         String text = "好好学习，天天向上";
         canvas.drawTextOnPath(text, ccwPath, 0, 18, paint);
-        // todo 这个顺时针的起点有点怪？
+        // 这个顺时针的带圆角的文字起点有些不同：
+        // 如果有圆角，那么起点就是左下角；
+        // 如果没有圆角，那么起点就是左上角。
         canvas.drawTextOnPath(text, cwPath, 0, 9, paint);
     }
 }

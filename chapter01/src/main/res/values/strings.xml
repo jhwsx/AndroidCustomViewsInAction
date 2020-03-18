@@ -38,5 +38,18 @@
     <string name="title_region_union_view">Region合并操作</string>
     <string name="title_region_operation_view">Region区域操作</string>
     <string name="title_region_other_api_view">Region其他函数</string>
-
+    <!--part5-->
+    <string name="title_canvas_translate_view">Canvas的平移</string>
+    <string name="title_canvas_screen_display_view">屏幕显示与 Canvas 的关系</string>
+    <string name="title_canvas_rotate_view">Canvas的旋转</string>
+    <string name="title_canvas_scale_view">Canvas的缩放</string>
+    <string name="title_canvas_skew_view">Canvas的扭曲</string>
+    <string name="title_canvas_clip_operation_view">裁剪画布</string>
+    <string name="title_ruler_view">尺子</string>
+    <string name="title_canvas_save_restore_view">Canvas的保存与恢复</string>
+    <string name="title_canvas_multi_save_restore_view">多次调用 save 与 restore</string>
+    <string name="title_canvas_restoretocount_view">Canvas的restoreToCount</string>
+    <string name="title_circle_avatar_view">圆形头像</string>
+    <string name="title_clip_anim_view">裁剪动画（自己实现的）</string>
+    <string name="title_clip_region_view">裁剪动画（启舰实现的）</string>
 </resources>

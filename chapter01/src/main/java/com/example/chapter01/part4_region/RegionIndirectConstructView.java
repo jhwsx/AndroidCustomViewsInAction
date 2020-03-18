@@ -11,6 +11,7 @@ import android.graphics.Region;
 import android.graphics.RegionIterator;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
 import android.view.View;
 
 /**
@@ -46,7 +47,7 @@ public class RegionIndirectConstructView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        paint.setStyle(Paint.Style.FILL);
+        paint.setStyle(styleFlag ? Paint.Style.FILL : Paint.Style.STROKE);
         paint.setColor(Color.RED);
         // 创建椭圆路径
         Path path = new Path();
@@ -62,10 +63,16 @@ public class RegionIndirectConstructView extends View {
         drawRegion(canvas, region, paint);
 
     }
+    boolean styleFlag = true;
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        styleFlag = !styleFlag;
+        postInvalidate();
+        return super.onTouchEvent(event);
+    }
 
     /**
      * 绘制 Region
-     * 需要注意的是，如果 Paint 的 setStyle 为 STROKE，那么只会绘制出一个外围的框。
      *
      * @param canvas
      * @param region

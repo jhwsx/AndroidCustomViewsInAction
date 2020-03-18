@@ -62,6 +62,20 @@ public class MainActivity extends AppCompatActivity {
         pageModels.add(new PageModel(R.string.title_region_union_view, R.layout.practice_region_union_view));
         pageModels.add(new PageModel(R.string.title_region_operation_view, R.layout.practice_region_operation_viewgroup));
         pageModels.add(new PageModel(R.string.title_region_other_api_view, R.layout.practice_region_other_api_view));
+        // part5-canvas
+        pageModels.add(new PageModel(R.string.title_canvas_translate_view, R.layout.practice_canvas_translate_view));
+        pageModels.add(new PageModel(R.string.title_canvas_screen_display_view, R.layout.practice_canvas_screen_display_view));
+        pageModels.add(new PageModel(R.string.title_canvas_rotate_view, R.layout.practice_canvas_rotate_view));
+        pageModels.add(new PageModel(R.string.title_canvas_scale_view, R.layout.practice_canvas_scale_view));
+        pageModels.add(new PageModel(R.string.title_canvas_skew_view, R.layout.practice_canvas_skew_view));
+        pageModels.add(new PageModel(R.string.title_canvas_clip_operation_view, R.layout.practice_canvas_clip_operation_view));
+        pageModels.add(new PageModel(R.string.title_ruler_view, R.layout.practice_ruler_view));
+        pageModels.add(new PageModel(R.string.title_canvas_save_restore_view, R.layout.practice_canvas_save_restore_view));
+        pageModels.add(new PageModel(R.string.title_canvas_multi_save_restore_view, R.layout.practice_canvas_multi_save_restore_view));
+        pageModels.add(new PageModel(R.string.title_canvas_restoretocount_view, R.layout.practice_canvas_restoretocount_view));
+        pageModels.add(new PageModel(R.string.title_circle_avatar_view, R.layout.practice_circle_avatar_view));
+        pageModels.add(new PageModel(R.string.title_clip_anim_view, R.layout.practice_clip_anim_view));
+        pageModels.add(new PageModel(R.string.title_clip_region_view, R.layout.practice_clip_region_view));
     }
 
     @Override
