@@ -52,4 +52,6 @@
     <string name="title_circle_avatar_view">圆形头像</string>
     <string name="title_clip_anim_view">裁剪动画（自己实现的）</string>
     <string name="title_clip_region_view">裁剪动画（启舰实现的）</string>
+    <string name="title_xml_custom_view">通过xml引入控件</string>
+    <string name="title_dynamic_custom_view">动态添加控件</string>
 </resources>

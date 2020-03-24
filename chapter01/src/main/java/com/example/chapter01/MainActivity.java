@@ -76,6 +76,9 @@ public class MainActivity extends AppCompatActivity {
         pageModels.add(new PageModel(R.string.title_circle_avatar_view, R.layout.practice_circle_avatar_view));
         pageModels.add(new PageModel(R.string.title_clip_anim_view, R.layout.practice_clip_anim_view));
         pageModels.add(new PageModel(R.string.title_clip_region_view, R.layout.practice_clip_region_view));
+        // part6-控件的使用方法
+        pageModels.add(new PageModel(R.string.title_xml_custom_view, R.layout.practice_xml_custom_view));
+        pageModels.add(new PageModel(R.string.title_dynamic_custom_view, R.layout.practice_dynamic_custom_view));
     }
 
     @Override
