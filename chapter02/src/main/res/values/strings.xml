@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Chapter02</string>
+    <!--part1 视图动画标签-->
+    <string name="title_view_animation_tag_scale">scale标签</string>
+    <string name="title_view_animation_tag_alpha">alpha标签</string>
+    <string name="title_view_animation_tag_rotate">rotate标签</string>
+    <string name="title_view_animation_tag_translate">translate标签</string>
+    <string name="title_view_animation_tag_set">set标签</string>
+</resources>

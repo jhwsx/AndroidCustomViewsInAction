@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--先向上偏移控件高度的 40%，时间是 350 毫秒-->
+    <translate
+        android:duration="350"
+        android:fillBefore="false"
+        android:fillEnabled="true"
+        android:fromYDelta="0%"
+        android:toYDelta="-40%" />
+    <!--350 毫秒后，向下偏移控件高度的 40%，时间是 200 毫秒-->
+    <translate
+        android:duration="200"
+        android:fillBefore="false"
+        android:fillEnabled="true"
+        android:fromYDelta="-40%"
+        android:startOffset="350"
+        android:toYDelta="0%" />
+    <!--550 毫秒后，向上偏移控件高度的 25%，时间是 300 毫秒-->
+    <translate
+        android:duration="300"
+        android:fillBefore="false"
+        android:fillEnabled="true"
+        android:fromYDelta="0%"
+        android:startOffset="550"
+        android:toYDelta="-25%" />
+    <!--850 毫秒后，向下偏移控件高度的 25%，时间是 200 毫秒-->
+    <translate
+        android:duration="200"
+        android:fillBefore="false"
+        android:fillEnabled="true"
+        android:fromYDelta="-25%"
+        android:startOffset="850"
+        android:toYDelta="0%" />
+    <!--1050 毫秒后，向上偏移控件高度的 8%，时间是 200 毫秒-->
+    <translate
+        android:duration="200"
+        android:fillBefore="false"
+        android:fillEnabled="true"
+        android:fromYDelta="0%"
+        android:startOffset="1050"
+        android:toYDelta="-8%" />
+    <!--1250 毫秒后，向下偏移控件高度的 8%，时间是 150 毫秒-->
+    <translate
+        android:duration="150"
+        android:fillBefore="false"
+        android:fillEnabled="true"
+        android:fromYDelta="-8%"
+        android:startOffset="1250"
+        android:toYDelta="0%" />
+</set>

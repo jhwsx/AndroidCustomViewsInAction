@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<scale xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fillBefore="false"
+    android:fillEnabled="false"
+    android:duration="700"
+    android:fromXScale="0.0"
+    android:fromYScale="0.0"
+    android:toXScale="1.4"
+    android:toYScale="1.4" />
