@@ -22,11 +22,19 @@ public class MainActivity extends AppCompatActivity {
     private List<PageModel> pageModels = new ArrayList<>();
 
     {
+        // part1 视图动画标签
         pageModels.add(new PageModel(R.string.title_view_animation_tag_scale, R.layout.practice_view_animation_tag_scale));
         pageModels.add(new PageModel(R.string.title_view_animation_tag_alpha, R.layout.practice_view_animation_tag_alpha));
         pageModels.add(new PageModel(R.string.title_view_animation_tag_rotate, R.layout.practice_view_animation_tag_rotate));
         pageModels.add(new PageModel(R.string.title_view_animation_tag_translate, R.layout.practice_view_animation_tag_translate));
         pageModels.add(new PageModel(R.string.title_view_animation_tag_set, R.layout.practice_view_animation_tag_set));
+        // part2 视图动画代码
+        pageModels.add(new PageModel(R.string.title_view_animation_code_scale, R.layout.practice_view_animation_code_scale));
+        pageModels.add(new PageModel(R.string.title_view_animation_code_alpha, R.layout.practice_view_animation_code_alpha));
+        pageModels.add(new PageModel(R.string.title_view_animation_code_rotate, R.layout.practice_view_animation_code_rotate));
+        pageModels.add(new PageModel(R.string.title_view_animation_code_translate, R.layout.practice_view_animation_code_translate));
+        pageModels.add(new PageModel(R.string.title_view_animation_code_set, R.layout.practice_view_animation_code_set));
+        pageModels.add(new PageModel(R.string.title_view_animation_code_control_listener, R.layout.practice_view_animation_code_control_listener));
     }
 
     @Override

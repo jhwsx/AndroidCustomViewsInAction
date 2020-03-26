@@ -6,4 +6,11 @@
     <string name="title_view_animation_tag_rotate">rotate标签</string>
     <string name="title_view_animation_tag_translate">translate标签</string>
     <string name="title_view_animation_tag_set">set标签</string>
+    <!--part2 视图动画代码-->
+    <string name="title_view_animation_code_scale">scale代码</string>
+    <string name="title_view_animation_code_alpha">alpha代码</string>
+    <string name="title_view_animation_code_rotate">rotate代码</string>
+    <string name="title_view_animation_code_translate">translate代码</string>
+    <string name="title_view_animation_code_set">set代码</string>
+    <string name="title_view_animation_code_control_listener">动画控制及监听</string>
 </resources>
