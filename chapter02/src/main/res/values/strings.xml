@@ -13,4 +13,12 @@
     <string name="title_view_animation_code_translate">translate代码</string>
     <string name="title_view_animation_code_set">set代码</string>
     <string name="title_view_animation_code_control_listener">动画控制及监听</string>
+    <!--part3 插值器-->
+    <string name="title_interpolator_set">设置插值器</string>
+    <string name="title_interpolator_accelerate_decelerate">AccelerateDecelerateInterpolator</string>
+    <string name="title_interpolator_accelerate">AccelerateInterpolator</string>
+    <!--part4 例子-->
+    <string name="title_camera_stretch">镜头由远及近效果</string>
+    <string name="title_loading">加载框效果</string>
+    <string name="title_scanner">扫描动画</string>
 </resources>

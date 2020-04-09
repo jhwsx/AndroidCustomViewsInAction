@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f8f8f8">
+
+    <ImageView
+        android:id="@+id/circle1"
+        android:layout_gravity="center"
+        android:src="@drawable/scan_circle"
+        android:layout_width="140dp"
+        android:layout_marginTop="30dp"
+        android:layout_height="140dp" />
+
+    <ImageView
+        android:id="@+id/circle2"
+        android:layout_gravity="center"
+        android:src="@drawable/scan_circle"
+        android:layout_width="140dp"
+        android:clickable="true"
+        android:layout_marginTop="30dp"
+        android:layout_height="140dp" />
+
+    <ImageView
+        android:id="@+id/circle3"
+        android:layout_gravity="center"
+        android:src="@drawable/scan_circle"
+        android:layout_width="140dp"
+        android:clickable="true"
+        android:layout_marginTop="30dp"
+        android:layout_height="140dp" />
+
+    <ImageView
+        android:id="@+id/circle4"
+        android:layout_gravity="center"
+        android:src="@drawable/scan_circle"
+        android:layout_width="140dp"
+        android:clickable="true"
+        android:layout_marginTop="30dp"
+        android:layout_height="140dp" />
+
+    <TextView
+        android:id="@+id/start_scan"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/scan_cover"
+        android:layout_width="155dp"
+        android:layout_height="155dp" />
+</FrameLayout>

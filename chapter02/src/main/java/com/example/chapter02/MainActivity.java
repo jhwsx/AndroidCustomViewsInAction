@@ -35,6 +35,14 @@ public class MainActivity extends AppCompatActivity {
         pageModels.add(new PageModel(R.string.title_view_animation_code_translate, R.layout.practice_view_animation_code_translate));
         pageModels.add(new PageModel(R.string.title_view_animation_code_set, R.layout.practice_view_animation_code_set));
         pageModels.add(new PageModel(R.string.title_view_animation_code_control_listener, R.layout.practice_view_animation_code_control_listener));
+        // part3 插值器
+        pageModels.add(new PageModel(R.string.title_interpolator_set, R.layout.practice_interpolator_set));
+        pageModels.add(new PageModel(R.string.title_interpolator_accelerate_decelerate, R.layout.practice_interpolator_accelerate_decelerate_viewgroup));
+        pageModels.add(new PageModel(R.string.title_interpolator_accelerate, R.layout.practice_interpolator_accelerate_viewgroup));
+        // part4 例子
+        pageModels.add(new PageModel(R.string.title_camera_stretch, R.layout.practice_camera_stretch_viewgroup));
+        pageModels.add(new PageModel(R.string.title_loading, R.layout.practice_loading_viewgroup));
+        pageModels.add(new PageModel(R.string.title_scanner, R.layout.practice_scanner_viewgroup));
     }
 
     @Override
