@@ -44,9 +44,11 @@ public class CanvasSaveRestoreView extends View {
             // 保存当前画布，即整个屏幕
             canvas.save();
             // 裁剪出一个绿色的矩形
-            canvas.clipRect(200, 200, 400, 600);
+            canvas.clipRect(200, 200, 600, 600);
             canvas.drawColor(Color.GREEN);
             // 恢复整屏画布
+            // 如果这里不调用 canvas.restore();, 那么画布区域就是绿色的矩形区域; 再调用
+            // canvas.drawColor(Color.BLUE); 只是把绿色的区域变成了蓝色.
             canvas.restore();
         }
         if (step == 2) {
@@ -61,8 +63,8 @@ public class CanvasSaveRestoreView extends View {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        step = count % 3;
         count++;
+        step = count % 3;
         invalidate();
         return super.onTouchEvent(event);
     }

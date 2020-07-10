@@ -8,7 +8,9 @@ import android.graphics.Rect;
 import android.graphics.Region;
 import android.graphics.RegionIterator;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.DialogTitle;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 
 /**
@@ -21,6 +23,8 @@ import android.view.View;
  * @since 20-3-16
  */
 public class RegionDirectConstructView extends View {
+    private static final String TAG = "RegionDirectConstructVi";
+
     public RegionDirectConstructView(Context context) {
         super(context);
     }
@@ -56,6 +60,7 @@ public class RegionDirectConstructView extends View {
         RegionIterator regionIterator = new RegionIterator(region);
         Rect rect = new Rect();
         while (regionIterator.next(rect)) {
+            Log.d(TAG, "drawRect: "); // 只会打印一次
             canvas.drawRect(rect, paint);
         }
     }

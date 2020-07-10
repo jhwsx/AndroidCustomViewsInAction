@@ -70,7 +70,8 @@ public class CanvasAddOvalPathView extends View {
         paint.setStyle(Paint.Style.STROKE);
         paint.setColor(0x44ff0000);
         String text = "好好学习，天天向上";
+        // 起点是在 3 点钟位置.
         canvas.drawTextOnPath(text, ccwPath, 0, 18, paint);
-        canvas.drawTextOnPath(text, cwPath, 0, 9, paint);
+        canvas.drawTextOnPath(text, cwPath, 50, 9, paint);
     }
 }

@@ -67,6 +67,9 @@ public class CanvasRestoreToCountView extends View {
 
         canvas.clipRect(new Rect(400, 400, 500, 500));
         canvas.drawColor(Color.WHITE);
+        // 对比一下:
+        // 想要把画布恢复到大小为 Rect(100, 100, 800, 800) 区域
+        // 方式一: 多次调用 canvas.restore()
         // 恢复画布大小为 Rect(300, 300, 600, 600) 区域
 //                        canvas.restore();
 
@@ -76,9 +79,8 @@ public class CanvasRestoreToCountView extends View {
         // 恢复画布大小为 Rect(100, 100, 800, 800) 区域
 //                canvas.restore();
 
-
-        // 恢复画布大小为整个屏幕
-//            canvas.restore();
+        // 方式二: 使用 canvas.restoreToCount(int saveCount); 调用一次就够了,但是要知道 saveCount
+        // 这种方式更加高效
         // 恢复画布大小为 Rect(100, 100, 800, 800) 区域
         canvas.restoreToCount(c2);
         canvas.drawColor(Color.YELLOW);

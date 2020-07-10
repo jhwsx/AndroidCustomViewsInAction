@@ -54,6 +54,20 @@ public class RectPointerView extends View {
         canvas.drawRect(rect, paint);
     }
 
+    private boolean isRectContainsPoint(Rect rect, int x, int y) {
+        // 首先判断是否是个正常的矩形
+        if (!(rect.left < rect.right && rect.top < rect.bottom)) {
+            return false;
+        }
+        // 点的横坐标位于矩形左边和矩形右边之间
+        // 点的纵坐标位于矩形顶边和矩形底边之间
+        if ((x > rect.left && x < rect.right)
+        && (y > rect.top && y < rect.bottom)) {
+            return true;
+        }
+        return false;
+    }
+
     private int downX;
     private int downY;
 
@@ -63,7 +77,9 @@ public class RectPointerView extends View {
             downX = Math.round(event.getX());
             downY = Math.round(event.getY());
             invalidate();
-            // 这里需要返回 true，因为只有返回 true，后续的 MOVE，UP 才会传递到当前控件中。
+            // 这里需要返回 true，因为只有返回 true，表示当前控件已经在拦截这个消息了,后续的 MOVE，UP 才会传递到当前控件中。
+            // 如果返回 false,表示当前控件不需要这个消息,后续的 MOVE,UP 就不会再传入当前控件了.
+            // TODO 2020-7-6 为什么呢?
             return true;
         } else if (event.getAction() == MotionEvent.ACTION_UP) {
             downX = -1;

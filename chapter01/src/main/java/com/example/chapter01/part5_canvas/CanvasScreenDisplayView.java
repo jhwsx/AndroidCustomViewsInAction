@@ -39,7 +39,7 @@ public class CanvasScreenDisplayView extends View {
         Paint greenPaint = getPaint(Color.GREEN, Paint.Style.STROKE,3);
         Paint redPaint = getPaint(Color.RED, Paint.Style.STROKE,3);
         // 在平移之前绘制一个矩形
-        Rect rect = new Rect(0, 0, getWidth(), 200);
+        Rect rect = new Rect(0, 0, getWidth() - 50, 200);
         canvas.drawRect(rect, greenPaint);
         // 平移操作
         canvas.translate(100, 100);

@@ -14,6 +14,7 @@ import android.view.View;
 
 /**
  * Region 最重要的操作在相交操作中。
+ *
  * 用于与指定的矩形取并集
  * public final boolean union(Rect r)
  *

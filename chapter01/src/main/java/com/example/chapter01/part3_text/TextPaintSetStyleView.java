@@ -50,5 +50,10 @@ public class TextPaintSetStyleView extends View {
         canvas.drawText(text + "-FILL_AND_STROKE", 16, 500, paint);
 
 
+        paint.setStyle(Paint.Style.FILL);
+        canvas.drawText(text + "-叠加 FILL 和 STROKE", 16, 700, paint);
+
+        paint.setStyle(Paint.Style.STROKE);
+        canvas.drawText(text + "-叠加 FILL 和 STROKE", 16, 700, paint);
     }
 }

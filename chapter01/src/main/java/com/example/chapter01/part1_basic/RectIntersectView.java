@@ -21,6 +21,7 @@ import android.view.View;
  * @since 20-3-7
  */
 public class RectIntersectView extends View {
+    private static final String TAG = "RectIntersectView";
     public RectIntersectView(Context context) {
         super(context);
     }
@@ -52,10 +53,31 @@ public class RectIntersectView extends View {
 
         boolean intersect12 = rect1.intersect(rect2);
         // intersect12:true,intersectRect=[190,10][200,200]
-        Log.d("RectIntersectView", "intersect12:" + intersect12 + ",intersectRect=" + rect1.toShortString());
-
+        Log.d(TAG, "intersect12:" + intersect12 + ",intersectRect=" + rect1.toShortString());
+        Log.d(TAG, "isIntersect(rect1, rect2) = " + isIntersect(rect1, rect2));
         boolean intersect23 = rect2.intersect(rect3);
         // intersect23:false,intersectRect=[190,10][400,200]
-        Log.d("RectIntersectView", "intersect23:" + intersect23 + ",intersectRect=" + rect2.toShortString());
+        Log.d(TAG, "intersect23:" + intersect23 + ",intersectRect=" + rect2.toShortString());
+        Log.d(TAG, "isIntersect(rect2, rect3) = " + isIntersect(rect2, rect3));
+    }
+    // 判断两个矩形相交的思路
+    // 先考虑对立事件:不相交的情况有哪些
+    private boolean isIntersect(Rect rect1, Rect rect2) {
+        if (rect1.top > rect2.bottom) {
+            return false;
+        }
+        if (rect1.bottom < rect2.top) {
+            return false;
+        }
+        if (rect1.left > rect2.right) {
+            return false;
+        }
+        if (rect1.right < rect2.left) {
+            return false;
+        }
+        return true;
+        // 等价于下面的写法
+//        return rect1.bottom >= rect2.top && rect1.top <= rect2.bottom
+//                && rect1.left <= rect2.right && rect1.right >= rect2.left;
     }
 }

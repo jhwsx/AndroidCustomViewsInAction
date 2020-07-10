@@ -11,6 +11,7 @@ import android.graphics.Region;
 import android.graphics.RegionIterator;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 
 /**
@@ -20,6 +21,9 @@ import android.view.View;
  * @since 20-3-16
  */
 public class RegionIteratorView extends View {
+
+    private static final String TAG = "RegionIteratorView";
+
     public RegionIteratorView(Context context) {
         super(context);
     }

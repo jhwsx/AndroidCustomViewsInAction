@@ -39,6 +39,7 @@ public class CanvasTranslateView extends View {
         Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
         paint.setColor(Color.GREEN);
         paint.setStyle(Paint.Style.FILL);
+        // 对 Canvas 进行平移后, 坐标系的位置也平移了.
         if (translate) {
             canvas.translate(100, 100);
         }

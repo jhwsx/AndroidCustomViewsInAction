@@ -45,7 +45,9 @@ public class CanvasSkewView extends View {
         Rect rect1 = new Rect(10, 10, 300, 500);
         canvas.drawRect(rect1, redPaint);
         // 在 x 方向上倾斜 60 度，则 tan60 = 1.732f
-        canvas.skew(1.732f, 1.732f);
+//        canvas.skew(1.732f, 0f);
+
+        canvas.skew(0f, 1.732f);
 
         // 再绘制一个实现矩形
         canvas.drawRect(rect, greenPaint);

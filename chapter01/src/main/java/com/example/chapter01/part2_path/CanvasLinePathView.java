@@ -35,6 +35,7 @@ public class CanvasLinePathView extends View {
         Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
         paint.setStrokeWidth(5f);
         // 注意这里的 setStyle 对绘制路径有影响：若为 STROKE, 则只是描边；若为 FILL 或 FILL_AND_STROKE, 则会填充。
+        // 即便是不封闭的路径,也会有影响.
         paint.setStyle(Paint.Style.STROKE);
         paint.setColor(Color.RED);
 

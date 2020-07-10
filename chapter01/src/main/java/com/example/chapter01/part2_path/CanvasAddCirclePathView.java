@@ -61,7 +61,8 @@ public class CanvasAddCirclePathView extends View {
         paint.setColor(0x44ff0000);
 
         String text = "好好学习，天天向上";
+        //起点是在 3 点钟的方向
         canvas.drawTextOnPath(text, cwPath, 0, 9, paint);
-        canvas.drawTextOnPath(text, ccwPath, 0, 9, paint);
+        canvas.drawTextOnPath(text, ccwPath, 0, -16, paint);
     }
 }

@@ -10,6 +10,8 @@ import android.view.View;
 
 /**
  * Paint 的 setTextAlign 对文字的影响
+ * 设置的是所要绘制的字符串与起始点的相对位置.
+ *
  * 需要注意的是文字对齐相对的是绘制文字的起始点
  * Paint.Align.LEFT：表示文字整体在起始点的右边，可以理解为文字整体和起始点左对齐
  * Paint.Align.CENTER：表示文字整体水平方向的中心，就是起始点

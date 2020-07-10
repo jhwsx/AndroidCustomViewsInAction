@@ -39,14 +39,20 @@ public class TextPaintSetTypefaceView extends View {
 
         String text = "床前明月光, How is it going?";
         canvas.drawText(text, 16, 100, paint);
-
+        // 使用系统自带的字体样式
         paint.setTypeface(Typeface.SANS_SERIF);
         canvas.drawText(text, 16, 200, paint);
 
         paint.setTypeface(Typeface.defaultFromStyle(Typeface.ITALIC));
         canvas.drawText(text, 16, 300, paint);
 
-        paint.setTypeface(Typeface.createFromAsset(getContext().getAssets(), "fonts/ff.ttf"));
+        paint.setTypeface(Typeface.create("仿宋", Typeface.NORMAL));
         canvas.drawText(text, 16, 400, paint);
+
+        paint.setTypeface(Typeface.createFromAsset(getContext().getAssets(), "fonts/ff.ttf"));
+        canvas.drawText(text, 16, 500, paint);
+
+        paint.setTypeface(Typeface.createFromAsset(getContext().getAssets(), "fonts/Modak-Regular.ttf"));
+        canvas.drawText(text, 16, 600, paint);
     }
 }

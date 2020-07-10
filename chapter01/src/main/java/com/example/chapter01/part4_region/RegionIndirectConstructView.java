@@ -11,6 +11,7 @@ import android.graphics.Region;
 import android.graphics.RegionIterator;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -24,13 +25,16 @@ import android.view.View;
  * public boolean set(Rect r)
  * 设置指定区域
  * public boolean set(Region region)
- * 参数一：用来构造区域的路径；参数二：与参一的 path 构成的路径取交集，并将该交集设置为最终的区域
+ * 参数一：用来构造区域的路径；参数二：与参一的 path 构成的路径取交集，并将该交集设置为最终的区域赋值给调用者
  * public boolean setPath(Path path, Region clip)
  *
  * @author wangzhichao
  * @since 20-3-16
  */
 public class RegionIndirectConstructView extends View {
+
+    private static final String TAG = "RegionIndirectConstruct";
+
     public RegionIndirectConstructView(Context context) {
         super(context);
     }
