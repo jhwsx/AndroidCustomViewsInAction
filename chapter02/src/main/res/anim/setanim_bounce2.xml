@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <set xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--效果: 控件弹跳三次, 一次比一次跳得低的效果.-->
     <!--先向上偏移控件高度的 40%，时间是 350 毫秒-->
     <translate
         android:duration="350"

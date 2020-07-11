@@ -2,8 +2,14 @@
 <scale xmlns:android="http://schemas.android.com/apk/res/android"
     android:fillBefore="false"
     android:fillEnabled="false"
+    android:fillAfter="true"
     android:duration="700"
+    android:startOffset="1000"
     android:fromXScale="0.0"
     android:fromYScale="0.0"
     android:toXScale="1.4"
     android:toYScale="1.4" />
+<!--不写  pivotX, pivotY, 默认就是
+    android:pivotX="0"
+    android:pivotY="0"
+-->

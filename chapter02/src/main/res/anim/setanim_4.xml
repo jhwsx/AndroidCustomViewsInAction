@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--效果: View先在原位置从0.5倍放大到2倍，然后在从原位置的90度旋转到720度。-->
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <scale
+        android:duration="1000"
+        android:fromXScale="0.5"
+        android:fromYScale="0.5"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:toXScale="2.0"
+        android:toYScale="2.0" />
+
+    <!-- android:fillEnabled="true"
+        android:fillBefore="false" 表示在 rotate 动画开始之前不让它自己的动画初始值起作用,
+         而是等动画真正开始的时候再让自己的初始值起作用.-->
+    <rotate
+        android:duration="2000"
+        android:fromDegrees="90"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:fillEnabled="true"
+        android:fillBefore="false"
+        android:startOffset="1000"
+        android:toDegrees="720" />
+</set>

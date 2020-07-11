@@ -12,6 +12,13 @@ import android.widget.TextView;
 import com.example.chapter02.R;
 
 /**
+ * 动画监听结束回调是不可靠的
+ * 参考阿里巴巴 Android 开发手册
+ * 在有强依赖 onAnimationEnd 回调的交互时,如动画播放完毕才能操作页
+ * 面 , onAnimationEnd 可 能 会 因 各 种 异 常 没 被 回 调 ( 参 考 :
+ * https://stackoverflow.com/questions/5474923/onanimationend-is-not-getting-called-onanimationstart-works-fine ), 建 议 加 上 超 时 保 护 或 通 过 postDelay 替 代
+ * onAnimationEnd。
+ *
  * @author wangzhichao
  * @since 20-3-26
  */

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shareInterpolator="false">
+    <!--注意: android:shareInterpolator 默认设置为 true, 在我们的例子里面, 两个动画的 interpolator 都会变成 linear_interpolator-->
+    <scale
+        android:duration="2000"
+        android:fromXScale="0"
+        android:fromYScale="0"
+        android:interpolator="@android:anim/anticipate_interpolator"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:toXScale="1.4"
+        android:toYScale="1.4" />
+    <translate
+        android:duration="2000"
+        android:fromXDelta="0"
+        android:startOffset="2000"
+        android:fromYDelta="0"
+        android:fillAfter="true"
+        android:interpolator="@android:anim/linear_interpolator"
+        android:toXDelta="100%"
+        android:toYDelta="100%" />
+</set>

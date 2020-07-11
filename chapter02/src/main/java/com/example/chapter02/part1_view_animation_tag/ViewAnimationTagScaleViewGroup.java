@@ -28,26 +28,32 @@ import com.example.chapter02.R;
  * android:pivotY="50%p" // 表示动画的起始点是在控件左上角的坐标原点的基础上在 Y 轴正方向上加上父控件高度的 50%;
  *
  * 不管 pivotX,pivotY 如何取值, 最终的结束位置是不变的.
+ * fill 开头的三个属性
+ *
+ * 参考文章:
+ * http://www.dss886.com/2017/07/05/01/
+ * https://www.jianshu.com/p/ee0c1dda0275
  *
  * android:fillAfter          用于确定是否保持动画结束时的值，如果设置为true，控件动画结束时，将保持动画
  *                            最后时的状态，为false就是不保持；这个值默认是false，表示不保持动画最后的状态。
  *                            fillAfter属性的默认值是false。
  *                            控制动画播放完成时是否将 transformation 作用到视图上。
+ *                            fillAfter 的设置是否有效, 与 fillEnabled 的设置无关.
  *
  * android:fillBefore         用于确定动画开始时，View的动画属性值；这里所说的动画开始不是指的调用
- *                            startAnimation方法，而是界面中动画真正开始动的时候。从调用
- *                            startAnimation到动画真正开始时，中间有一个startOffset阶段，若
- *                            fillBefore为true，则在startOffset阶段时，将动画属性设置为初始值，
- *                            为false，则为View本身的初始值。
- *                            fillBefore属性的默认值是true。
+ *                            startAnimation 方法，而是界面中动画真正开始动的时候。从调用
+ *                            startAnimation 到动画真正开始时，中间有一个 startOffset 阶段，若
+ *                            fillBefore 为 true，则在 startOffset 阶段时，将动画属性设置为初始值，
+ *                            为false，则为 View 本身的初始值。
+ *                            fillBefore属性的默认值是 true。
  *                            控制动画开始之前是否将 transformation 作用到视图上。
+ *                            fillBefore 的设置是否有效, 会受到 fillEnabled 的设置的影响.
  *
- * android:fillEnabled        用来控制fillBefore属性是否有效，若为true，则fillBefore生效；若为false
- *                            则不管设置fillBefore为true还是false，都不起作用。但是，划重点了,当
- *                            fillEnabled为false时，我们假设fillBefore为true。也就是说，当
- *                            fillEnabled为false是，不管fillBefore是什么值，在startOffset阶段
+ * android:fillEnabled        用来控制 fillBefore 属性是否有效，若为 true，则 fillBefore 的设置有效果；若为 false
+ *                            则不管设置 fillBefore 为 true 还是 false，都不起作用, 也就是说，当
+ *                            fillEnabled 为 false 时，不管 fillBefore 是什么值，在 startOffset 阶段
  *                            都将初始值设置为动画属性的初始值。
- *                            fillEnabled属性的值默认是false，fillEnabled属性是fillBefore属性的开关。
+ *                            fillEnabled 属性的值默认是 false，fillEnabled 属性是 fillBefore 属性的开关。
  * @author wangzhichao
  * @since 20-3-24
  */

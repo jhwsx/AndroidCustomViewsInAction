@@ -13,7 +13,45 @@ import com.example.chapter02.R;
 
 /**
  * set 标签动画文件放在 res/anim/ 下面
+ * 容器类标签, 用于定义动画集
  *
+ * 利用 AnimationSet 播放时整个动画播放完毕才会判断是否 fillAfter 的特性
+ *
+ * duration, repeatMode, fillBefore, fillAfter:
+ *      These properties, when set on an AnimationSet object, will be pushed down to all child animations.
+ * repeatCount, fillEnabled:
+ *      These properties are ignored for AnimationSet.
+ * startOffset, shareInterpolator:
+ *      These properties apply to the AnimationSet itself.
+ * 语法:
+ * <?xml version="1.0" encoding="utf-8"?>
+ * <set xmlns:android="http://schemas.android.com/apk/res/android"
+ *     android:interpolator="@[package:]anim/interpolator_resource"
+ *     android:shareInterpolator=["true" | "false"] >
+ *     <alpha
+ *         android:fromAlpha="float"
+ *         android:toAlpha="float" />
+ *     <scale
+ *         android:fromXScale="float"
+ *         android:toXScale="float"
+ *         android:fromYScale="float"
+ *         android:toYScale="float"
+ *         android:pivotX="float"
+ *         android:pivotY="float" />
+ *     <translate
+ *         android:fromXDelta="float"
+ *         android:toXDelta="float"
+ *         android:fromYDelta="float"
+ *         android:toYDelta="float" />
+ *     <rotate
+ *         android:fromDegrees="float"
+ *         android:toDegrees="float"
+ *         android:pivotX="float"
+ *         android:pivotY="float" />
+ *     <set>
+ *         ...
+ *     </set>
+ * </set>
  * @author wangzhichao
  * @since 20-3-24
  */
@@ -44,6 +82,13 @@ public class ViewAnimationTagSetViewGroup extends ConstraintLayout {
             public void onClick(View v) {
                 Animation animation = AnimationUtils.loadAnimation(v.getContext(), R.anim.setanim_bounce2);
                 tvBounce2.startAnimation(animation);
+            }
+        });final TextView tv3 = findViewById(R.id.tv_3);
+        findViewById(R.id.btn_start_3).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Animation animation = AnimationUtils.loadAnimation(v.getContext(), R.anim.setanim_3);
+                tv3.startAnimation(animation);
             }
         });
     }

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--效果: 将控件从小到大, 旋转出场, 而且透明度从 0 变为 1 的组合效果.-->
 <set xmlns:android="http://schemas.android.com/apk/res/android"
     android:duration="3000"
     android:fillAfter="true">

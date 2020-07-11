@@ -14,8 +14,8 @@ import com.example.chapter02.R;
  * alpha 标签
  * 没有中心的概念
  * <p>
- * android:fromAlpha="1.0" // 起始是完全不透明
- * android:toAlpha="0.0" // 结束是完全透明
+ * android:fromAlpha="1.0" // 起始是完全不透明 opaque
+ * android:toAlpha="0.0" // 结束是完全透明 transparent
  *
  * @author wangzhichao
  * @since 20-3-25

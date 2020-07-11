@@ -15,6 +15,10 @@ import com.example.chapter02.R;
  * rotate 标签动画文件放在 res/anim/ 下面
  *     android:fromDegrees="0"
  *     android:toDegrees="-650" // - 代表的是逆时针方向
+ *
+ * 在 rotate 中,
+ * android:pivotY 和 android:pivotX 属性用于指定旋转中心点的坐标.
+ * 而在 scale 中, 指定的是动画的开始位置.
  * @author wangzhichao
  * @since 20-3-25
  */
