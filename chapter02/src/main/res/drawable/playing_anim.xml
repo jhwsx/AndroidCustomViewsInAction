@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android" android:oneshot="false">
+    <item android:drawable="@drawable/list_icon_gif_playing1" android:duration="60"/>
+    <item android:drawable="@drawable/list_icon_gif_playing2" android:duration="60"/>
+    <item android:drawable="@drawable/list_icon_gif_playing3" android:duration="60"/>
+    <item android:drawable="@drawable/list_icon_gif_playing4" android:duration="60"/>
+    <item android:drawable="@drawable/list_icon_gif_playing5" android:duration="60"/>
+    <item android:drawable="@drawable/list_icon_gif_playing6" android:duration="60"/>
+    <item android:drawable="@drawable/list_icon_gif_playing7" android:duration="60"/>
+    <item android:drawable="@drawable/list_icon_gif_playing8" android:duration="60"/>
+    <item android:drawable="@drawable/list_icon_gif_playing9" android:duration="60"/>
+    <item android:drawable="@drawable/list_icon_gif_playing10" android:duration="60"/>
+    <item android:drawable="@drawable/list_icon_gif_playing11" android:duration="60"/>
+    <item android:drawable="@drawable/list_icon_gif_playing12" android:duration="60"/>
+    <item android:drawable="@drawable/list_icon_gif_playing13" android:duration="60"/>
+</animation-list>

@@ -15,10 +15,29 @@
     <string name="title_view_animation_code_control_listener">动画控制及监听</string>
     <!--part3 插值器-->
     <string name="title_interpolator_set">设置插值器</string>
+    <string name="title_interpolator">插值器</string>
     <string name="title_interpolator_accelerate_decelerate">AccelerateDecelerateInterpolator</string>
     <string name="title_interpolator_accelerate">AccelerateInterpolator</string>
+    <string name="title_interpolator_decelerate">DecelerateInterpolator</string>
+    <string name="title_interpolator_linear">LinearInterpolator</string>
+    <string name="title_interpolator_bounce">BounceInterpolator</string>
+    <string name="title_interpolator_anticipate_tension_2">AnticipateInterpolator_tension_2</string>
+    <string name="title_interpolator_anticipate_tension_point5">AnticipateInterpolator_tension_0.5</string>
+    <string name="title_interpolator_anticipate_tension_4">AnticipateInterpolator_tension_4</string>
+    <string name="title_interpolator_overshoot_tension_2">OvershootInterpolator_tension_2</string>
+    <string name="title_interpolator_overshoot_tension_point5">OvershootInterpolator_tension_0.5</string>
+    <string name="title_interpolator_overshoot_tension_4">OvershootInterpolator_tension_4</string>
+    <string name="title_interpolator_anticipate_overshoot_tension_2">AnticipateOvershootInterpolator_tension_2</string>
+    <string name="title_interpolator_anticipate_overshoot_tension_point5">AnticipateOvershootInterpolator_tension_0.5</string>
+    <string name="title_interpolator_anticipate_overshoot_tension_4">AnticipateOvershootInterpolator_tension_4</string>
+    <string name="title_interpolator_cycle_cycles_1">CycleInterpolator_cycles_1</string>
+    <string name="title_interpolator_cycle_cycles_point5">CycleInterpolator_cycles_0.5</string>
+    <string name="title_interpolator_cycle_cycles_4">CycleInterpolator_cycles_4</string>
     <!--part4 例子-->
     <string name="title_camera_stretch">镜头由远及近效果</string>
     <string name="title_loading">加载框效果</string>
     <string name="title_scanner">扫描动画</string>
+    <!--part5 帧动画-->
+    <string name="title_frame_anim_xml">帧动画xml实现</string>
+    <string name="title_frame_anim_code">帧动画代码实现</string>
 </resources>
