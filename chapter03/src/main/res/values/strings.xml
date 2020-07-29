@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Chapter03</string>
+    <string name="title_tween_animation_click_area_issue">补间动画的点击区域问题</string>
+    <string name="title_value_animator_fix_click_area_issue">ValueAnimator解决点击区域问题</string>
+    <string name="title_value_animator_varargs">ValueAnimator传入多个参数</string>
+    <string name="title_value_animator_api">ValueAnimator常用函数</string>
+    <string name="title_value_animator_bounce_loading_my">ValueAnimator弹跳加载效果(自己)</string>
+    <string name="title_value_animator_bounce_loading_qijian">ValueAnimator弹跳加载效果(启舰)</string>
+</resources>
