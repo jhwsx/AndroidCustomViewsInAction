@@ -63,10 +63,14 @@ public class B_ValueAnimatorFixClickAreaIssueViewGroup extends LinearLayout {
             public void onAnimationUpdate(ValueAnimator animation) {
                 float fraction = animation.getAnimatedFraction();
                 int currValue = (int) animation.getAnimatedValue();
+                // fraction 会从0.0变化到1.0，currValue会从0变化到width。
                 Log.d(TAG, "onAnimationUpdate: fraction="+fraction+",currValue=" + currValue);
-                tv.setTranslationX(currValue);
-                tv.setTranslationY(2 * currValue);
-//                tv.layout(left + currValue, top + 2 * currValue, left + currValue + width, top + 2 * currValue + height);
+                // TODO: 2021/5/8 这两种方式有什么区别呢？
+                // 方式一：
+//                tv.setTranslationX(currValue);
+//                tv.setTranslationY(2 * currValue);
+                // 方式二：
+                tv.layout(left + currValue, top + 2 * currValue, left + currValue + width, top + 2 * currValue + height);
                 Log.d(TAG, "onAnimationUpdate: left=" + tv.getLeft() + ", top=" + tv.getTop());
             }
         });

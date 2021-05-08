@@ -56,60 +56,7 @@ public class D_ValueAnimatorAPIGroup extends LinearLayout {
         btnStart.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (valueAnimator == null) {
-                    valueAnimator = ValueAnimator.ofInt(0, 400);
-                }
-                valueAnimator.setDuration(2000L);
-                int repeatCount = 0;
-                try {
-                    repeatCount = Integer.parseInt(etRepeatCount.getText().toString());
-                } catch (NumberFormatException e) {
-                    e.printStackTrace();
-                }
-                valueAnimator.setRepeatCount(repeatCount);
-                valueAnimator.setRepeatMode(rbRestart.isChecked() ? ValueAnimator.RESTART : ValueAnimator.REVERSE);
-                valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-                    @Override
-                    public void onAnimationUpdate(ValueAnimator animation) {
-                        float fraction = animation.getAnimatedFraction();
-                        int currValue = (int) animation.getAnimatedValue();
-//                        Log.d(TAG, "onAnimationUpdate: fraction="+fraction+",currValue=" + currValue);
-                        tv.layout(tv.getLeft(), currValue + top, tv.getRight(),
-                                currValue + top + tv.getHeight());
-                    }
-                });
-                valueAnimator.addListener(new Animator.AnimatorListener() {
-                    @Override
-                    public void onAnimationStart(Animator animation) {
-                        Log.d(TAG, "onAnimationStart: ");
-                    }
-
-                    @Override
-                    public void onAnimationEnd(Animator animation) {
-                        Log.d(TAG, "onAnimationEnd: ");
-                    }
-
-                    @Override
-                    public void onAnimationCancel(Animator animation) {
-                        Log.d(TAG, "onAnimationCancel: ");
-                    }
-
-                    @Override
-                    public void onAnimationRepeat(Animator animation) {
-                        Log.d(TAG, "onAnimationRepeat: ");
-                    }
-                });
-                valueAnimator.addPauseListener(new Animator.AnimatorPauseListener() {
-                    @Override
-                    public void onAnimationPause(Animator animation) {
-                        Log.d(TAG, "onAnimationPause: ");
-                    }
-
-                    @Override
-                    public void onAnimationResume(Animator animation) {
-                        Log.d(TAG, "onAnimationResume: ");
-                    }
-                });
+                initValueAnimator(etRepeatCount, rbRestart);
                 valueAnimator.start();
             }
         });
@@ -138,60 +85,7 @@ public class D_ValueAnimatorAPIGroup extends LinearLayout {
         btnReverse.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (valueAnimator == null) {
-                    valueAnimator = ValueAnimator.ofInt(0, 400);
-                }
-                valueAnimator.setDuration(2000L);
-                int repeatCount = 0;
-                try {
-                    repeatCount = Integer.parseInt(etRepeatCount.getText().toString());
-                } catch (NumberFormatException e) {
-                    e.printStackTrace();
-                }
-                valueAnimator.setRepeatCount(repeatCount);
-                valueAnimator.setRepeatMode(rbRestart.isChecked() ? ValueAnimator.RESTART : ValueAnimator.REVERSE);
-                valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-                    @Override
-                    public void onAnimationUpdate(ValueAnimator animation) {
-                        float fraction = animation.getAnimatedFraction();
-                        int currValue = (int) animation.getAnimatedValue();
-//                        Log.d(TAG, "onAnimationUpdate: fraction="+fraction+",currValue=" + currValue);
-                        tv.layout(tv.getLeft(), currValue + top, tv.getRight(),
-                                currValue + top + tv.getHeight());
-                    }
-                });
-                valueAnimator.addListener(new Animator.AnimatorListener() {
-                    @Override
-                    public void onAnimationStart(Animator animation) {
-                        Log.d(TAG, "onAnimationStart: ");
-                    }
-
-                    @Override
-                    public void onAnimationEnd(Animator animation) {
-                        Log.d(TAG, "onAnimationEnd: ");
-                    }
-
-                    @Override
-                    public void onAnimationCancel(Animator animation) {
-                        Log.d(TAG, "onAnimationCancel: ");
-                    }
-
-                    @Override
-                    public void onAnimationRepeat(Animator animation) {
-                        Log.d(TAG, "onAnimationRepeat: ");
-                    }
-                });
-                valueAnimator.addPauseListener(new Animator.AnimatorPauseListener() {
-                    @Override
-                    public void onAnimationPause(Animator animation) {
-                        Log.d(TAG, "onAnimationPause: ");
-                    }
-
-                    @Override
-                    public void onAnimationResume(Animator animation) {
-                        Log.d(TAG, "onAnimationResume: ");
-                    }
-                });
+                initValueAnimator(etRepeatCount, rbRestart);
                 valueAnimator.reverse();
             }
         });
@@ -217,6 +111,63 @@ public class D_ValueAnimatorAPIGroup extends LinearLayout {
                     clonedValueAnimator.removeAllUpdateListeners();
                     clonedValueAnimator.cancel();
                 }
+            }
+        });
+    }
+
+    private void initValueAnimator(EditText etRepeatCount, RadioButton rbRestart) {
+        if (valueAnimator == null) {
+            valueAnimator = ValueAnimator.ofInt(0, 400);
+        }
+        valueAnimator.setDuration(2000L);
+        int repeatCount = 0;
+        try {
+            repeatCount = Integer.parseInt(etRepeatCount.getText().toString());
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+        }
+        valueAnimator.setRepeatCount(repeatCount);
+        valueAnimator.setRepeatMode(rbRestart.isChecked() ? ValueAnimator.RESTART : ValueAnimator.REVERSE);
+        valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                float fraction = animation.getAnimatedFraction();
+                int currValue = (int) animation.getAnimatedValue();
+//                        Log.d(TAG, "onAnimationUpdate: fraction="+fraction+",currValue=" + currValue);
+                tv.layout(tv.getLeft(), currValue + top, tv.getRight(),
+                        currValue + top + tv.getHeight());
+            }
+        });
+        valueAnimator.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+                Log.d(TAG, "onAnimationStart: ");
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                Log.d(TAG, "onAnimationEnd: ");
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+                Log.d(TAG, "onAnimationCancel: ");
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+                Log.d(TAG, "onAnimationRepeat: ");
+            }
+        });
+        valueAnimator.addPauseListener(new Animator.AnimatorPauseListener() {
+            @Override
+            public void onAnimationPause(Animator animation) {
+                Log.d(TAG, "onAnimationPause: ");
+            }
+
+            @Override
+            public void onAnimationResume(Animator animation) {
+                Log.d(TAG, "onAnimationResume: ");
             }
         });
     }

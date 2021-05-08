@@ -21,6 +21,7 @@ import com.example.chapter03.R;
 public class C_ValueAnimatorVarArgsViewGroup extends LinearLayout {
     private static final String TAG = "C_ValueAnimatorVarArgsV";
     private final TextView tv;
+
     public C_ValueAnimatorVarArgsViewGroup(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         inflate(context, R.layout.c_value_animator_varargs_viewgroup, this);
@@ -45,15 +46,15 @@ public class C_ValueAnimatorVarArgsViewGroup extends LinearLayout {
         final int height = tv.getHeight();
         final int top = tv.getTop();
         final int left = tv.getLeft();
-        ValueAnimator valueAnimator = ValueAnimator.ofInt(0, 400,50,200);
+        ValueAnimator valueAnimator = ValueAnimator.ofFloat(0f, 400f, 50f, 200f);
         valueAnimator.setDuration(2000L);
         valueAnimator.setInterpolator(new LinearInterpolator());
         valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
                 float fraction = animation.getAnimatedFraction();
-                int currValue = (int) animation.getAnimatedValue();
-                Log.d(TAG, "onAnimationUpdate: fraction="+fraction+",currValue=" + currValue);
+                float currValue = (float) animation.getAnimatedValue();
+                Log.d(TAG, "onAnimationUpdate: fraction=" + fraction + ",currValue=" + currValue);
                 tv.setTranslationX(currValue);
                 tv.setTranslationY(2 * currValue);
 //                tv.layout(left + currValue, top + 2 * currValue, left + currValue + width, top + 2 * currValue + height);
