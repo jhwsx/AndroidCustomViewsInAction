@@ -30,6 +30,10 @@ public class MainActivity extends AppCompatActivity {
         pageModels.add(new PageModel(R.string.title_value_animator_api, R.layout.practice_value_animator_api_group));
         pageModels.add(new PageModel(R.string.title_value_animator_bounce_loading_my, R.layout.practice_bounce_loading_viewgroup_my));
         pageModels.add(new PageModel(R.string.title_value_animator_bounce_loading_qijian, R.layout.practice_bounce_loading_viewgroup_qijian));
+        pageModels.add(new PageModel(R.string.title_custom_interpolator_viewgroup, R.layout.practice_custom_interpolator_viewgroup));
+        pageModels.add(new PageModel(R.string.title_custom_evaluator_viewgroup, R.layout.practice_custom_evaluator_viewgroup));
+        pageModels.add(new PageModel(R.string.title_reverse_evaluator_viewgroup, R.layout.practice_reverse_evaluator_viewgroup));
+        pageModels.add(new PageModel(R.string.title_argb_evaluator_viewgroup, R.layout.practice_argb_evaluator_viewgroup));
     }
 
     @Override

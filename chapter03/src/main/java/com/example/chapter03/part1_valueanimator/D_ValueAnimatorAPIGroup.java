@@ -95,6 +95,7 @@ public class D_ValueAnimatorAPIGroup extends LinearLayout {
             public void onClick(View v) {
                 createdValueAnimator = create();
                 clonedValueAnimator = createdValueAnimator.clone();
+                clonedValueAnimator.setStartDelay(1000L);
                 clonedValueAnimator.start();
             }
         });

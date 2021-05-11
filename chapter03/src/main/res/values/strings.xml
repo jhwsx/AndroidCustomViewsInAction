@@ -6,4 +6,8 @@
     <string name="title_value_animator_api">ValueAnimator常用函数</string>
     <string name="title_value_animator_bounce_loading_my">ValueAnimator弹跳加载效果(自己)</string>
     <string name="title_value_animator_bounce_loading_qijian">ValueAnimator弹跳加载效果(启舰)</string>
+    <string name="title_custom_interpolator_viewgroup">简单自定义插值器</string>
+    <string name="title_custom_evaluator_viewgroup">简单自定义转换器</string>
+    <string name="title_reverse_evaluator_viewgroup">倒序自定义转换器</string>
+    <string name="title_argb_evaluator_viewgroup">Argb转换器</string>
 </resources>
