@@ -10,4 +10,6 @@
     <string name="title_custom_evaluator_viewgroup">简单自定义转换器</string>
     <string name="title_reverse_evaluator_viewgroup">倒序自定义转换器</string>
     <string name="title_argb_evaluator_viewgroup">Argb转换器</string>
+    <string name="title_value_animator_of_object_viewgroup">ValueAnimator.ofObject</string>
+    <string name="title_falling_ball_viewgroup">抛物动画</string>
 </resources>

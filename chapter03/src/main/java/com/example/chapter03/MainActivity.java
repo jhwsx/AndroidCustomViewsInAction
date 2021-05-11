@@ -34,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
         pageModels.add(new PageModel(R.string.title_custom_evaluator_viewgroup, R.layout.practice_custom_evaluator_viewgroup));
         pageModels.add(new PageModel(R.string.title_reverse_evaluator_viewgroup, R.layout.practice_reverse_evaluator_viewgroup));
         pageModels.add(new PageModel(R.string.title_argb_evaluator_viewgroup, R.layout.practice_argb_evaluator_viewgroup));
+        pageModels.add(new PageModel(R.string.title_value_animator_of_object_viewgroup, R.layout.practice_value_animator_of_object_viewgroup));
+        pageModels.add(new PageModel(R.string.title_falling_ball_viewgroup, R.layout.practice_falling_ball_viewgroup));
     }
 
     @Override
