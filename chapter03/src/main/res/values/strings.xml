@@ -12,4 +12,5 @@
     <string name="title_argb_evaluator_viewgroup">Argb转换器</string>
     <string name="title_value_animator_of_object_viewgroup">ValueAnimator.ofObject</string>
     <string name="title_falling_ball_viewgroup">抛物动画</string>
+    <string name="title_object_animator_intro_viewgroup">ObjectAnimator动画引入</string>
 </resources>

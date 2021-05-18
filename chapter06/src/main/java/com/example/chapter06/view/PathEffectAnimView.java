@@ -21,8 +21,8 @@ import androidx.annotation.Nullable;
 public class PathEffectAnimView extends View {
     public PathEffectAnimView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
-        ValueAnimator valueAnimator = ValueAnimator.ofInt(0, 75); // 这个 75 是下面的 intervals 数组元素的和，不然会有一跳一跳的效果出现，不好。
-        valueAnimator.setDuration(200L);
+        ValueAnimator valueAnimator = ValueAnimator.ofInt(0, 60); // 这个 75 是下面的 intervals 数组元素的和，不然会有一跳一跳的效果出现，不好。
+        valueAnimator.setDuration(500L);
         valueAnimator.setInterpolator(new LinearInterpolator());
         valueAnimator.setRepeatCount(ValueAnimator.INFINITE);
         valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
@@ -36,20 +36,36 @@ public class PathEffectAnimView extends View {
         valueAnimator.start();
     }
     private int phase;
+    Path path1 = new Path();
+    Path path2 = new Path();
+    Paint paint = new Paint();
+    RectF rect;
+
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        Paint paint = new Paint();
+        if (rect == null) {
+            rect = new RectF(getWidth()* 0.2f, getHeight() * 0.3f, getWidth() * 0.8f, getHeight() * 0.7f );
+        }
         paint.setAntiAlias(true);
-        paint.setStrokeWidth(5f);
+        paint.setStrokeWidth(10f);
         paint.setColor(Color.GREEN);
         paint.setStyle(Paint.Style.STROKE);
         paint.setLinearText(false);
-        Path path = new Path();
-        RectF rect = new RectF(getWidth()* 0.2f, getHeight() * 0.3f, getWidth() * 0.8f, getHeight() * 0.7f ) ;
-        path.addRect(rect, Path.Direction.CCW);
-        paint.setPathEffect(new DashPathEffect(new float[]{40, 20, 10, 5}, phase));
-        canvas.drawPath(path, paint);
+        path1.reset();
+        path1.addRect(rect, Path.Direction.CCW);
+        paint.setPathEffect(new DashPathEffect(new float[]{40, 20}, phase));
+        canvas.drawPath(path1, paint);
+
+        paint.setAntiAlias(true);
+        paint.setStrokeWidth(10f);
+        paint.setColor(Color.RED);
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setLinearText(false);
+        path2.reset();
+        path2.addRect(rect, Path.Direction.CCW);
+        paint.setPathEffect(new DashPathEffect(new float[]{0, 40, 20, 0}, phase));
+        canvas.drawPath(path2, paint);
     }
 
     private void setPhase(int phase) {

@@ -10,4 +10,10 @@
         app:srcCompat="@drawable/dog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
+    <com.example.chapter07.part6.StrokenAnimationView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:stroke_radius="8dp"
+        app:stroke_width="6dp" />
 </LinearLayout>

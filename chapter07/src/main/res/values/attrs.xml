@@ -42,4 +42,10 @@
         </attr>
 
     </declare-styleable>
+    <declare-styleable name="StrokenAnimationView">
+        <attr format="dimension" name="stroke_width"/>
+        <attr format="dimension" name="stroke_radius"/>
+        <attr format="integer" name="rotate_start"/>
+        <attr format="boolean" name="is_auto_start"/>
+    </declare-styleable>
 </resources>
