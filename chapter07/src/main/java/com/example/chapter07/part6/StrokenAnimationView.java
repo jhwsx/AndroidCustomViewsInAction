@@ -16,6 +16,7 @@ import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
+import android.view.animation.LinearInterpolator;
 
 import androidx.annotation.Nullable;
 
@@ -89,10 +90,10 @@ public class StrokenAnimationView extends View {
 
     public void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        rectF.left = strokeWidth;
-        rectF.top = strokeWidth;
-        rectF.right = (float) getMeasuredWidth() - strokeWidth;
-        rectF.bottom = (float) getMeasuredHeight() - strokeWidth;
+        rectF.left = strokeWidth / 2;
+        rectF.top = strokeWidth / 2;
+        rectF.right = (float) getMeasuredWidth() - strokeWidth / 2;
+        rectF.bottom = (float) getMeasuredHeight() - strokeWidth / 2 ;
         if (isAutoStart) {
             startAnim();
         }
@@ -112,7 +113,7 @@ public class StrokenAnimationView extends View {
             animStarted = true;
             valueAnimator = ValueAnimator.ofInt(rotateStart, 360 + rotateStart);
             valueAnimator.setDuration(2000L);
-            valueAnimator.setInterpolator(new AccelerateInterpolator());
+            valueAnimator.setInterpolator(new LinearInterpolator());
             valueAnimator.setRepeatCount(ValueAnimator.INFINITE);
             valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
                 @Override
