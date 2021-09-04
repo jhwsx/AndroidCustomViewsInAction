@@ -24,6 +24,7 @@
     <string name="title_canvas_fill_type_path_view">CanvasFillTypePathView</string>
     <string name="title_canvas_reset_rewind_path_view">CanvasResetRewindPathView</string>
     <string name="title_spider_view">SpiderView</string>
+    <string name="title_youtube_play_view">YoutbuePlayView</string>
     <string name="title_text_paint_setstyle_view">Paint的填充样式对文字影响</string>
     <string name="title_text_paint_settextalign_view">Paint的setTextAlign对文字的影响</string>
     <string name="title_text_paint_textstyle_view">Paint设置文字样式</string>
