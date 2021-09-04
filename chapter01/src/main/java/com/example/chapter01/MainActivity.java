@@ -9,6 +9,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     {
         // part1
-        pageModels.add(new PageModel(R.string.title_basis_view, R.layout.practice_basis_view));
+        pageModels.add(new PageModel(R.string.title_basic_view, R.layout.practice_basic_view));
         pageModels.add(new PageModel(R.string.title_basic_antialias_view, R.layout.practice_basic_antialias_view));
         pageModels.add(new PageModel(R.string.title_basic_setcolor_view, R.layout.practice_basic_setcolor_view));
         pageModels.add(new PageModel(R.string.title_basic_setstyle_view, R.layout.practice_basic_setstyle_view));

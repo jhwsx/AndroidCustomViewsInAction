@@ -15,6 +15,9 @@ import android.view.View;
  * @since 20-3-6
  */
 public class BasicSetStyleView extends View {
+    Paint paint = new Paint();
+    Paint textPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+
     public BasicSetStyleView(Context context) {
         super(context);
     }
@@ -30,8 +33,8 @@ public class BasicSetStyleView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-
-        Paint paint = new Paint();
+        textPaint.setColor(Color.RED);
+        textPaint.setTextSize(24f);
         paint.setAntiAlias(true);
         paint.setStrokeWidth(30);
         paint.setColor(Color.RED);
@@ -40,14 +43,17 @@ public class BasicSetStyleView extends View {
         // setStrokeWidth 的值，对于 FILL 的效果没有影响
         paint.setStyle(Paint.Style.FILL);
         canvas.drawCircle(200, 200, 70, paint);
+        canvas.drawText("FILL", 400, 200, textPaint);
 
         // 设置为 STROKE，绘制出的是圆环，圆环的宽度是线宽，圆环宽度一半的位置距离圆心是半径
         paint.setStyle(Paint.Style.STROKE);
         canvas.drawCircle(200, 500, 70, paint);
+        canvas.drawText("STROKE", 400, 500, textPaint);
 
         // 设置为 FILL_AND_STROKE，绘制出的比 FILL，要多出半个线宽的区域
         paint.setStyle(Paint.Style.FILL_AND_STROKE);
         canvas.drawCircle(200, 800, 70, paint);
+        canvas.drawText("FILL_AND_STROKE", 400, 800, textPaint);
 
         paint.setColor(Color.BLUE);
         paint.setStrokeWidth(0F);

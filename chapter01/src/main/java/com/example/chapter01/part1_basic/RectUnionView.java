@@ -57,6 +57,7 @@ public class RectUnionView extends View {
 
         rect1.union(rect2);
 
+        // 现在 rect1 的范围是：50,50,300,300
         paint.setColor(0x440000FF);
         canvas.drawRect(rect1, paint);
 
@@ -75,7 +76,7 @@ public class RectUnionView extends View {
         rect3.union(700, 700);
 
         paint.setColor(0x44ff0000);
-
+        // 现在 rect3 的范围是：50，400，700，700
         paint.setStrokeWidth(5f);
         canvas.drawRect(rect3, paint);
 

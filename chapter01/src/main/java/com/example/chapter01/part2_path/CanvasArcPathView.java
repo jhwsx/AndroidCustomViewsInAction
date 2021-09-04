@@ -42,7 +42,7 @@ public class CanvasArcPathView extends View {
 
         // 1, 创建 Path 对象
         Path path = new Path();
-        // 2, 指定起始点,如果设置起始点，那么起始点就是（0, 0）
+        // 2, 指定起始点,如果没有设置起始点，那么起始点就是（0, 0）
         path.moveTo(10, 10);
         RectF rectF = new RectF(100, 10, 200, 100);
         // 3, 绘制圆弧:水平向右是 0 度，顺时针为正方向。

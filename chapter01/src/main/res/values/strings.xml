@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">chapter01</string>
-    <string name="title_basis_view">BasisView</string>
+    <string name="app_name">chapter01 绘图基础</string>
+    <string name="title_basic_view">BasicView</string>
     <string name="title_basic_antialias_view">setAntiAlias</string>
     <string name="title_basic_setcolor_view">setColor</string>
     <string name="title_basic_setstyle_view">setStyle</string>

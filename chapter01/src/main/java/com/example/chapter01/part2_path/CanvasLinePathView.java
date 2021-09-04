@@ -41,7 +41,7 @@ public class CanvasLinePathView extends View {
 
         // 1, 创建 Path 对象
         Path path = new Path();
-        // 2, 指定起始点,如果设置起始点，那么起始点就是（0, 0）
+        // 2, 指定起始点,如果没有设置起始点，那么起始点就是（0, 0）
         path.moveTo(10, 10);
         // 3, 指定第一条直线的终点；也是第二条直线的起点
         path.lineTo(10, 100);

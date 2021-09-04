@@ -12,16 +12,16 @@ import android.view.View;
  * @author wangzhichao
  * @since 20-3-6
  */
-public class BasisView extends View {
-    public BasisView(Context context) {
+public class BasicView extends View {
+    public BasicView(Context context) {
         super(context);
     }
 
-    public BasisView(Context context, @Nullable AttributeSet attrs) {
+    public BasicView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public BasisView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public BasicView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 

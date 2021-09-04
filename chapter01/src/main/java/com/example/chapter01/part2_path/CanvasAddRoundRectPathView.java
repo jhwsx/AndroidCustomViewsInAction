@@ -82,7 +82,7 @@ public class CanvasAddRoundRectPathView extends View {
         paint.setStyle(Paint.Style.STROKE);
         paint.setColor(0x44ff0000);
         String text = "好好学习，天天向上";
-        canvas.drawTextOnPath(text, ccwPath, 0, 18, paint);
+        canvas.drawTextOnPath(text, ccwPath, 0, 0, paint);
         // 这个顺时针的带圆角的文字起点有些不同：
         // 如果有圆角，那么起点就是左下角；
         // 如果没有圆角，那么起点就是左上角。
