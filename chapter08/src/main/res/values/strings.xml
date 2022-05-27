@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">chapter08</string>
+    <string name="app_name">chapter08 混合模式</string>
     <string name="title_paint_setxfermode_porterduffxfermode">Paint.setXfermode(PorterDuffXfermode)</string>
     <string name="title_light_book_view">LightBookView</string>
     <string name="title_twitter_view">TwitterView</string>

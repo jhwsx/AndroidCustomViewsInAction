@@ -2,13 +2,14 @@ package com.example.chapter02.part5_frame_animation;
 
 import android.content.Context;
 import android.graphics.drawable.AnimationDrawable;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+
+import androidx.annotation.Nullable;
 
 import com.example.chapter02.R;
 

@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.example.chapter07.part2.PaintSetShadowLayerView
+    <com.example.chapter07.part2_shadowlayer.A_PaintSetShadowLayerView
         android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -45,7 +45,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:max="40"
-            android:progress="0" />
+            android:progress="20" />
     </LinearLayout>
 
     <LinearLayout
@@ -64,7 +64,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:max="40"
-            android:progress="0" />
+            android:progress="20" />
     </LinearLayout>
 
     <LinearLayout
@@ -86,7 +86,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
             android:layout_weight="1"
-            android:text="Chear shadow-1" />
+            android:textAllCaps="false"
+            android:text="Clear shadow-1" />
 
         <Button
             android:id="@+id/btnClearShadow2"
@@ -94,6 +95,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
             android:layout_weight="1"
-            android:text="Chear shadow-2" />
+            android:textAllCaps="false"
+            android:text="Clear shadow-2" />
     </LinearLayout>
 </LinearLayout>

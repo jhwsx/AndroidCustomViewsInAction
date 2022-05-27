@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.example.chapter01.part2_path.YoutubePlayView
+    <com.example.chapter01.part2_path.L_YoutubePlayView
         android:id="@+id/ypv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />

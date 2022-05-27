@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.example.chapter07.part4.AvatarViewGroup
+<com.example.chapter07.part4_bitmapshader.D_AvatarViewGroup
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-</com.example.chapter07.part4.AvatarViewGroup>
+</com.example.chapter07.part4_bitmapshader.D_AvatarViewGroup>

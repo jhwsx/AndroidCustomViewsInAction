@@ -2,7 +2,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/black"
     android:orientation="vertical">
 
     <Spinner
@@ -12,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp" />
 
-    <com.example.chapter08.part2.PaintSetXfermodePorterDuffXfermodeView
+    <com.example.chapter08.part2.A_PaintSetXfermodePorterDuffXfermodeView
         android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

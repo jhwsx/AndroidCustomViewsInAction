@@ -1,36 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:padding="8dp"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="8dp">
 
     <TextView
-        android:text="使用XML实现阴影效果"
-        android:textSize="16sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:shadowColor="@android:color/darker_gray"
         android:shadowDx="4"
         android:shadowDy="4"
         android:shadowRadius="4"
-        android:shadowColor="@android:color/darker_gray"
+        android:text="使用XML实现阴影效果"
         android:textColor="@android:color/holo_green_dark"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:textSize="18sp" />
 
     <Button
-        android:text="使用XML实现阴影效果"
-        android:textSize="16sp"
-        android:shadowDx="4"
-        android:shadowDy="4"
-        android:shadowRadius="4"
-        android:shadowColor="@android:color/darker_gray"
-        android:textColor="@android:color/holo_green_dark"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:shadowColor="@android:color/darker_gray"
+        android:shadowDx="8"
+        android:shadowDy="8"
+        android:shadowRadius="4"
+        android:text="使用XML实现阴影效果"
+        android:textColor="@android:color/holo_blue_bright"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/editext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:shadowColor="@android:color/darker_gray"
+        android:shadowDx="8"
+        android:shadowDy="8"
+        android:shadowRadius="4"
+        android:text="使用XML实现阴影效果"
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/text"
-        android:textSize="16sp"
-        android:textColor="@android:color/holo_green_dark"
-        android:text="使用代码实现阴影效果"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="使用代码实现阴影效果"
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="18sp" />
 </LinearLayout>

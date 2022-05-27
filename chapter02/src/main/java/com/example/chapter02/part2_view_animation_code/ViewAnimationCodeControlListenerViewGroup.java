@@ -1,7 +1,7 @@
 package com.example.chapter02.part2_view_animation_code;
 
 import android.content.Context;
-import android.support.constraint.ConstraintLayout;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;

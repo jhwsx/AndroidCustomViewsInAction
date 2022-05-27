@@ -3,7 +3,12 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.example.chapter08.part4.AreaWaveView_DSTIN
+    <com.example.chapter08.part4.C_AreaWaveView_DSTIN
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.example.chapter08.part4.C_TencentClassWaveView_DSTIN
+        android:layout_marginTop="24dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 </LinearLayout>

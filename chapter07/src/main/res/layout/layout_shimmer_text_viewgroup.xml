@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <com.example.chapter07.part5.ShimmerTextView
-        android:text="欢迎光临启舰的blog"
+    <com.example.chapter07.part5_lineargradient.B_ShimmerTextView
+        android:id="@+id/stv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:padding="16dp"
         android:textSize="24sp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        tools:text="欢迎光临willwaywang6的blog" />
 </LinearLayout>

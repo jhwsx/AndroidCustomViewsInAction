@@ -1,1 +1,9 @@
-include ':app', ':chapter01',  ':chapter03',':chapter06', ':chapter07', ':chapter02', ":chapter08", ':chapter09', ':chapter10'
+include ':chapter01'
+include ':chapter02'
+//include ':chapter03'
+include ':chapter06'
+include ':chapter07'
+include ":chapter08"
+//include ':chapter09'
+//include ':chapter10'
+include ':common'

@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="BitmapShadowView">
+    <declare-styleable name="C_BitmapShadowView">
         <attr name="bsv_src" format="reference" />
         <attr name="bsv_shadowDx" format="integer" />
         <attr name="bsv_shadowDy" format="integer" />
         <attr name="bsv_shadowColor" format="color" />
         <attr name="bsv_shadowRadius" format="integer" />
     </declare-styleable>
-    <declare-styleable name="AvatarView">
+    <declare-styleable name="D_AvatarView">
         <attr name="av_src" format="reference" />
         <attr name="av_type" format="enum">
             <enum name="circle" value="0" />
             <enum name="rectangle" value="1" />
         </attr>
-        <attr name="av_rectangle_radius" format="integer" />
+        <attr name="av_rectangle_radius" format="dimension" />
     </declare-styleable>
-    <declare-styleable name="PaintSetshaderLinearGradientView">
+    <declare-styleable name="A_PaintSetshaderLinearGradientView">
         <attr name="pslv_type" format="enum">
             <enum name="double_color" value="0" />
             <enum name="multi_color" value="1" />
@@ -42,7 +42,7 @@
         </attr>
 
     </declare-styleable>
-    <declare-styleable name="StrokenAnimationView">
+    <declare-styleable name="B_ColorfulStrokeView">
         <attr format="dimension" name="stroke_width"/>
         <attr format="dimension" name="stroke_radius"/>
         <attr format="integer" name="rotate_start"/>

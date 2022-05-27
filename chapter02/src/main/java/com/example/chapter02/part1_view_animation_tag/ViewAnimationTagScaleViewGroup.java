@@ -1,8 +1,8 @@
 package com.example.chapter02.part1_view_animation_tag;
 
 import android.content.Context;
-import android.support.annotation.Nullable;
-import android.support.constraint.ConstraintLayout;
+import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.Animation;
@@ -63,7 +63,7 @@ public class ViewAnimationTagScaleViewGroup extends ConstraintLayout {
         super(context, attrs);
         inflate(context, R.layout.view_animation_tag_scale_viewgroup, this);
         final TextView tv = findViewById(R.id.tv);
-        findViewById(R.id.btn_start).setOnClickListener(new OnClickListener() {
+        findViewById(R.id.btn_start).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Animation animation = AnimationUtils.loadAnimation(v.getContext(), R.anim.scaleanim);

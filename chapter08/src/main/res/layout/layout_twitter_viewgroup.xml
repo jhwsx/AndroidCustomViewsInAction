@@ -3,14 +3,14 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.example.chapter08.part2.TwitterView
+    <com.example.chapter08.part2.C_TwitterView
         android:layout_width="match_parent"
         android:layout_weight="1"
         android:background="#000"
         android:layout_height="0dp" />
 
 
-    <com.example.chapter08.part2.TwitterView
+    <com.example.chapter08.part2.C_TwitterView
         android:layout_width="match_parent"
         android:layout_weight="1"
         android:background="#fff"

@@ -38,7 +38,7 @@
         android:id="@+id/spinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
-    <com.example.chapter07.part6.PaintSetshaderRadialGradientView
+    <com.example.chapter07.part6_radialgradient.A_PaintSetshaderRadialGradientView
         android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

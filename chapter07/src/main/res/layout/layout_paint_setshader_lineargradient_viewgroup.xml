@@ -15,7 +15,7 @@
             android:text="smallRect"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
-        <com.example.chapter07.part5.PaintSetshaderLinearGradientView
+        <com.example.chapter07.part5_lineargradient.A_PaintSetshaderLinearGradientView
             android:id="@+id/pslv1"
             android:layout_width="match_parent"
             android:layout_height="100dp"
@@ -25,7 +25,7 @@
             app:pslv_y0="half_height"
             app:pslv_y1="half_height" />
 
-        <com.example.chapter07.part5.PaintSetshaderLinearGradientView
+        <com.example.chapter07.part5_lineargradient.A_PaintSetshaderLinearGradientView
             android:id="@+id/pslv2"
             android:layout_width="match_parent"
             android:layout_height="100dp"
@@ -35,7 +35,7 @@
             app:pslv_y0="half_height"
             app:pslv_y1="half_height" />
 
-        <com.example.chapter07.part5.PaintSetshaderLinearGradientView
+        <com.example.chapter07.part5_lineargradient.A_PaintSetshaderLinearGradientView
             android:id="@+id/pslv3"
             android:layout_width="match_parent"
             android:layout_height="500dp"
@@ -45,7 +45,7 @@
             app:pslv_y0="zero"
             app:pslv_y1="half_height" />
 
-        <com.example.chapter07.part5.PaintSetshaderLinearGradientView
+        <com.example.chapter07.part5_lineargradient.A_PaintSetshaderLinearGradientView
             android:id="@+id/pslv4"
             android:layout_width="match_parent"
             android:layout_height="200dp"

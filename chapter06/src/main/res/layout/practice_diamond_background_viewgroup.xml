@@ -8,10 +8,10 @@
     <com.example.chapter06.view.DiamondBackgroundTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:dbv_background_color="#80E5C8C8"
+        app:dbv_background_color="#8071C9D5"
         app:dbv_padding="4dp"
-        app:dbv_text="每日答题"
-        app:dbv_text_color="#FF7F101D"
+        app:dbv_text="平凡的世界"
+        app:dbv_text_color="#FF808080"
         app:dbv_text_size="24sp" />
 
     <com.example.chapter06.view.DiamondBackgroundTextView
