@@ -11,6 +11,8 @@ import android.view.View
 
 /**
  * Canvas 画布的平移操作
+ * 平移的是坐标系，即平移坐标系的原点的位置。
+ *
  * 参一：x 方向上的平移距离，（+）right(-)left,
  * 参二：y 方向上的移动距离，(+)bottom(-)top
  * public void translate(float dx, float dy)

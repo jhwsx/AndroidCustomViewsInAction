@@ -1,17 +1,11 @@
 package com.example.chapter01.part5_canvas
 
 import android.content.Context
-import android.graphics.Canvas
-import android.graphics.Color
-import android.graphics.Paint
-import android.graphics.Rect
+import android.graphics.*
 import android.util.AttributeSet
 import android.view.View
 import androidx.annotation.ColorInt
-import com.example.chapter01.part5_canvas.CanvasRestoreToCountView
-import com.example.chapter01.part5_canvas.CanvasScaleView
-import com.example.chapter01.part5_canvas.ClipAnimView
-import com.example.chapter01.part5_canvas.ClipPathAnimView
+import com.example.common.dp
 
 /**
  * 屏幕显示与 Canvas 的关系
@@ -26,23 +20,28 @@ import com.example.chapter01.part5_canvas.ClipPathAnimView
 class B_CanvasScreenDisplayView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : View(context, attrs, defStyleAttr) {
-    private val rect = Rect()
+    private val greenPaint = getPaint(Color.GREEN)
+    private val redPaint = getPaint(Color.RED)
+    private val rect = RectF()
+    override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
+        super.onSizeChanged(w, h, oldw, oldh)
+        rect.set(0f, 0f, width / 2f, 200.dp)
+    }
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-        val greenPaint = getPaint(Color.GREEN)
-        val redPaint = getPaint(Color.RED)
         // 在平移之前绘制一个矩形
-        rect.set(0, 0, width / 2, 200)
         // 在调用 canvas.drawRect(rect, greenPaint) 时，产生一个 Canvas 透明图层，此时坐标原点是（0,0）；
         // 在 Canvas 上画好之后，覆盖到屏幕上显示出来。
         canvas.drawRect(rect, greenPaint)
+        canvas.save()
         // 平移操作
         // 平移的是坐标系
-        canvas.translate(100f, 100f)
+        canvas.translate(50.dp, 100.dp)
         // 在平移之后再绘制一个矩形
         // 在调用 canvas.drawRect(rect, redPaint) 时，又会产生一个 Canvas 透明图层，
         // 此时画布坐标已经改变了，分别向右和向下移动了 100 个像素。
         canvas.drawRect(rect, redPaint)
+        canvas.restore()
     }
 
     private fun getPaint(@ColorInt color: Int): Paint {
@@ -50,7 +49,7 @@ class B_CanvasScreenDisplayView @JvmOverloads constructor(
         paint.isAntiAlias = true
         paint.style = Paint.Style.STROKE
         paint.color = color
-        paint.strokeWidth = 3f
+        paint.strokeWidth = 5.dp
         return paint
     }
 }

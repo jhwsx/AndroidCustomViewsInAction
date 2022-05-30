@@ -153,7 +153,6 @@ class MainActivity : AppCompatActivity() {
             R.layout.practice_canvas_skew_view))
         pageModels.add(PageModel(R.string.title_canvas_clip_operation_view,
             R.layout.practice_canvas_clip_operation_view))
-        pageModels.add(PageModel(R.string.title_ruler_view, R.layout.practice_ruler_view))
         pageModels.add(PageModel(R.string.title_canvas_save_restore_view,
             R.layout.practice_canvas_save_restore_view))
         pageModels.add(PageModel(R.string.title_canvas_multi_save_restore_view,
@@ -162,6 +161,7 @@ class MainActivity : AppCompatActivity() {
             R.layout.practice_canvas_restoretocount_view))
         pageModels.add(PageModel(R.string.title_circle_avatar_view,
             R.layout.practice_circle_avatar_view))
+        pageModels.add(PageModel(R.string.title_ruler_view, R.layout.practice_ruler_view))
         pageModels.add(PageModel(R.string.title_clip_anim_view, R.layout.practice_clip_anim_view))
         pageModels.add(PageModel(R.string.title_clip_region_view,
             R.layout.practice_clip_region_view))

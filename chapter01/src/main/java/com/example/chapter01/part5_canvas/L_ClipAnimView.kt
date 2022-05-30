@@ -6,10 +6,8 @@ import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
 import com.example.chapter01.R
-import com.example.chapter01.part5_canvas.CanvasRestoreToCountView
-import com.example.chapter01.part5_canvas.CanvasScaleView
-import com.example.chapter01.part5_canvas.ClipAnimView
-import com.example.chapter01.part5_canvas.ClipPathAnimView
+import com.example.common.dp
+import kotlin.math.roundToInt
 
 /**
  * 裁剪动画示例(自己实现的)
@@ -21,27 +19,31 @@ import com.example.chapter01.part5_canvas.ClipPathAnimView
  * @author wangzhichao
  * @since 20-3-18
  */
-class ClipAnimView(context: Context?, attrs: AttributeSet?) : View(context, attrs) {
-    private val bitmap: Bitmap
-    private val paint: Paint
-    private val matrix: Matrix
-    private var width = 0
+class L_ClipAnimView(context: Context?, attrs: AttributeSet?) : View(context, attrs) {
+    private val bitmap: Bitmap = BitmapFactory.decodeResource(resources, R.drawable.scenery)
+    private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
+    private val mtx: Matrix = Matrix()
     private val rect = Rect()
+
+    init {
+        paint.color = Color.WHITE
+        paint.style = Paint.Style.FILL
+    }
+
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-        width = getWidth()
         // 1, 绘制图片
-        matrix.setScale(width * 1f / bitmap.width,
+        mtx.setScale(width * 1f / bitmap.width,
             height * 1f / bitmap.height)
-        canvas.drawBitmap(bitmap, matrix, paint)
+        canvas.drawBitmap(bitmap, mtx, paint)
         // 2, 绘制矩形条
-        val count = Math.round(height * 1f / RECT_HEIGHT) + 1
+        val count = (height * 1f / RECT_HEIGHT).roundToInt() + 1
         var top = 0
         for (i in 0 until count) {
             if (i and 1 == 0) {
-                rect[0, top, getWidth() - progress] = top + RECT_HEIGHT
+                rect.set(0, top, width - progress,top + RECT_HEIGHT)
             } else {
-                rect[progress, top, getWidth()] = top + RECT_HEIGHT
+                rect.set(progress, top, width, top + RECT_HEIGHT)
             }
             top += RECT_HEIGHT
             canvas.drawRect(rect, paint)
@@ -55,10 +57,9 @@ class ClipAnimView(context: Context?, attrs: AttributeSet?) : View(context, attr
     }
 
     private var progress = 0
-
     private inner class MyRunnable : Runnable {
         override fun run() {
-            progress += 10
+            progress += 5
             if (progress > width) {
                 progress = width
                 invalidate()
@@ -71,14 +72,5 @@ class ClipAnimView(context: Context?, attrs: AttributeSet?) : View(context, attr
 
     companion object {
         private const val RECT_HEIGHT = 40
-    }
-
-    init {
-        bitmap = BitmapFactory.decodeResource(resources, R.drawable.scenery)
-        paint = Paint()
-        paint.isAntiAlias = true
-        paint.color = Color.BLACK
-        paint.style = Paint.Style.FILL
-        matrix = Matrix()
     }
 }

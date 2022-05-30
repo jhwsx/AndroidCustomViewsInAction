@@ -1,13 +1,13 @@
-package com.example.chapter01.part6_widget_usemethod;
+package com.example.chapter01.part6_widget_usemethod
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-import androidx.annotation.Nullable;
-import android.util.AttributeSet;
-import android.util.Log;
-import android.view.View;
+import android.content.Context
+import android.graphics.Canvas
+import android.graphics.Color
+import android.graphics.Paint
+import android.util.AttributeSet
+import android.util.Log
+import android.view.View
+import com.example.chapter01.part6_widget_usemethod.CustomView
 
 /**
  * 通过 xml 引入控件
@@ -15,31 +15,30 @@ import android.view.View;
  * @author wangzhichao
  * @since 20-3-24
  */
-public class CustomView extends View {
-    private static final String TAG = CustomView.class.getSimpleName();
+class CustomView : View {
+    private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
 
-    private Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
-
-    public CustomView(Context context) {
-        super(context);
-        Log.d(TAG, "context constructor");
+    constructor(context: Context) : super(context) {
+        Log.d(TAG, "context constructor")
     }
 
-    public CustomView(Context context, @Nullable AttributeSet attrs) {
-        super(context, attrs);
-        Log.d(TAG, "context attrs constructor");
+    constructor(context: Context, attrs: AttributeSet?) : super(context, attrs) {
+        Log.d(TAG, "context attrs constructor")
     }
 
-    public CustomView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
-        Log.d(TAG, "context attrs defStyleAttr constructor");
+    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context,
+        attrs,
+        defStyleAttr) {
+        Log.d(TAG, "context attrs defStyleAttr constructor")
     }
 
-    @Override
-    protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        paint.setColor(Color.RED);
+    override fun onDraw(canvas: Canvas) {
+        super.onDraw(canvas)
+        paint.color = Color.RED
+        canvas.drawRect(0f, 0f, 200f, 100f, paint)
+    }
 
-        canvas.drawRect(0, 0, 200, 100, paint);
+    companion object {
+        private val TAG = CustomView::class.java.simpleName
     }
 }

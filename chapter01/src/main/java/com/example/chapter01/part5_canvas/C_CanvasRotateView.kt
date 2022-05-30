@@ -8,7 +8,9 @@ import android.graphics.Rect
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
+import android.widget.Toast
 import androidx.annotation.ColorInt
+import com.example.common.dp
 
 /**
  * Canvas 的旋转操作
@@ -23,38 +25,39 @@ import androidx.annotation.ColorInt
  * @author wangzhichao
  * @since 20-3-17
  */
-class CanvasRotateView : View {
-    constructor(context: Context?) : super(context) {}
-    constructor(context: Context?, attrs: AttributeSet?) : super(context, attrs) {}
-    constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) : super(context,
-        attrs,
-        defStyleAttr) {
-    }
-
+class C_CanvasRotateView @JvmOverloads constructor(
+    context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0,
+) : View(context, attrs, defStyleAttr) {
+    private val redPaint = getPaint(Color.RED, Paint.Style.STROKE)
+    private val greenPaint = getPaint(Color.GREEN, Paint.Style.FILL)
+    private val rect = Rect(300, 10, 500, 100)
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-        val redPaint = getPaint(Color.RED, Paint.Style.STROKE, 3)
-        val greenPaint = getPaint(Color.GREEN, Paint.Style.FILL, 3)
-        val rect = Rect(300, 10, 500, 100)
         // 绘制一个空心矩形
         canvas.drawRect(rect, redPaint)
+        canvas.save()
         when (value) {
-            1 ->                 // 旋转中心是原点
-                canvas.rotate(30f)
-            3 ->                 // 旋转中心是指定的点
-                canvas.rotate(30f, (width / 2).toFloat(), (height / 2).toFloat())
-            else -> {}
+            1 -> {
+                canvas.rotate(30f) // 旋转中心是原点
+                Toast.makeText(context, "以坐标原点为旋转中心", Toast.LENGTH_SHORT).show()
+            }
+            3 -> {
+                canvas.rotate(30f, width / 2f, height / 2f) // 旋转中心是指定的点
+                Toast.makeText(context, "以绘图中心点为旋转中心", Toast.LENGTH_SHORT).show()
+
+            }
         }
         // 再绘制一个实现矩形
         canvas.drawRect(rect, greenPaint)
+        canvas.restore()
     }
 
-    fun getPaint(@ColorInt color: Int, style: Paint.Style?, strokeWidth: Int): Paint {
+    private fun getPaint(@ColorInt color: Int, style: Paint.Style): Paint {
         val paint = Paint()
         paint.isAntiAlias = true
         paint.style = style
         paint.color = color
-        paint.strokeWidth = strokeWidth.toFloat()
+        paint.strokeWidth = 3.dp
         return paint
     }
 

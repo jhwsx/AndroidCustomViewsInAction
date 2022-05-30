@@ -6,12 +6,13 @@ import android.graphics.Color
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
-import com.example.chapter01.part5_canvas.CanvasRestoreToCountView
-import com.example.chapter01.part5_canvas.CanvasScaleView
-import com.example.chapter01.part5_canvas.ClipAnimView
-import com.example.chapter01.part5_canvas.ClipPathAnimView
 
 /**
+ * 为什么需要画布的保存和恢复操作？
+ * 因为 translate，rotate，scale，skew，clipXXX 这些对画布的操作是不可逆的，
+ * 为了在进行这些操作后，仍然可以拿到画布的原始状态，就需要在操作前保存画布的状态，在
+ * 操作后恢复之前保存的画布状态。
+ *
  * Canvas 的 save() 与 restore() 函数，执行保存与恢复
  * // Saves the current matrix and clip onto a private stack.
  * public int save()
@@ -32,7 +33,7 @@ import com.example.chapter01.part5_canvas.ClipPathAnimView
  * @author wangzhichao
  * @since 20-3-18
  */
-class CanvasSaveRestoreView(context: Context?, attrs: AttributeSet?) : View(context, attrs) {
+class G_CanvasSaveRestoreView(context: Context, attrs: AttributeSet?) : View(context, attrs) {
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
         if (step == 0 || step == 1 || step == 2) {
