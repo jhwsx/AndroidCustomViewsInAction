@@ -10,6 +10,8 @@ import com.example.common.ImageUtils
 import com.example.common.dp
 
 /**
+ * 设置发光效果
+ * 基于整个画面来进行过滤
  * @author wangzhichao
  * @date 2019/09/20
  */

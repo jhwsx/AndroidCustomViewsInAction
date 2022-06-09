@@ -106,6 +106,10 @@ class MainActivity : AppCompatActivity() {
             R.layout.practice_dashboard_view))
         pageModels.add(PageModel(R.string.title_pie_view,
             R.layout.practice_pie_view))
+        pageModels.add(PageModel(R.string.title_getfillpath_view,
+            R.layout.practice_get_fill_path_view))
+        pageModels.add(PageModel(R.string.title_gettextpath_view,
+            R.layout.practice_get_text_path_view))
         // part3 text
         pageModels.add(PageModel(R.string.title_text_paint_setstyle_view,
             R.layout.practice_text_paint_setstyle_view))

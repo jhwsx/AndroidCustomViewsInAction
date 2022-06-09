@@ -25,6 +25,8 @@ class A_PaintSetshaderBitmapShaderView(context: Context?, attrs: AttributeSet?) 
         if (tileX != null) {
             // bitmap: 指定用什么图来填充
             // tileX: 当需要填充的图形区域 x 向大于 bitmap 的宽度时，采用什么重复策略来填满 x 向的区域。
+            // 当设置了 Shader 之后，Paint 在绘制图形和文字时就不使用 setColor/ARGB() 设置的颜色了，
+            // 而是使用 Shader 的方案中的颜色。
             paint.shader = BitmapShader(bitmap, tileX!!, tileY!!)
         }
         if (smallRect) {

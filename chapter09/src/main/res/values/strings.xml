@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">chapter09</string>
+    <string name="app_name">chapter09 Canvas 与图层</string>
     <string name="title_ondrawdispatchdraworderviewgroup">OnDrawDispatchDrawOrder</string>
     <string name="title_bitmap_canvas_view">BitmapCanvasView</string>
     <string name="title_xfermode_view">XfermodeView</string>
@@ -7,23 +7,7 @@
     <string name="title_savelayer_useexample2">SaveLayerUseExample2</string>
     <string name="title_savelayer_useexample3">SaveLayerUseExample3</string>
     <string name="title_savelayeralpha_useexample">SaveLayerAlphaUseExample</string>
-    <string name="title_matrix_save_flag_view">MATRIX_SAVE_FLAG_View</string>
-    <string name="title_matrix_save_flag_view2">MATRIX_SAVE_FLAG_View2</string>
-    <string name="title_matrix_save_flag_view3">MATRIX_SAVE_FLAG_View3</string>
-    <string name="title_matrix_save_flag_view4">MATRIX_SAVE_FLAG_View4</string>
-    <string name="title_clip_save_flag_view">CLIP_SAVE_FLAG_View</string>
-    <string name="title_clip_save_flag_view2">CLIP_SAVE_FLAG_View2</string>
-    <string name="title_clip_save_flag_view3">CLIP_SAVE_FLAG_View3</string>
-    <string name="title_clip_save_flag_view4">CLIP_SAVE_FLAG_View4</string>
-    <string name="title_full_color_layer_save_flag_view">FULL_COLOR_LAYER_SAVE_FLAG_View</string>
-    <string name="title_has_alpha_layer_save_flag_view">HAS_ALPHA_LAYER_SAVE_FLAG_View</string>
-    <string name="title_alpha_layer_save_flag_view">ALPHA_LAYER_SAVE_FLAG_View</string>
-    <string name="title_alpha_layer_save_flag_view2">ALPHA_LAYER_SAVE_FLAG_View2</string>
-    <string name="title_clip_to_layer_save_flag_view">CLIP_TO_LAYER_SAVE_FLAG_View</string>
-    <string name="title_clip_to_layer_save_flag_view2">CLIP_TO_LAYER_SAVE_FLAG_View2</string>
     <string name="title_all_save_flag_view">ALL_SAVE_FLAG_View</string>
-    <string name="title_all_save_flag_view2">ALL_SAVE_FLAG_View2</string>
     <string name="title_restoretocount_view">RestoreToCountView</string>
     <string name="title_restoretocount_view2">RestoreToCountView2</string>
-    <string name="title_restoretocount_view3">RestoreToCountView3</string>
 </resources>

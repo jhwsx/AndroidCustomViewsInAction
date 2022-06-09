@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">chapter11 Matrix与坐标变换</string>
+    <string name="practice_colormatrix_half_alpha_view">ColorMatrix图片半透明</string>
+    <string name="practice_colormatrix_channel_output_view">ColorMatrix缩放运算之图片通道输出</string>
+    <string name="practice_colormatrix_enhance_saturation_view">ColorMatrix平移运算之增加绿色饱和度</string>
+    <string name="practice_colormatrix_invert_view">ColorMatrix平移运算之色彩反相</string>
+    <string name="practice_colormatrix_increase_brightness_view">ColorMatrix缩放运算之增加亮度</string>
+    <string name="practice_colormatrix_color_hue">ColorMatrix旋转运算之色相调节</string>
+    <string name="practice_colormatrix_color_project">ColorMatrix色彩投影</string>
+    <string name="practice_colormatrix_set_reset">ColorMatrix设置与重置方法</string>
+    <string name="practice_colormatrix_setsaturation">ColorMatrix设置饱和度方法</string>
+    <string name="practice_colormatrix_setscale">ColorMatrix色彩缩放方法</string>
+    <string name="practice_colormatrix_setrotate">ColorMatrix色彩旋转方法</string>
+    <string name="practice_lighting_color_filter">LightingColorFilter</string>
+    <string name="practice_porterduff_color_filter">PorterDuffColorFilter</string>
 </resources>

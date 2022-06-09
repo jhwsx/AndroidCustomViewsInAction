@@ -26,7 +26,7 @@ class C_TextPaintTextStyleView @JvmOverloads constructor(
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-        val text = "窗前明月光"
+        val text = "窗前明月光-High quality(region)"
         canvas.drawText(text, 16f, 100f, paint)
 
         // 设置粗体

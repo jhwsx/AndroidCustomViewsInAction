@@ -1,40 +1,31 @@
-package com.example.chapter09.part2;
+package com.example.chapter09.part2
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.support.annotation.Nullable;
-import android.util.AttributeSet;
-import android.view.View;
-
-import com.example.chapter09.R;
-
+import android.content.Context
+import android.graphics.*
+import android.util.AttributeSet
+import android.view.View
+import com.example.chapter09.R
+import com.example.common.ImageUtils
+import com.example.common.dp
 
 /**
  * saveLayerAlpha函数新建的画布是有透明度的.
  * @author wzc
  * @date 2019/10/4
  */
-public class SaveLayerAlphaUseExample extends View {
-    private Paint paint;
-    private Bitmap bitmap;
-    public SaveLayerAlphaUseExample(Context context, @Nullable AttributeSet attrs) {
-        super(context, attrs);
-        bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.dog);
-        paint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        paint.setColor(Color.RED);
+class E_SaveLayerAlphaUseExample(context: Context, attrs: AttributeSet?) : View(context, attrs) {
+    private val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+        color = Color.RED
     }
-
-    @Override
-    protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        canvas.drawBitmap(bitmap, 0, 0, paint);
-
-        int layerId = canvas.saveLayerAlpha(0, 0, 200, 200, 100, Canvas.ALL_SAVE_FLAG);
-        canvas.drawColor(Color.GRAY);
-        canvas.restoreToCount(layerId);
+    private val bitmap = BitmapFactory.decodeResource(resources, R.drawable.dog)
+    private val avatar = ImageUtils.decodeSampleBitmapFromResource(context.resources, R.drawable.avatar, 100.dp.toInt())
+    override fun onDraw(canvas: Canvas) {
+        super.onDraw(canvas)
+        canvas.drawBitmap(bitmap, 0f, 0f, paint)
+        val layerId = canvas.saveLayerAlpha(0f, 0f, 200.dp, 200.dp, 100)
+        // 新建画布上画的东西都是有透明度的。
+        canvas.drawColor(Color.BLUE)
+        canvas.drawBitmap(avatar, 0f, 0f, paint)
+        canvas.restoreToCount(layerId)
     }
 }

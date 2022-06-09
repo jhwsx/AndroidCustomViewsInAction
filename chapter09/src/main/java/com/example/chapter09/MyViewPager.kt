@@ -1,35 +1,31 @@
-package com.example.chapter09;
+package com.example.chapter09
 
-import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.view.ViewPager;
-import android.util.AttributeSet;
-import android.view.MotionEvent;
-
+import android.content.Context
+import android.util.AttributeSet
+import android.view.MotionEvent
+import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.tabs.TabLayout
+import androidx.fragment.app.FragmentPagerAdapter
+import androidx.viewpager.widget.ViewPager
 
 /**
  * @author wangzhichao
  * @date 2019/09/19
  */
-public class MyViewPager extends ViewPager {
-    public MyViewPager(@NonNull Context context) {
-        super(context);
+class MyViewPager : ViewPager {
+    constructor(context: Context) : super(context) {}
+    constructor(context: Context, attrs: AttributeSet?) : super(context, attrs) {}
+
+    private var noScroll = false
+    fun setNoScroll(noScroll: Boolean) {
+        this.noScroll = noScroll
     }
 
-    public MyViewPager(@NonNull Context context, @Nullable AttributeSet attrs) {
-        super(context, attrs);
-    }
-    private boolean noScroll;
-    public void setNoScroll(boolean noScroll) {
-        this.noScroll = noScroll;
-    }
-    @Override
-    public boolean onInterceptTouchEvent(MotionEvent ev) {
-        if (noScroll) {
-            return false;
+    override fun onInterceptTouchEvent(ev: MotionEvent): Boolean {
+        return if (noScroll) {
+            false
         } else {
-            return super.onInterceptTouchEvent(ev);
+            super.onInterceptTouchEvent(ev)
         }
     }
 }

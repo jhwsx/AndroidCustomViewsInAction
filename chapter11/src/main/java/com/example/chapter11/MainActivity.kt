@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         viewPager = findViewById(R.id.pager)
         tabLayout = findViewById(R.id.tabLayout)
-        viewPager.setAdapter(object : FragmentPagerAdapter(
+        viewPager.adapter = object : FragmentPagerAdapter(
             supportFragmentManager) {
             override fun getItem(position: Int): Fragment {
                 return PageFragment.Companion.newInstance(pageModels[position].layoutRes)
@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
             override fun getCount(): Int {
                 return pageModels.size
             }
-        })
+        }
         tabLayout.setupWithViewPager(viewPager)
     }
 
@@ -41,6 +41,18 @@ class MainActivity : AppCompatActivity() {
     )
 
     init {
-        
+        pageModels.add(PageModel(R.string.practice_colormatrix_half_alpha_view, R.layout.practice_colormatrix_half_alpha_view))
+        pageModels.add(PageModel(R.string.practice_colormatrix_channel_output_view, R.layout.practice_colormatrix_channel_output_view))
+        pageModels.add(PageModel(R.string.practice_colormatrix_enhance_saturation_view, R.layout.practice_colormatrix_enhance_saturation_view))
+        pageModels.add(PageModel(R.string.practice_colormatrix_invert_view, R.layout.practice_colormatrix_invert_view))
+        pageModels.add(PageModel(R.string.practice_colormatrix_increase_brightness_view, R.layout.practice_colormatrix_increase_brightness_view))
+        pageModels.add(PageModel(R.string.practice_colormatrix_color_hue, R.layout.practice_colormatrix_color_hue))
+        pageModels.add(PageModel(R.string.practice_colormatrix_color_project, R.layout.practice_colormatrix_color_project))
+        pageModels.add(PageModel(R.string.practice_colormatrix_set_reset, R.layout.practice_colormatrix_set_reset))
+        pageModels.add(PageModel(R.string.practice_colormatrix_setsaturation, R.layout.practice_colormatrix_setsaturation))
+        pageModels.add(PageModel(R.string.practice_colormatrix_setscale, R.layout.practice_colormatrix_setscale))
+        pageModels.add(PageModel(R.string.practice_colormatrix_setrotate, R.layout.practice_colormatrix_setrotate))
+        pageModels.add(PageModel(R.string.practice_lighting_color_filter, R.layout.practice_lighting_color_filter))
+        pageModels.add(PageModel(R.string.practice_porterduff_color_filter, R.layout.practice_porterduff_color_filter))
     }
 }

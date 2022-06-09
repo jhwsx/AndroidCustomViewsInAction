@@ -64,6 +64,8 @@ class MainActivity : AppCompatActivity() {
             R.layout.practice_paint_set_stroke_cap))
         pageModels.add(PageModel(R.string.title_paint_set_stroke_join,
             R.layout.practice_paint_set_stroke_join))
+        pageModels.add(PageModel(R.string.title_paint_set_stroke_miter,
+            R.layout.practice_paint_set_stroke_miter))
         pageModels.add(PageModel(R.string.title_paint_set_path_effect,
             R.layout.practice_paint_set_path_effect))
         pageModels.add(PageModel(R.string.title_sunflower,

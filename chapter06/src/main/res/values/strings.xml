@@ -13,6 +13,7 @@
     <!--part03-->
     <string name="title_paint_set_stroke_cap">setStrokeCap()</string>
     <string name="title_paint_set_stroke_join">setStrokeJoin()</string>
+    <string name="title_paint_set_stroke_miter">setStrokeMiter()</string>
     <string name="title_paint_set_path_effect">setPathEffect()</string>
     <string name="title_sunflower">向日葵效果</string>
     <string name="title_path_effect_anim">PathEffect Anim</string>
