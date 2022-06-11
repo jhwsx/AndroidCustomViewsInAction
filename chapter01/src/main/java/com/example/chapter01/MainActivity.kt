@@ -155,8 +155,18 @@ class MainActivity : AppCompatActivity() {
             R.layout.practice_canvas_scale_view))
         pageModels.add(PageModel(R.string.title_canvas_skew_view,
             R.layout.practice_canvas_skew_view))
-        pageModels.add(PageModel(R.string.title_canvas_clip_operation_view,
-            R.layout.practice_canvas_clip_operation_view))
+        pageModels.add(PageModel(R.string.practice_canvas_2d_transformation,
+            R.layout.practice_canvas_2d_transformation))
+        pageModels.add(PageModel(R.string.practice_matrix_2d_transformation,
+            R.layout.practice_matrix_2d_transformation))
+        pageModels.add(PageModel(R.string.practice_camera_3d_transformation_view,
+            R.layout.practice_camera_3d_transformation_view))
+        pageModels.add(PageModel(R.string.practice_flipboard_view,
+            R.layout.practice_flipboard_view))
+        pageModels.add(PageModel(R.string.title_canvas_clip_path_view,
+            R.layout.practice_canvas_clip_path_view))
+        pageModels.add(PageModel(R.string.title_canvas_clip_rect_view,
+            R.layout.practice_canvas_clip_rect_view))
         pageModels.add(PageModel(R.string.title_canvas_save_restore_view,
             R.layout.practice_canvas_save_restore_view))
         pageModels.add(PageModel(R.string.title_canvas_multi_save_restore_view,

@@ -34,7 +34,7 @@ import android.widget.Toast
  * @author wangzhichao
  * @since 20-3-18
  */
-class I_CanvasRestoreToCountView(context: Context?, attrs: AttributeSet?) : View(context, attrs) {
+class N_CanvasRestoreToCountView(context: Context?, attrs: AttributeSet?) : View(context, attrs) {
     private val rect = RectF()
 
     override fun onDraw(canvas: Canvas) {

@@ -19,16 +19,22 @@ import kotlin.math.min
  * @author wangzhichao
  * @since 20-3-18
  */
-class K_CircleAvatarView(context: Context?, attrs: AttributeSet?) : View(context, attrs) {
+class O_CircleAvatarView(context: Context?, attrs: AttributeSet?) : View(context, attrs) {
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
-    private val avatar = ImageUtils.decodeSampleBitmapFromResource(resources, R.drawable.avatar, 200.dp.toInt())
+    private val AVATAR_SIZE = 200.dp
+    private val avatar = ImageUtils.decodeSampleBitmapFromResource(resources, R.drawable.avatar, AVATAR_SIZE.toInt())
     private val rect = RectF()
     private val path = Path()
+
+    override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
+        super.onSizeChanged(w, h, oldw, oldh)
+        rect.set(width / 2f - AVATAR_SIZE / 2f, height / 2f - AVATAR_SIZE / 2f, width / 2f + AVATAR_SIZE / 2f, height / 2f + AVATAR_SIZE / 2f)
+    }
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-        rect.set(width / 2f - avatar.width / 2f, height / 2f - avatar.height / 2f, width / 2f + avatar.width / 2f, height / 2f + avatar.height / 2f)
         path.reset()
         path.addOval(rect, Path.Direction.CCW)
+        // 这种方式切出的圆形是有毛边的。如果不想有毛边，使用 Xfermode 的方式。
         canvas.clipPath(path)
         canvas.drawBitmap(avatar, width / 2f - avatar.width / 2f, height / 2f - avatar.height / 2f, paint)
     }

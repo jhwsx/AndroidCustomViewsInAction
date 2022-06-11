@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.example.chapter09.part3.ALL_SAVE_FLAG_View2
+<com.example.chapter01.part5_canvas.J_CanvasClipPathView
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-</com.example.chapter09.part3.ALL_SAVE_FLAG_View2>
+</com.example.chapter01.part5_canvas.J_CanvasClipPathView>

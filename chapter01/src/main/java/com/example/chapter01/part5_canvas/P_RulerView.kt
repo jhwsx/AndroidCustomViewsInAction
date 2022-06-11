@@ -15,7 +15,7 @@ import com.example.common.dp
  * @author wangzhichao
  * @since 20-3-17
  */
-class J_RulerView(context: Context, attrs: AttributeSet?) : View(context, attrs) {
+class P_RulerView(context: Context, attrs: AttributeSet?) : View(context, attrs) {
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         color = Color.BLACK
         strokeWidth = 2f

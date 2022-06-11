@@ -42,6 +42,7 @@ class C_CanvasRotateView @JvmOverloads constructor(
                 Toast.makeText(context, "以坐标原点为旋转中心", Toast.LENGTH_SHORT).show()
             }
             3 -> {
+                // 内部实现其实就是一个多次的2D几何变换
                 canvas.rotate(30f, width / 2f, height / 2f) // 旋转中心是指定的点
                 Toast.makeText(context, "以绘图中心点为旋转中心", Toast.LENGTH_SHORT).show()
 

@@ -57,7 +57,12 @@
     <string name="title_canvas_rotate_view">Canvas的旋转</string>
     <string name="title_canvas_scale_view">Canvas的缩放</string>
     <string name="title_canvas_skew_view">Canvas的扭曲</string>
-    <string name="title_canvas_clip_operation_view">裁剪画布</string>
+    <string name="practice_canvas_2d_transformation">Canvas 2D 几何变换</string>
+    <string name="practice_matrix_2d_transformation">Matrix 2D 几何变换</string>
+    <string name="practice_camera_3d_transformation_view">Camera 3D 几何变换</string>
+    <string name="practice_flipboard_view">Flipboard翻页效果</string>
+    <string name="title_canvas_clip_path_view">clipPath</string>
+    <string name="title_canvas_clip_rect_view">clipRect</string>
     <string name="title_ruler_view">尺子</string>
     <string name="title_canvas_save_restore_view">Canvas的保存与恢复</string>
     <string name="title_canvas_multi_save_restore_view">多次调用 save 与 restore</string>

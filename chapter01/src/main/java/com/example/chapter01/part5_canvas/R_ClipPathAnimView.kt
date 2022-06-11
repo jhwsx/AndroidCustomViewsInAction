@@ -18,7 +18,7 @@ import com.example.common.dp
  * @author wangzhichao
  * @since 20-3-18
  */
-class M_ClipPathAnimView(context: Context?, attrs: AttributeSet?) : View(context, attrs) {
+class R_ClipPathAnimView(context: Context?, attrs: AttributeSet?) : View(context, attrs) {
     private var bitmap: Bitmap = BitmapFactory.decodeResource(resources, R.drawable.scenery)
     private var clipWidth = 0f
     private var path = Path()

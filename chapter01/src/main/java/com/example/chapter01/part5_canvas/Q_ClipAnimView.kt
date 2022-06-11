@@ -19,7 +19,7 @@ import kotlin.math.roundToInt
  * @author wangzhichao
  * @since 20-3-18
  */
-class L_ClipAnimView(context: Context?, attrs: AttributeSet?) : View(context, attrs) {
+class Q_ClipAnimView(context: Context?, attrs: AttributeSet?) : View(context, attrs) {
     private val bitmap: Bitmap = BitmapFactory.decodeResource(resources, R.drawable.scenery)
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
     private val mtx: Matrix = Matrix()

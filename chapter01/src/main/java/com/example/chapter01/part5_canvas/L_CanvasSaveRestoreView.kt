@@ -33,7 +33,7 @@ import android.view.View
  * @author wangzhichao
  * @since 20-3-18
  */
-class G_CanvasSaveRestoreView(context: Context, attrs: AttributeSet?) : View(context, attrs) {
+class L_CanvasSaveRestoreView(context: Context, attrs: AttributeSet?) : View(context, attrs) {
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
         if (step == 0 || step == 1 || step == 2) {
