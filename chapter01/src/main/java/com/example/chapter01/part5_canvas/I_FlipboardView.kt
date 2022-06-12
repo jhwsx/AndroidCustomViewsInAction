@@ -6,6 +6,7 @@ import android.graphics.Canvas
 import android.graphics.Paint
 import android.util.AttributeSet
 import android.view.View
+import androidx.core.graphics.withSave
 import com.example.chapter01.R
 import com.example.common.ImageUtils
 import com.example.common.dp
@@ -42,23 +43,31 @@ class I_FlipboardView @JvmOverloads constructor(
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-        // 1，绘制上半部分
-        canvas.save()
-        canvas.clipRect(avatarLeft, avatarTop, avatarLeft + AVATAR_SIZE, avatarTop + AVATAR_SIZE / 2f)
-        canvas.drawBitmap(avatar, avatarLeft, avatarTop, paint)
-        canvas.restore()
-
-        // 2，绘制下半部分
-        canvas.save()
         val dx = width / 2f
         val dy = avatarTop + AVATAR_SIZE / 2f
-        canvas.translate(dx, dy)
-        camera.rotateX(30f)
-        camera.applyToCanvas(canvas)
-        // 一定要在旋转之前裁切
-        canvas.clipRect(-AVATAR_SIZE / 2f, 0f, AVATAR_SIZE / 2f, AVATAR_SIZE / 2f)
-        canvas.translate(-dx, -dy)
-        canvas.drawBitmap(avatar, avatarLeft, avatarTop, paint)
-        canvas.restore()
+        // 1，绘制上半部分
+        canvas.withSave {
+            translate(dx, dy)
+            rotate(-30f)
+            clipRect(-AVATAR_SIZE, -AVATAR_SIZE, AVATAR_SIZE, 0f)
+            rotate(30f)
+            translate(-dx, -dy)
+            drawBitmap(avatar, avatarLeft, avatarTop, paint)
+        }
+
+        // 2，绘制下半部分
+        canvas.withSave {
+            translate(dx, dy)
+            rotate(-30f)
+            camera.save()
+            camera.rotateX(30f)
+            camera.applyToCanvas(canvas)
+            camera.restore()
+            // 一定要在旋转之前裁切
+            clipRect(-AVATAR_SIZE, 0f, AVATAR_SIZE, AVATAR_SIZE)
+            rotate(30f)
+            translate(-dx, -dy)
+            drawBitmap(avatar, avatarLeft, avatarTop, paint)
+        }
     }
 }
