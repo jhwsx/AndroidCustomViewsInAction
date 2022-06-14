@@ -2,6 +2,14 @@
     <string name="app_name">chapter09 Canvas 与图层</string>
     <string name="title_ondrawdispatchdraworderviewgroup">OnDrawDispatchDrawOrder</string>
     <string name="title_bitmap_canvas_view">BitmapCanvasView</string>
+    <string name="practice_decorated_imageview_viewgroup">DecoratedImageView</string>
+    <string name="practice_decorated_textview">DecoratedTextView</string>
+    <string name="practice_ondraw_layout">onDraw-在 Layout 中</string>
+    <string name="practice_dispatchdraw_layout">dispatchDraw</string>
+    <string name="practice_after_ondrawforeground_imageview">onDrawForeground-后插</string>
+    <string name="practice_before_ondrawforeground_imageview">onDrawForeground-前插</string>
+    <string name="practice_after_draw">draw-后插</string>
+    <string name="practice_before_draw">draw-前插</string>
     <string name="title_xfermode_view">XfermodeView</string>
     <string name="title_savelayer_useexample">SaveLayerUseExample</string>
     <string name="title_savelayer_useexample2">SaveLayerUseExample2</string>
@@ -10,4 +18,5 @@
     <string name="title_all_save_flag_view">ALL_SAVE_FLAG_View</string>
     <string name="title_restoretocount_view">RestoreToCountView</string>
     <string name="title_restoretocount_view2">RestoreToCountView2</string>
+    <string name="image_size">尺寸：%dx%d</string>
 </resources>

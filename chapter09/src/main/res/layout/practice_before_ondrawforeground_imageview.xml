@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.example.chapter09.part1.H_BeforeOnDrawForegroundImageView
+        android:foreground="#88000000"
+        app:srcCompat="@drawable/avatar"
+        android:layout_gravity="center"
+        android:scaleType="fitXY"
+        android:layout_width="200dp"
+        android:layout_height="200dp" />
+</FrameLayout>

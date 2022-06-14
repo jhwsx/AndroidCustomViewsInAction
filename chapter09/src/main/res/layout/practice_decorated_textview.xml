@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.chapter09.part1.D_DecoratedTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:textColor="@android:color/black"
+    android:textSize="16dp"
+    android:text="要成为一支有用的铅笔，它必须经过磨砺。\n生活几乎是一样的。\n我们每个人都会经历痛苦的经历和挑战。\n但正是通过这些机会，我们才能成为更好的自己。" />
