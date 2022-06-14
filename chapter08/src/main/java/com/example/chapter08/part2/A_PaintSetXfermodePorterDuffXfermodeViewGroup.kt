@@ -19,9 +19,10 @@ class A_PaintSetXfermodePorterDuffXfermodeViewGroup(context: Context?, attrs: At
     LinearLayout(context, attrs) {
     private val MODE_MODELS: MutableList<ModeModel> = ArrayList()
 
-    class ModeModel(var mode: PorterDuff.Mode, var name: String, var desc: String)
+    class ModeModel(var mode: PorterDuff.Mode?, var name: String, var desc: String)
 
     init {
+        MODE_MODELS.add(ModeModel(null, "无", "不使用任何混合模式"))
         // 这里有 18 种混合模式
         // 1，颜色叠加相关模式 - 6 种
         // a, 这 6 种模式在 PhotoShop 中都有，是通过计算改变交合区域的颜色值的；

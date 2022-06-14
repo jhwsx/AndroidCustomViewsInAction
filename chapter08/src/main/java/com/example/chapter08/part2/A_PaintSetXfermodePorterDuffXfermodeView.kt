@@ -38,9 +38,9 @@ class A_PaintSetXfermodePorterDuffXfermodeView(context: Context?, attrs: Attribu
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-        if (porterDuffXfermode == null) {
-            return
-        }
+//        if (porterDuffXfermode == null) {
+//            return
+//        }
         // 使用离屏缓存
         // 新建图层
         val layerId = canvas.saveLayer(10f.dp, 10f.dp, 10f.dp + w, 10f.dp + h, paint)
@@ -68,7 +68,7 @@ class A_PaintSetXfermodePorterDuffXfermodeView(context: Context?, attrs: Attribu
     }
 
     fun setModeModel(modeModel: ModeModel) {
-        porterDuffXfermode = PorterDuffXfermode(modeModel.mode)
+        porterDuffXfermode = if (modeModel.mode == null) null else PorterDuffXfermode(modeModel.mode)
         desc = modeModel.desc
         invalidate()
     }
