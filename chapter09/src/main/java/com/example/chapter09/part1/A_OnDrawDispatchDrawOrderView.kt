@@ -9,6 +9,8 @@ import com.example.chapter09.part1.A_OnDrawDispatchDrawOrderView
 import com.example.chapter09.part1.A_OnDrawDispatchDrawOrderViewGroup
 
 /**
+ * 参考：
+ * HenCoder Android 开发进阶：自定义 View 1-5 绘制顺序 https://rengwuxian.com/ui-1-5/
  * @author wangzhichao
  * @date 2019/09/30
  */

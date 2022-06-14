@@ -45,6 +45,23 @@ class MainActivity : AppCompatActivity() {
             R.layout.practice_ondrawdispatchdraworderviewgroup))
         pageModels.add(PageModel(R.string.title_bitmap_canvas_view,
             R.layout.practice_bitmap_canvas_view))
+        pageModels.add(PageModel(R.string.practice_decorated_imageview_viewgroup,
+            R.layout.practice_decorated_imageview_viewgroup))
+        pageModels.add(PageModel(R.string.practice_decorated_textview,
+            R.layout.practice_decorated_textview))
+        pageModels.add(PageModel(R.string.practice_ondraw_layout,
+            R.layout.practice_ondraw_layout))
+        pageModels.add(PageModel(R.string.practice_dispatchdraw_layout,
+            R.layout.practice_dispatchdraw_layout))
+        pageModels.add(PageModel(R.string.practice_after_ondrawforeground_imageview,
+            R.layout.practice_after_ondrawforeground_imageview))
+        pageModels.add(PageModel(R.string.practice_before_ondrawforeground_imageview,
+            R.layout.practice_before_ondrawforeground_imageview))
+        pageModels.add(PageModel(R.string.practice_after_draw,
+            R.layout.practice_after_draw))
+        pageModels.add(PageModel(R.string.practice_before_draw,
+            R.layout.practice_before_draw))
+
         pageModels.add(PageModel(R.string.title_xfermode_view, R.layout.practice_xfermode_view))
         pageModels.add(PageModel(R.string.title_savelayer_useexample,
             R.layout.practice_savelayer_useexample))
