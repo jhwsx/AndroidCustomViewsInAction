@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <Button
         android:id="@+id/btn_start_anim"
-        android:text="start anim"
-        android:textAllCaps="false"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="start anim"
+        android:textAllCaps="false" />
 
     <TextView
         android:id="@+id/tv"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:background="#ff00ff00"
+        android:background="@android:color/holo_blue_bright"
+        android:gravity="center"
         android:text="Hello world" />
 </LinearLayout>

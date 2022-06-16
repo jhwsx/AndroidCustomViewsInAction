@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.example.chapter03.part3_valueanimator_advanced_ofobject.L_FallingBallViewGroup xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<com.example.chapter03.part3_valueanimator_advanced_ofobject.B_FallingBallViewGroup xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-</com.example.chapter03.part3_valueanimator_advanced_ofobject.L_FallingBallViewGroup>
+</com.example.chapter03.part3_valueanimator_advanced_ofobject.B_FallingBallViewGroup>

@@ -1,6 +1,12 @@
-package com.example.chapter03.part2_custom_interpolator_evaluator;
+package com.example.chapter03.part2_custom_interpolator_evaluator
 
-import android.animation.TypeEvaluator;
+import android.animation.TypeEvaluator
+import com.example.chapter03.part2_custom_interpolator_evaluator.MyInterpolator
+import com.example.chapter03.part2_custom_interpolator_evaluator.B_CustomEvaluatorViewGroup
+import com.example.chapter03.part2_custom_interpolator_evaluator.MyEvaluator
+import com.example.chapter03.part2_custom_interpolator_evaluator.C_ReverseEvaluatorViewGroup
+import com.example.chapter03.part2_custom_interpolator_evaluator.ReverseEvaluator
+import com.example.chapter03.part2_custom_interpolator_evaluator.D_ArgbEvaluatorViewGroup
 
 /**
  * 倒序转换器
@@ -8,10 +14,8 @@ import android.animation.TypeEvaluator;
  * @author wangzhichao
  * @since 2021/5/11
  */
-public class ReverseEvaluator implements TypeEvaluator<Integer> {
-    @Override
-    public Integer evaluate(float fraction, Integer startValue, Integer endValue) {
-        int startInt = startValue;
-        return (int) (endValue - fraction * (endValue - startInt));
+class ReverseEvaluator : TypeEvaluator<Int> {
+    override fun evaluate(fraction: Float, startValue: Int, endValue: Int): Int {
+        return (endValue - fraction * (endValue - startValue)).toInt()
     }
 }

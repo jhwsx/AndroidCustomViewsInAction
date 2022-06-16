@@ -6,8 +6,9 @@
     android:gravity="center"
     android:orientation="vertical">
 
-    <com.example.chapter03.part1_valueanimator.LoadingImageView
+    <com.example.chapter03.part1_valueanimator.F_LoadingImageView
         android:id="@+id/iv_animal"
+        android:background="#44ff0000"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/pic_1" />

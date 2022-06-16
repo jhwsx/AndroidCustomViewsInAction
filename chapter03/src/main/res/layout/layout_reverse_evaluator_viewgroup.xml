@@ -2,12 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <TextView
-        android:paddingTop="8dp"
-        android:paddingBottom="8dp"
-        android:text="补间动画在控件偏移后,控件的点击事件仍然在原来的地方."
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+
     <Button
         android:id="@+id/btn_start_anim"
         android:text="start anim"
@@ -19,6 +14,7 @@
         android:id="@+id/tv"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:gravity="center"
         android:background="@android:color/holo_blue_bright"
         android:text="Hello world" />
 </LinearLayout>

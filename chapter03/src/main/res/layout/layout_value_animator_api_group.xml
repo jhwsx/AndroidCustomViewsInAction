@@ -95,6 +95,7 @@
     </LinearLayout>
     <TextView
         android:id="@+id/tv"
+        android:gravity="center"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:background="@android:color/holo_blue_bright"

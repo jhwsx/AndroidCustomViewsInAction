@@ -1,90 +1,81 @@
-package com.example.chapter03.part1_valueanimator;
+package com.example.chapter03.part1_valueanimator
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.util.AttributeSet;
-import android.util.Log;
-import android.widget.ImageView;
-
-import com.example.chapter03.R;
+import android.animation.Animator
+import android.animation.AnimatorListenerAdapter
+import android.animation.ValueAnimator
+import android.content.Context
+import android.util.AttributeSet
+import android.util.Log
+import androidx.appcompat.widget.AppCompatImageView
+import com.example.chapter03.R
 
 /**
+ * 把弹跳加载中动画，封装成一个单独的控件
+ *
  * @author wangzhichao
  * @date 7/29/20
  */
-public class LoadingImageView extends android.support.v7.widget.AppCompatImageView {
-    private ValueAnimator valueAnimator;
-    private static final String TAG = "LoadingImageView";
+class F_LoadingImageView(context: Context, attrs: AttributeSet?) : AppCompatImageView(
+    context, attrs) {
+    private var valueAnimator: ValueAnimator? = null
+
     /**
      * 图片的总数目
      */
-    private int imageCount = 3;
+    private val imageCount = 3
+
     /**
      * 计数器
      */
-    private int count = 0;
-
-    private int top;
-
-    public LoadingImageView(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        init();
-    }
-
-    private void init() {
-        if (valueAnimator == null) {
-            valueAnimator = ValueAnimator.ofInt(0, -100, 0);
-        }
-        valueAnimator.removeAllUpdateListeners();
-        valueAnimator.removeAllListeners();
-        valueAnimator.setDuration(1000L);
-        valueAnimator.setRepeatMode(ValueAnimator.RESTART);
-        valueAnimator.setRepeatCount(ValueAnimator.INFINITE);
-        valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-            @Override
-            public void onAnimationUpdate(ValueAnimator animation) {
-                int currentValue = (int) animation.getAnimatedValue();
-                setTop(top + currentValue);
+    private var count = 0
+    private var initialTop = 0
+    init {
+        valueAnimator = ValueAnimator.ofInt(0, -100, 0).apply {
+            removeAllUpdateListeners()
+            removeAllListeners()
+            duration = 1000L
+            repeatMode = ValueAnimator.RESTART
+            repeatCount = ValueAnimator.INFINITE
+            addUpdateListener { animation ->
+                val currentValue = animation.animatedValue as Int
+                // 更新的是控件的 top 值
+                top = initialTop + currentValue
             }
-        });
-        valueAnimator.addListener(new AnimatorListenerAdapter() {
-            @Override
-            public void onAnimationRepeat(Animator animation) {
-                super.onAnimationRepeat(animation);
-                Log.d(TAG, "onAnimationRepeat: ");
-                count++;
-                switch (count % imageCount) {
-                    case 0:
-                        setImageResource(R.drawable.pic_1);
-                        break;
-                    case 1:
-                        setImageResource(R.drawable.pic_2);
-                        break;
-                    case 2:
-                        setImageResource(R.drawable.pic_3);
-                        break;
+            addListener(object : AnimatorListenerAdapter() {
+                override fun onAnimationRepeat(animation: Animator) {
+                    super.onAnimationRepeat(animation)
+                    Log.d(TAG, "onAnimationRepeat: ")
+                    count++
+                    when (count % imageCount) {
+                        0 -> setImageResource(R.drawable.pic_1)
+                        1 -> setImageResource(R.drawable.pic_2)
+                        2 -> setImageResource(R.drawable.pic_3)
+                    }
                 }
-            }
-        });
-        valueAnimator.start();
-    }
-    // 每次控件被布局时都会调用这个方法
-    @Override
-    protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
-        super.onLayout(changed, left, top, right, bottom);
-        Log.d(TAG, "onLayout: ");
-        this.top = top;
-    }
-
-    @Override
-    protected void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        if (valueAnimator != null) {
-            valueAnimator.removeAllListeners();
-            valueAnimator.removeAllUpdateListeners();
-            valueAnimator.cancel();
+            })
+            start()
         }
     }
+
+    // 每次控件被布局时都会调用这个方法
+    override fun onLayout(changed: Boolean, left: Int, top: Int, right: Int, bottom: Int) {
+        super.onLayout(changed, left, top, right, bottom)
+        Log.d(TAG, "onLayout: ")
+        this.initialTop = top
+    }
+
+    override fun onDetachedFromWindow() {
+        super.onDetachedFromWindow()
+        if (valueAnimator != null) {
+            valueAnimator!!.removeAllListeners()
+            valueAnimator!!.removeAllUpdateListeners()
+            valueAnimator!!.cancel()
+        }
+    }
+
+    companion object {
+        private const val TAG = "LoadingImageView"
+    }
+
+
 }

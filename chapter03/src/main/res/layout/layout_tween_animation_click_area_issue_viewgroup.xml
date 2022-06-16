@@ -5,7 +5,7 @@
     <TextView
         android:paddingTop="8dp"
         android:paddingBottom="8dp"
-        android:text="属性动画在控件偏移时,控件的点击事件会跟随控件."
+        android:text="补间动画在控件偏移后,控件的点击事件仍然在原来的地方."
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
     <Button
@@ -17,6 +17,7 @@
 
     <TextView
         android:id="@+id/tv"
+        android:gravity="center"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:background="@android:color/holo_blue_bright"

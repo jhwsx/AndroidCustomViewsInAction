@@ -1,22 +1,13 @@
-package com.example.chapter03.part1_valueanimator;
+package com.example.chapter03.part1_valueanimator
 
-import android.animation.Animator;
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.os.Build;
-import android.support.annotation.Nullable;
-import android.support.annotation.RequiresApi;
-import android.util.AttributeSet;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.TextView;
-
-import com.example.chapter03.R;
+import android.animation.Animator
+import android.animation.ValueAnimator
+import android.content.Context
+import android.util.AttributeSet
+import android.util.Log
+import android.widget.*
+import com.example.chapter03.R
+import java.lang.NumberFormatException
 
 /**
  * 演示 ValueAnimator 常用的函数以及监听器
@@ -24,194 +15,156 @@ import com.example.chapter03.R;
  * @author wangzhichao
  * @date 7/27/20
  */
-public class D_ValueAnimatorAPIGroup extends LinearLayout {
+class D_ValueAnimatorAPIGroup(context: Context?, attrs: AttributeSet?) :
+    LinearLayout(context, attrs) {
+    private var valueAnimator: ValueAnimator? = null
+    // 记录初始的顶部位置，便于恢复到原来的位置。
+    private var textTop = 0
+    private val tv: TextView
+    private var createdValueAnimator: ValueAnimator? = null
+    private var clonedValueAnimator: ValueAnimator? = null
 
-    private static final String TAG = "D_ValueAnimatorAPIGroup";
-
-    private ValueAnimator valueAnimator;
-    private int top;
-    private final TextView tv;
-    private ValueAnimator createdValueAnimator;
-    private ValueAnimator clonedValueAnimator;
-
-    public D_ValueAnimatorAPIGroup(Context context, @Nullable AttributeSet attrs) {
-        super(context, attrs);
-        inflate(context, R.layout.d_value_animator_api_group, this);
-        final RadioButton rbRestart = findViewById(R.id.rb_restart);
-        tv = findViewById(R.id.tv);
-        final EditText etRepeatCount = findViewById(R.id.et_repeat_count);
-        Button btnStart = findViewById(R.id.btn_start);
-        Button btnCancel = findViewById(R.id.btn_cancel);
-        Button btnPause = findViewById(R.id.btn_pause);
-        Button btnResume = findViewById(R.id.btn_resume);
-        Button btnReverse = findViewById(R.id.btn_reverse);
-        Button btnStartClone = findViewById(R.id.btn_start_clone);
-        Button btnCancelClone = findViewById(R.id.btn_cancel_clone);
-        post(new Runnable() {
-            @Override
-            public void run() {
-                top = tv.getTop();
+    init {
+        inflate(context, R.layout.layout_value_animator_api_group, this)
+        val rbRestart = findViewById<RadioButton>(R.id.rb_restart)
+        tv = findViewById(R.id.tv)
+        val etRepeatCount = findViewById<EditText>(R.id.et_repeat_count)
+        val btnStart = findViewById<Button>(R.id.btn_start)
+        val btnCancel = findViewById<Button>(R.id.btn_cancel)
+        val btnPause = findViewById<Button>(R.id.btn_pause)
+        val btnResume = findViewById<Button>(R.id.btn_resume)
+        val btnReverse = findViewById<Button>(R.id.btn_reverse)
+        val btnStartClone = findViewById<Button>(R.id.btn_start_clone)
+        val btnCancelClone = findViewById<Button>(R.id.btn_cancel_clone)
+        post { textTop = tv.top }
+        btnStart.setOnClickListener {
+            initValueAnimator(etRepeatCount, rbRestart)
+            valueAnimator!!.start()
+        }
+        btnCancel.setOnClickListener { cancelAnim() }
+        btnPause.setOnClickListener {
+            if (valueAnimator != null) {
+                valueAnimator!!.pause()
             }
-        });
-        btnStart.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                initValueAnimator(etRepeatCount, rbRestart);
-                valueAnimator.start();
+        }
+        btnResume.setOnClickListener {
+            if (valueAnimator != null) {
+                valueAnimator!!.resume()
             }
-        });
-        btnCancel.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                cancelAnim();
-            }
-        });
-        btnPause.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (valueAnimator != null) {
-                    valueAnimator.pause();
-                }
-            }
-        });
-        btnResume.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (valueAnimator != null) {
-                    valueAnimator.resume();
-                }
-            }
-        });
-        btnReverse.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                initValueAnimator(etRepeatCount, rbRestart);
-                valueAnimator.reverse();
-            }
-        });
-
-        btnStartClone.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                createdValueAnimator = create();
-                clonedValueAnimator = createdValueAnimator.clone();
-                clonedValueAnimator.setStartDelay(1000L);
-                clonedValueAnimator.start();
-            }
-        });
-        btnCancelClone.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // 这种不可以停止动画
+        }
+        btnReverse.setOnClickListener {
+            initValueAnimator(etRepeatCount, rbRestart)
+            valueAnimator!!.reverse()
+        }
+        btnStartClone.setOnClickListener {
+            createdValueAnimator = create()
+            clonedValueAnimator = createdValueAnimator!!.clone()
+            clonedValueAnimator!!.startDelay = 1000L
+            clonedValueAnimator!!.start()
+        }
+        btnCancelClone.setOnClickListener {
+            // 这种不可以停止动画
 //                if (createdValueAnimator != null) {
 //                    createdValueAnimator.removeAllUpdateListeners();
 //                    createdValueAnimator.cancel();
 //                }
-                // 这种可以停止动画
-                if (clonedValueAnimator != null) {
-                    clonedValueAnimator.removeAllUpdateListeners();
-                    clonedValueAnimator.cancel();
+            // 这种可以停止动画
+            if (clonedValueAnimator != null) {
+                clonedValueAnimator!!.removeAllUpdateListeners()
+                clonedValueAnimator!!.cancel()
+            }
+        }
+    }
+
+    private fun initValueAnimator(etRepeatCount: EditText, rbRestart: RadioButton) {
+
+        valueAnimator = ValueAnimator.ofInt(0, 400).apply {
+            duration = 2000L
+            addUpdateListener { animation ->
+                val fraction = animation.animatedFraction
+                val currValue = animation.animatedValue as Int
+                tv.layout(tv.left, currValue + textTop, tv.right,
+                    currValue + textTop + tv.height)
+            }
+            addListener(object : Animator.AnimatorListener {
+                override fun onAnimationStart(animation: Animator) {
+                    Log.d(TAG, "onAnimationStart: ")
                 }
-            }
-        });
-    }
 
-    private void initValueAnimator(EditText etRepeatCount, RadioButton rbRestart) {
-        if (valueAnimator == null) {
-            valueAnimator = ValueAnimator.ofInt(0, 400);
+                override fun onAnimationEnd(animation: Animator) {
+                    Log.d(TAG, "onAnimationEnd: ")
+                }
+
+                override fun onAnimationCancel(animation: Animator) {
+                    Log.d(TAG, "onAnimationCancel: ")
+                }
+
+                override fun onAnimationRepeat(animation: Animator) {
+                    Log.d(TAG, "onAnimationRepeat: ")
+                }
+            })
+            addPauseListener(object : Animator.AnimatorPauseListener {
+                override fun onAnimationPause(animation: Animator) {
+                    Log.d(TAG, "onAnimationPause: ")
+                }
+
+                override fun onAnimationResume(animation: Animator) {
+                    Log.d(TAG, "onAnimationResume: ")
+                }
+            })
+            var rc = 0
+            try {
+                rc = etRepeatCount.text.toString().toInt()
+            } catch (e: NumberFormatException) {
+                e.printStackTrace()
+            }
+            repeatCount = rc
+            repeatMode =
+                if (rbRestart.isChecked) ValueAnimator.RESTART else ValueAnimator.REVERSE
         }
-        valueAnimator.setDuration(2000L);
-        int repeatCount = 0;
-        try {
-            repeatCount = Integer.parseInt(etRepeatCount.getText().toString());
-        } catch (NumberFormatException e) {
-            e.printStackTrace();
+    }
+
+    private fun create(): ValueAnimator {
+        return ValueAnimator.ofInt(0, 400).apply {
+            duration = 2000L
+            repeatMode = ValueAnimator.RESTART
+            repeatCount = ValueAnimator.INFINITE
+            addUpdateListener { animation ->
+                val currValue = animation.animatedValue as Int
+                tv.layout(tv.left, currValue + textTop, tv.right,
+                    currValue + textTop + tv.height)
+            }
+
         }
-        valueAnimator.setRepeatCount(repeatCount);
-        valueAnimator.setRepeatMode(rbRestart.isChecked() ? ValueAnimator.RESTART : ValueAnimator.REVERSE);
-        valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-            @Override
-            public void onAnimationUpdate(ValueAnimator animation) {
-                float fraction = animation.getAnimatedFraction();
-                int currValue = (int) animation.getAnimatedValue();
-//                        Log.d(TAG, "onAnimationUpdate: fraction="+fraction+",currValue=" + currValue);
-                tv.layout(tv.getLeft(), currValue + top, tv.getRight(),
-                        currValue + top + tv.getHeight());
-            }
-        });
-        valueAnimator.addListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(Animator animation) {
-                Log.d(TAG, "onAnimationStart: ");
-            }
-
-            @Override
-            public void onAnimationEnd(Animator animation) {
-                Log.d(TAG, "onAnimationEnd: ");
-            }
-
-            @Override
-            public void onAnimationCancel(Animator animation) {
-                Log.d(TAG, "onAnimationCancel: ");
-            }
-
-            @Override
-            public void onAnimationRepeat(Animator animation) {
-                Log.d(TAG, "onAnimationRepeat: ");
-            }
-        });
-        valueAnimator.addPauseListener(new Animator.AnimatorPauseListener() {
-            @Override
-            public void onAnimationPause(Animator animation) {
-                Log.d(TAG, "onAnimationPause: ");
-            }
-
-            @Override
-            public void onAnimationResume(Animator animation) {
-                Log.d(TAG, "onAnimationResume: ");
-            }
-        });
     }
 
-
-    private ValueAnimator create() {
-        ValueAnimator valueAnimator = ValueAnimator.ofInt(0, 400);
-        valueAnimator.setDuration(2000L);
-        valueAnimator.setRepeatMode(ValueAnimator.RESTART);
-        valueAnimator.setRepeatCount(ValueAnimator.INFINITE);
-        valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-            @Override
-            public void onAnimationUpdate(ValueAnimator animation) {
-                int currValue = (int) animation.getAnimatedValue();
-                tv.layout(tv.getLeft(), currValue + top, tv.getRight(),
-                        currValue + top + tv.getHeight());
-            }
-        });
-        return valueAnimator;
-    }
-
-    private void cancelAnim() {
+    private fun cancelAnim() {
         if (valueAnimator != null) {
             // 移除所有的 AnimatorUpdateListener
-            valueAnimator.removeAllUpdateListeners();
+            valueAnimator!!.removeAllUpdateListeners()
             // 移除指定的 AnimatorUpdateListener
             // valueAnimator.removeUpdateListener(ValueAnimator.AnimatorUpdateListener listener);
             // 移除所有的 AnimatorListener 和 AnimatorPauseListener
-            valueAnimator.removeAllListeners();
+            valueAnimator!!.removeAllListeners()
             // 移除指定的 AnimatorListener
             // valueAnimator.removeListener(Animator.AnimatorListener listener);
             // 移除指定的 AnimatorPauseListener
             // valueAnimator.removePauseListener(Animator.AnimatorPauseListener listener);
-            tv.layout(tv.getLeft(), top, tv.getRight(), top + tv.getHeight());
-            valueAnimator.cancel();
+            // 让控件回到初始的位置。
+            tv.layout(tv.left, textTop, tv.right, textTop + tv.height)
+            valueAnimator!!.cancel()
         }
     }
 
-    @Override
-    protected void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        Log.d(TAG, "onDetachedFromWindow: ");
+    override fun onDetachedFromWindow() {
+        super.onDetachedFromWindow()
+        Log.d(TAG, "onDetachedFromWindow: ")
         // 注意: 当不需要动画的时候,一定要移除动画,否则动画还在继续,从而导致 View 无法释放,进一步导致整个 Activity 无法释放,最终引起内存泄漏.
-        cancelAnim();
+        cancelAnim()
     }
+
+    companion object {
+        private const val TAG = "D_ValueAnimatorAPIGroup"
+    }
+
 }

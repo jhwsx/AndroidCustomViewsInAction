@@ -12,5 +12,21 @@
     <string name="title_argb_evaluator_viewgroup">Argb转换器</string>
     <string name="title_value_animator_of_object_viewgroup">ValueAnimator.ofObject</string>
     <string name="title_falling_ball_viewgroup">抛物动画</string>
+
     <string name="title_object_animator_intro_viewgroup">ObjectAnimator动画引入</string>
+    <string name="practice_objectanimator_falling_ball_viewgroup">自定义属性抛物动画</string>
+    <string name="practice_objectanimater_getter">自定义getter</string>
+    <string name="practice_animatorset_playsequentially">AnimatorSet之playSequentially</string>
+    <string name="practice_animatorset_playtogether">AnimatorSet之playTogether</string>
+    <string name="practice_animatorset_builder_with">AnimatorSet.Builder之with</string>
+    <string name="practice_animatorset_builder_before">AnimatorSet.Builder之before</string>
+    <string name="practice_animatorset_builder_after">AnimatorSet.Builder之after</string>
+    <string name="practice_animatorset_settarget">AnimatorSet之setTarget</string>
+    <string name="practice_animatorset_setduration">AnimatorSet之setDuration</string>
+    <string name="practice_animatorset_setstartdelay">AnimatorSet之setStartDelay</string>
+    <string name="practice_path_menu">路径菜单动画</string>
+
+    <string name="practice_animator_tag">animator标签</string>
+    <string name="practice_object_animator_tag">objectAnimator标签</string>
+    <string name="practice_set_tag">set标签</string>
 </resources>
