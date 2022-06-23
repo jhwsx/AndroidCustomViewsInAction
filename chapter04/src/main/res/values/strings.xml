@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Chapter04 属性动画进阶</string>
+    <string name="practice_propertyvaluesholder_offloat">PropertyValuesHolder.ofFloat</string>
+    <string name="practice_propertyvaluesholder_ofobject">PropertyValuesHolder.ofObject</string>
+    <string name="practice_propertyvaluesholder_ofkeyframe">PropertyValuesHolder.ofKeyframe</string>
+    <string name="practice_telephone_ring_view">电话响铃动画</string>
+    <string name="practice_keyframe_interpolator">Keyframe插值器</string>
+    <string name="practice_keyframe_ofobject">Keyframe.ofObject</string>
+    <string name="practice_viewpropertyanimator_intro">ViewPropertyAnimator初探</string>
+    <string name="practice_viewpropertyanimator_xxx_vs_xxxby">ViewPropertyAnimator的XXX方法和XXXBy方法对比</string>
+</resources>

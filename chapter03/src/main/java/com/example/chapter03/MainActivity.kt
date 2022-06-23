@@ -81,6 +81,8 @@ class MainActivity : AppCompatActivity() {
             R.layout.practice_objectanimator_falling_ball_viewgroup))
         pageModels.add(PageModel(R.string.practice_objectanimater_getter,
             R.layout.practice_objectanimater_getter))
+        pageModels.add(PageModel(R.string.practice_objectanimater_property,
+            R.layout.practice_objectanimater_property))
 
         pageModels.add(PageModel(R.string.practice_animatorset_playsequentially,
             R.layout.practice_animatorset_playsequentially))

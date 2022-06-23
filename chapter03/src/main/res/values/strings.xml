@@ -16,6 +16,8 @@
     <string name="title_object_animator_intro_viewgroup">ObjectAnimator动画引入</string>
     <string name="practice_objectanimator_falling_ball_viewgroup">自定义属性抛物动画</string>
     <string name="practice_objectanimater_getter">自定义getter</string>
+    <string name="practice_objectanimater_property">传入Property的API</string>
+
     <string name="practice_animatorset_playsequentially">AnimatorSet之playSequentially</string>
     <string name="practice_animatorset_playtogether">AnimatorSet之playTogether</string>
     <string name="practice_animatorset_builder_with">AnimatorSet.Builder之with</string>
