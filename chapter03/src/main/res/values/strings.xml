@@ -27,6 +27,7 @@
     <string name="practice_animatorset_setduration">AnimatorSet之setDuration</string>
     <string name="practice_animatorset_setstartdelay">AnimatorSet之setStartDelay</string>
     <string name="practice_path_menu">路径菜单动画</string>
+    <string name="practice_flipboard_view">Flipboard翻转动画</string>
 
     <string name="practice_animator_tag">animator标签</string>
     <string name="practice_object_animator_tag">objectAnimator标签</string>

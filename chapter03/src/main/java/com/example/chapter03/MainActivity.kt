@@ -102,6 +102,8 @@ class MainActivity : AppCompatActivity() {
             R.layout.practice_animatorset_setstartdelay))
         pageModels.add(PageModel(R.string.practice_path_menu,
             R.layout.practice_path_menu))
+        pageModels.add(PageModel(R.string.practice_flipboard_view,
+            R.layout.practice_flipboard_view))
 
         pageModels.add(PageModel(R.string.practice_animator_tag,
             R.layout.practice_animator_tag))

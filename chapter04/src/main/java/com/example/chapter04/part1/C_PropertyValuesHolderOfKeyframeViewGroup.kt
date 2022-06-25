@@ -12,6 +12,8 @@ import com.example.chapter04.R
 
 /**
  * 关键帧
+ * 可以对一个属性的动画进行更加精确地控制
+ *
  * @author wangzhichao
  * @since 2022/6/22
  */

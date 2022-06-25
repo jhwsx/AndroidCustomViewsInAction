@@ -1,19 +1,15 @@
-package com.example.chapter02.part3_interpolator;
+package com.example.chapter02.part3_interpolator
 
-import android.content.Context;
-import androidx.annotation.Nullable;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import android.util.AttributeSet;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.animation.AccelerateInterpolator;
-import android.view.animation.AlphaAnimation;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.Button;
-import android.widget.TextView;
-
-import com.example.chapter02.R;
+import android.content.Context
+import android.util.AttributeSet
+import android.view.View
+import android.view.animation.AccelerateInterpolator
+import android.view.animation.AlphaAnimation
+import android.view.animation.AnimationUtils
+import android.widget.Button
+import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
+import com.example.chapter02.R
 
 /**
  * 设置插值器
@@ -23,24 +19,18 @@ import com.example.chapter02.R;
  * @author wangzhichao
  * @since 20-3-26
  */
-public class InterpolatorSetViewGroup extends ConstraintLayout {
-    public InterpolatorSetViewGroup(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        inflate(context, R.layout.interpolator_set_viewgroup, this);
-        Button btnXml = findViewById(R.id.btn_xml);
-        final TextView tvXml = findViewById(R.id.tv_xml);
-        btnXml.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Animation animation = AnimationUtils.loadAnimation(v.getContext(), R.anim.alphaanim_interpolator);
-                tvXml.startAnimation(animation);
-            }
-        });
-        final TextView tvCode = findViewById(R.id.tv_code);
-        findViewById(R.id.btn_code).setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                /*
+class InterpolatorSetViewGroup(context: Context, attrs: AttributeSet?) :
+    ConstraintLayout(context, attrs) {
+    init {
+        inflate(context, R.layout.interpolator_set_viewgroup, this)
+        val btnXml = findViewById<Button>(R.id.btn_xml)
+        val tvXml = findViewById<TextView>(R.id.tv_xml)
+        btnXml.setOnClickListener { v ->
+            val animation = AnimationUtils.loadAnimation(v.context, R.anim.alphaanim_interpolator)
+            tvXml.startAnimation(animation)
+        }
+        val tvCode = findViewById<TextView>(R.id.tv_code)
+        findViewById<View>(R.id.btn_code).setOnClickListener { /*
                 <alpha xmlns:android="http://schemas.android.com/apk/res/android"
                     android:duration="3000"
                     android:fillBefore="true"
@@ -48,12 +38,11 @@ public class InterpolatorSetViewGroup extends ConstraintLayout {
                     android:toAlpha="0.0"
                     android:interpolator="@android:anim/accelerate_interpolator"/>
                  */
-                AlphaAnimation alphaAnimation = new AlphaAnimation(1.0f, 0.0f);
-                alphaAnimation.setDuration(3000L);
-                alphaAnimation.setInterpolator(new AccelerateInterpolator());
-//                alphaAnimation.setInterpolator(v.getContext(), android.R.anim.accelerate_interpolator);
-                tvCode.startAnimation(alphaAnimation);
-            }
-        });
+            val alphaAnimation = AlphaAnimation(1.0f, 0.0f)
+            alphaAnimation.duration = 3000L
+            alphaAnimation.interpolator = AccelerateInterpolator()
+            //                alphaAnimation.setInterpolator(v.getContext(), android.R.anim.accelerate_interpolator);
+            tvCode.startAnimation(alphaAnimation)
+        }
     }
 }

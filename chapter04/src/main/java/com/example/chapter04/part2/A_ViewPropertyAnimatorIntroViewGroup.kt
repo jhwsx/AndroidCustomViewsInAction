@@ -68,6 +68,7 @@ class A_ViewPropertyAnimatorIntroViewGroup @JvmOverloads constructor(
             .withEndAction {
                 Log.d(TAG, "withEndAction: ")
             }
+            .withLayer()
     }
 
     companion object {

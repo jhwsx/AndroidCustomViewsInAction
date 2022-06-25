@@ -35,6 +35,7 @@ class A_PropertyValuesHolderOfFloatViewGroup @JvmOverloads constructor(
     private fun doAnimation() {
         val rotationHolder = PropertyValuesHolder.ofFloat("rotation", 60f, -60f, 40f, -40f, 20f, -20f, 0f)
         val alphaHolder = PropertyValuesHolder.ofFloat("alpha", 0.1f, 1f, 0.1f, 1f)
+        // 可以同时动画
         val animator = ObjectAnimator.ofPropertyValuesHolder(tv, rotationHolder, alphaHolder)
         animator.duration = 3000L
         animator.start()
