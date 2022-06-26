@@ -7,7 +7,7 @@ import android.graphics.drawable.shapes.Shape
  * @author wangzhichao
  * @date 2019/10/12
  */
-class RegionShape(region: Region?) : Shape() {
+class H_RegionShape(region: Region?) : Shape() {
     private val mRegion: Region?
 
     init {

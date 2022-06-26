@@ -6,7 +6,7 @@
     android:gravity="center"
     android:orientation="vertical">
 
-    <com.example.chapter10.part1.RegionShapeView
+    <com.example.chapter10.part1.H_RegionShapeView
         android:layout_width="250dp"
         android:layout_height="150dp"
         android:background="@android:color/white" />

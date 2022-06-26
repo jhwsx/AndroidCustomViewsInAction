@@ -1,6 +1,7 @@
 package com.example.chapter10.part1
 
 import android.content.Context
+import android.graphics.drawable.GradientDrawable
 import android.util.AttributeSet
 import android.util.Log
 import android.widget.LinearLayout
@@ -22,12 +23,13 @@ class A_GradientDrawableShapeViewGroup(context: Context, attrs: AttributeSet?) :
     init {
         inflate(context, R.layout.layout_gradientdrawable_shape_viewgroup, this)
         val textView = findViewById<TextView>(R.id.tv)
+        val textView1 = findViewById<TextView>(R.id.tv1)
         val background = textView.background
-        Log.d(TAG,
-            "background = $background") // 打印：background = android.graphics.drawable.GradientDrawable@42487368
+        textView1.text = background.toString()
+        val gradientDrawable = background as GradientDrawable
         val textView2 = findViewById<TextView>(R.id.tv2)
+        val textView3 = findViewById<TextView>(R.id.tv3)
         val background2 = textView2.background
-        Log.d(TAG,
-            "background2 = $background2") // 打印：background2 = android.graphics.drawable.GradientDrawable@42487f88
+        textView3.text = background2.toString()
     }
 }

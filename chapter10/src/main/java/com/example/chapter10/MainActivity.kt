@@ -2,6 +2,7 @@ package com.example.chapter10
 
 import android.Manifest
 import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
 import androidx.annotation.LayoutRes
 import androidx.annotation.StringRes
@@ -69,6 +70,7 @@ class MainActivity : AppCompatActivity() {
     )
 
     init {
+        // part1 shapedrawable
         pageModels.add(PageModel(R.string.title_gradientdrawable_shape_viewgroup,
             R.layout.practice_gradientdrawable_shape_viewgroup))
         pageModels.add(PageModel(R.string.title_gradientdrawable_shape_viewgroup2,
@@ -88,6 +90,9 @@ class MainActivity : AppCompatActivity() {
         pageModels.add(PageModel(R.string.title_shape_shader_view,
             R.layout.practice_shape_shader_view))
         pageModels.add(PageModel(R.string.title_magnifier_view, R.layout.practice_magnifier_view))
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            pageModels.add(PageModel(R.string.title_magnifier, R.layout.practice_magnifier))
+        }
         pageModels.add(PageModel(R.string.title_circled_drawable,
             R.layout.practice_circled_drawable_viewgroup))
         pageModels.add(PageModel(R.string.title_bitmap_drawable_convert,

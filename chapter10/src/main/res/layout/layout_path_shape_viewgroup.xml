@@ -33,7 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <com.example.chapter10.part1.PathShapeView
+    <com.example.chapter10.part1.G_PathShapeView
         android:layout_marginTop="8dp"
         android:id="@+id/pathshapeview"
         android:background="@android:color/white"

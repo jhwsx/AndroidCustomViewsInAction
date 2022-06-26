@@ -14,21 +14,23 @@ import com.example.common.dp
  * @author wangzhichao
  * @date 2019/10/15
  */
-class CircledDrawable1(private val bitmap: Bitmap) : Drawable() {
+class L_RoundedCornerDrawable2(private val bitmap: Bitmap) : Drawable() {
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
-    private var rect: RectF? = null
+    private lateinit var rect: RectF
+    // ImageView 设置了不同的 scaleType，会调用 configureBounds() 方法，内部会调用 drawable 的 setBounds 方法以及设置 matrix。
     override fun setBounds(left: Int, top: Int, right: Int, bottom: Int) {
         super.setBounds(left, top, right, bottom)
         val shader =
-            BitmapShader(Bitmap.createScaledBitmap(bitmap, right - left, bottom - top, true),
+            BitmapShader(Bitmap.createScaledBitmap(bitmap,
+                right - left, bottom - top, true),
                 Shader.TileMode.CLAMP, Shader.TileMode.CLAMP)
         paint.shader = shader
         rect = RectF(left.toFloat(), top.toFloat(), right.toFloat(), bottom.toFloat())
-        Log.d(TAG, "rect = " + rect!!.toShortString())
+        Log.d(TAG, "rect = " + rect.toShortString())
     }
 
     override fun draw(canvas: Canvas) {
-        canvas.drawRoundRect(rect!!, 10.dp, 10.dp, paint)
+        canvas.drawRoundRect(rect, 10.dp, 10.dp, paint)
     }
 
     override fun setAlpha(alpha: Int) {
@@ -52,6 +54,6 @@ class CircledDrawable1(private val bitmap: Bitmap) : Drawable() {
     }
 
     companion object {
-        private const val TAG = "CircledDrawable"
+        private const val TAG = "L_RoundedCornerDrawable"
     }
 }

@@ -1,12 +1,14 @@
 package com.example.chapter10.part1
 
 import android.content.Context
+import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
 import android.util.AttributeSet
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
 import com.example.chapter10.R
+import com.example.common.dp
 
 /**
  * @author wangzhichao
@@ -14,9 +16,6 @@ import com.example.chapter10.R
  */
 class B_GradientDrawableShapeViewGroup2(context: Context, attrs: AttributeSet?) :
     LinearLayout(context, attrs) {
-    companion object {
-        private const val TAG = "wzc"
-    }
 
     init {
         inflate(context, R.layout.layout_gradientdrawable_shape_viewgroup2, this)
@@ -24,16 +23,20 @@ class B_GradientDrawableShapeViewGroup2(context: Context, attrs: AttributeSet?) 
         val btnAddCornerRadius = findViewById<Button>(R.id.btn_add_corner_radius)
         btnAddCornerRadius.setOnClickListener {
             val drawable = tv.background as GradientDrawable
+            // 设置同样的圆角
             drawable.cornerRadius = 20f
 
-//                drawable.setCornerRadii(new float[]{5, 5, 10, 10, 5, 10, 15, 30});
+            // 设置不同的圆角
+//            drawable.cornerRadii = floatArrayOf(5f, 5f, 10f, 10f, 5f, 10f, 15f, 30f)
 
-//                drawable.setStroke(Utils.dp2px(2), Color.YELLOW,Utils.dp2px(5),Utils.dp2px(5));
+            // 设置描边
+//            drawable.setStroke(2.dp.toInt(), Color.BLUE, 5.dp, 5.dp)
 
-//                drawable.setGradientCenter(0.5f, 0.5f);
-//                drawable.setGradientRadius(Utils.dp2px(20));
-//                drawable.setGradientType(GradientDrawable.RADIAL_GRADIENT);
-//                drawable.setColors(new int[] {0xffff0000,0xff0000ff});
+            // 设置渐变
+//            drawable.setGradientCenter(0.5f, 0.5f)
+//            drawable.gradientRadius = 20.dp
+//            drawable.gradientType = GradientDrawable.RADIAL_GRADIENT;
+//            drawable.colors = intArrayOf(0xffff0000.toInt(), 0xff0000ff.toInt())
         }
     }
 }

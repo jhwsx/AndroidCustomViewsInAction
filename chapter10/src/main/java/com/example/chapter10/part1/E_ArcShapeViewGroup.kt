@@ -8,7 +8,7 @@ import android.util.AttributeSet
  * @author wangzhichao
  * @date 2019/10/11
  */
-class ArcShapeViewGroup(context: Context, attrs: AttributeSet?) : LinearLayout(context, attrs) {
+class E_ArcShapeViewGroup(context: Context, attrs: AttributeSet?) : LinearLayout(context, attrs) {
     init {
         inflate(context, R.layout.layout_arc_shape_viewgroup, this)
     }

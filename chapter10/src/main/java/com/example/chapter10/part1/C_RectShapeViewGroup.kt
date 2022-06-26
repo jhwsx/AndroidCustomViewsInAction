@@ -7,10 +7,10 @@ import com.example.chapter10.R
 
 /**
  * @author wangzhichao
- * @date 2019/10/12
+ * @date 2019/10/10
  */
-class RegionShapeViewGroup(context: Context, attrs: AttributeSet?) : LinearLayout(context, attrs) {
+class C_RectShapeViewGroup(context: Context, attrs: AttributeSet?) : LinearLayout(context, attrs) {
     init {
-        inflate(context, R.layout.layout_region_shape_viewgroup, this)
+        inflate(context, R.layout.layout_shape_viewgroup, this)
     }
 }

@@ -3,7 +3,7 @@ package com.example.chapter10.part2
 import android.content.Context
 import com.example.chapter10.R
 import android.graphics.drawable.Drawable
-import com.example.chapter10.part1.CircledDrawable
+import com.example.chapter10.part1.L_RoundedCornerDrawable
 import android.graphics.drawable.BitmapDrawable
 import android.os.Build
 import android.graphics.*
@@ -53,7 +53,7 @@ class BitmapDrawableConvert(context: Context, attrs: AttributeSet?) : View(conte
             val bmp = bitmapDrawable.bitmap
         }
         // 1.3
-        val drawable = CircledDrawable(bitmap)
+        val drawable = L_RoundedCornerDrawable(bitmap)
         val bitmap1 = drawableToBitmap(drawable)
         // 2, Bitmap 转 Drawable
         val bitmapDrawable = BitmapDrawable(resources, bitmap)

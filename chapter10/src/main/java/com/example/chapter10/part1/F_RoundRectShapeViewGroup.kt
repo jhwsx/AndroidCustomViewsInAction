@@ -9,8 +9,9 @@ import com.example.chapter10.R
  * @author wangzhichao
  * @date 2019/10/11
  */
-class OvalShapeViewGroup(context: Context, attrs: AttributeSet?) : LinearLayout(context, attrs) {
+class F_RoundRectShapeViewGroup(context: Context, attrs: AttributeSet?) :
+    LinearLayout(context, attrs) {
     init {
-        inflate(context, R.layout.layout_oval_shape_viewgroup, this)
+        inflate(context, R.layout.layout_roundrect_shape_viewgroup, this)
     }
 }

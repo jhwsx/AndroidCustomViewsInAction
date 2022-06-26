@@ -11,12 +11,8 @@ import com.example.common.dp
  * @author wangzhichao
  * @date 2019/10/12
  */
-class RegionShapeView(context: Context, attrs: AttributeSet?) : View(context, attrs) {
+class H_RegionShapeView(context: Context, attrs: AttributeSet?) : View(context, attrs) {
     private val drawable: ShapeDrawable
-    override fun onDraw(canvas: Canvas) {
-        super.onDraw(canvas)
-        drawable.draw(canvas)
-    }
 
     init {
         val vRect = Rect(50.dp.toInt(), 0, 90.dp.toInt(), 150.dp.toInt())
@@ -27,12 +23,17 @@ class RegionShapeView(context: Context, attrs: AttributeSet?) : View(context, at
 
         // 取两个区域的相交之外的区域
         vRegion.op(hRegion, Region.Op.XOR)
-        val regionShape = RegionShape(vRegion)
+        val regionShape = H_RegionShape(vRegion)
         drawable = ShapeDrawable(regionShape)
         drawable.bounds = Rect(0,
             0,
             250.dp.toInt(),
             150.dp.toInt())
         drawable.paint.color = Color.YELLOW
+    }
+
+    override fun onDraw(canvas: Canvas) {
+        super.onDraw(canvas)
+        drawable.draw(canvas)
     }
 }

@@ -10,7 +10,9 @@
     <string name="title_region_shape_viewgroup">RegionShape</string>
     <string name="title_shape_shader_view">ShapeShaderView</string>
     <string name="title_magnifier_view">MagnifierView</string>
+    <string name="title_magnifier">Magnifier(API28)</string>
     <string name="title_circled_drawable">CircledDrawable</string>
+
     <string name="title_bitmap_drawable_convert">BitmapDrawableConvert</string>
     <string name="title_bitmap_compress_format">BitmapCompressFormat</string>
     <string name="title_bitmapfactory_decoderesource">BitmapFactory.decodeResource</string>

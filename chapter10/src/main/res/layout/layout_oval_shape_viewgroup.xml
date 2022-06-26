@@ -5,7 +5,7 @@
     android:background="@android:color/darker_gray"
     android:layout_height="match_parent">
 
-    <com.example.chapter10.part1.OvalShapeView
+    <com.example.chapter10.part1.D_OvalShapeView
         android:background="@android:color/white"
         android:layout_width="250dp"
         android:layout_height="150dp" />

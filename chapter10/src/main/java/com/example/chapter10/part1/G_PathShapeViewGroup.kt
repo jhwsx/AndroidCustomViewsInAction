@@ -11,10 +11,10 @@ import com.example.chapter10.R
  * @author wangzhichao
  * @date 2019/10/11
  */
-class PathShapeViewGroup(context: Context, attrs: AttributeSet?) : LinearLayout(context, attrs) {
+class G_PathShapeViewGroup(context: Context, attrs: AttributeSet?) : LinearLayout(context, attrs) {
     init {
         inflate(context, R.layout.layout_path_shape_viewgroup, this)
-        val pathShapeView = findViewById<PathShapeView>(R.id.pathshapeview)
+        val pathShapeView = findViewById<G_PathShapeView>(R.id.pathshapeview)
         val button1 = findViewById<Button>(R.id.button1)
         val button2 = findViewById<Button>(R.id.button2)
         val button3 = findViewById<Button>(R.id.button3)

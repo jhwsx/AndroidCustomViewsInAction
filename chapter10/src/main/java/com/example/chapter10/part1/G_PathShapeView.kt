@@ -12,20 +12,22 @@ import com.example.common.dp
  * @author wangzhichao
  * @date 2019/10/11
  */
-class PathShapeView(context: Context, attrs: AttributeSet?) : View(context, attrs) {
+class G_PathShapeView(context: Context, attrs: AttributeSet?) : View(context, attrs) {
     private val drawable: ShapeDrawable
     private val path: Path
 
     init {
         setLayerType(LAYER_TYPE_SOFTWARE, null)
+        // 在这里点的单位是份 而不是 px。
         path = Path()
         path.moveTo(0f, 0f)
         path.lineTo(100f, 0f)
         path.lineTo(100f, 100f)
         path.lineTo(0f, 100f)
         path.close()
+        // stdWidth: 表示标准宽度，即将整个 ShapeDrawable 的宽度分成多少份。
+        // stdHeight: 表示标准高度，即将整个 ShapeDrawable 的高度分成多少份。
         val pathShape = PathShape(path, 100f, 100f)
-        //        PathShape pathShape = new PathShape(path, 100, 200);
         drawable = ShapeDrawable()
         drawable.shape = pathShape
         drawable.bounds = Rect(0,
