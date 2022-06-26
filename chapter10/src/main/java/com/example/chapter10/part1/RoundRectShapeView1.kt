@@ -1,16 +1,12 @@
-package com.example.chapter10.part1;
+package com.example.chapter10.part1
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Rect;
-import android.graphics.drawable.ShapeDrawable;
-import android.graphics.drawable.shapes.RoundRectShape;
-import android.support.annotation.Nullable;
-import android.util.AttributeSet;
-import android.view.View;
-
-import com.example.chapter10.Utils;
+import android.content.Context
+import android.graphics.drawable.ShapeDrawable
+import android.graphics.drawable.shapes.RoundRectShape
+import android.graphics.*
+import android.util.AttributeSet
+import android.view.*
+import com.example.common.dp
 
 /**
  * RoundRectShape 实现单纯的带有圆角的矩形
@@ -18,25 +14,24 @@ import com.example.chapter10.Utils;
  * @author wangzhichao
  * @date 2019/10/11
  */
-public class RoundRectShapeView1 extends View {
-    private ShapeDrawable drawable;
+class RoundRectShapeView1(context: Context, attrs: AttributeSet?) : View(context, attrs) {
+    private val drawable: ShapeDrawable
 
-    public RoundRectShapeView1(Context context, @Nullable AttributeSet attrs) {
-        super(context, attrs);
-        float[] outRadii = new float[]{
-                Utils.dp2px(12), Utils.dp2px(12),
-                Utils.dp2px(24), Utils.dp2px(24),
-                0, 0,
-                0, 0};
-        RoundRectShape roundRectShape = new RoundRectShape(outRadii, null, null);
-        drawable = new ShapeDrawable(roundRectShape);
-        drawable.setBounds(new Rect(Utils.dp2px(50), Utils.dp2px(50), Utils.dp2px(200), Utils.dp2px(100)));
-        drawable.getPaint().setColor(Color.YELLOW);
+    init {
+        val outRadii = floatArrayOf(
+            12.dp, 12.dp,
+            24.dp, 24.dp, 0f, 0f, 0f, 0f)
+        val roundRectShape = RoundRectShape(outRadii, null, null)
+        drawable = ShapeDrawable(roundRectShape)
+        drawable.bounds = Rect(50.dp.toInt(),
+            50.dp.toInt(),
+            200.dp.toInt(),
+            100.dp.toInt())
+        drawable.paint.color = Color.YELLOW
     }
 
-    @Override
-    protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        drawable.draw(canvas);
+    override fun onDraw(canvas: Canvas) {
+        super.onDraw(canvas)
+        drawable.draw(canvas)
     }
 }

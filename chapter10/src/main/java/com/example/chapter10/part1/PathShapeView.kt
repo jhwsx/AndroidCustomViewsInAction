@@ -1,61 +1,48 @@
-package com.example.chapter10.part1;
+package com.example.chapter10.part1
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Path;
-import android.graphics.Rect;
-import android.graphics.drawable.ShapeDrawable;
-import android.graphics.drawable.shapes.PathShape;
-import android.support.annotation.Nullable;
-import android.util.AttributeSet;
-import android.view.View;
-
-import com.example.chapter10.Utils;
+import android.content.Context
+import android.graphics.drawable.ShapeDrawable
+import android.graphics.drawable.shapes.PathShape
+import android.graphics.*
+import android.util.AttributeSet
+import android.view.*
+import com.example.common.dp
 
 /**
  * @author wangzhichao
  * @date 2019/10/11
  */
-public class PathShapeView extends View {
-    private ShapeDrawable drawable;
-    private final Path path;
+class PathShapeView(context: Context, attrs: AttributeSet?) : View(context, attrs) {
+    private val drawable: ShapeDrawable
+    private val path: Path
 
-    public PathShapeView(Context context, @Nullable AttributeSet attrs) {
-        super(context, attrs);
-        setLayerType(View.LAYER_TYPE_SOFTWARE, null);
-        path = new Path();
-        path.moveTo(0, 0);
-        path.lineTo(100, 0);
-        path.lineTo(100, 100);
-        path.lineTo(0, 100);
-        path.close();
-
-        PathShape pathShape = new PathShape(path, 100, 100);
-//        PathShape pathShape = new PathShape(path, 100, 200);
-
-        drawable = new ShapeDrawable();
-        drawable.setShape(pathShape);
-        drawable.setBounds(new Rect(0, 0, Utils.dp2px(250), Utils.dp2px(150)));
-        drawable.getPaint().setColor(Color.YELLOW);
+    init {
+        setLayerType(LAYER_TYPE_SOFTWARE, null)
+        path = Path()
+        path.moveTo(0f, 0f)
+        path.lineTo(100f, 0f)
+        path.lineTo(100f, 100f)
+        path.lineTo(0f, 100f)
+        path.close()
+        val pathShape = PathShape(path, 100f, 100f)
+        //        PathShape pathShape = new PathShape(path, 100, 200);
+        drawable = ShapeDrawable()
+        drawable.shape = pathShape
+        drawable.bounds = Rect(0,
+            0,
+            250.dp.toInt(),
+            150.dp.toInt())
+        drawable.paint.color = Color.YELLOW
     }
 
-    @Override
-    protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        drawable.draw(canvas);
+    override fun onDraw(canvas: Canvas) {
+        super.onDraw(canvas)
+        drawable.draw(canvas)
     }
 
-    public void updateStdWidthAndStdHeight(int stdWidth, int stdHeight) {
-        PathShape pathShape = new PathShape(path, stdWidth, stdHeight);
-        drawable.setShape(pathShape);
-        invalidate();
+    fun updateStdWidthAndStdHeight(stdWidth: Int, stdHeight: Int) {
+        val pathShape = PathShape(path, stdWidth.toFloat(), stdHeight.toFloat())
+        drawable.shape = pathShape
+        invalidate()
     }
 }
-
-/**
- * 总结：
- * 1，PathShape 是继承于 Shape 的。
- * 2, PathShape 的参数 stdWidth 和 stdHeight 理解成宽度分成多少份，高度分成多少份；而 Path 路径的宽，高也应该
- * 理解成份数，而不是 px。Path 的宽和高与 stdWidth 和 stdHeight 一致的话，就会填满整个控件。
- */

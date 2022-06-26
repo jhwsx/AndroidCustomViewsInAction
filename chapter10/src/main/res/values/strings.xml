@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">chapter10</string>
+    <string name="app_name">Chapter10 Android 画布</string>
     <string name="title_gradientdrawable_shape_viewgroup">GradientDrawableShapeViewGroup</string>
     <string name="title_gradientdrawable_shape_viewgroup2">GradientDrawableShapeViewGroup2</string>
     <string name="title_shape_viewgroup1">RectShape</string>

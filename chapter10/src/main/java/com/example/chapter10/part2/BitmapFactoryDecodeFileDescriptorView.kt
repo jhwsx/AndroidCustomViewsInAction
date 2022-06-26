@@ -1,48 +1,39 @@
-package com.example.chapter10.part2;
+package com.example.chapter10.part2
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.os.Environment;
-import android.support.annotation.Nullable;
-import android.util.AttributeSet;
-import android.view.View;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+import android.content.Context
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.graphics.Canvas
+import android.graphics.Paint
+import android.os.Environment
+import android.util.AttributeSet
+import android.view.View
+import java.io.File
+import java.io.FileInputStream
 
 /**
  * @author wangzhichao
  * @date 2019/10/20
  */
-public class BitmapFactoryDecodeFileDescriptorView extends View {
-
-    private Bitmap bitmap;
-    private Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
-    public BitmapFactoryDecodeFileDescriptorView(Context context, @Nullable AttributeSet attrs) {
-        super(context, attrs);
-        String path = Environment.getExternalStorageDirectory() + File.separator + "scenary_png.png";
-        try {
-            FileInputStream fileInputStream = new FileInputStream(path);
-            bitmap = BitmapFactory.decodeFileDescriptor(fileInputStream.getFD());
-        } catch (Exception e) {
-            e.printStackTrace();
+class BitmapFactoryDecodeFileDescriptorView(context: Context, attrs: AttributeSet?) :
+    View(context, attrs) {
+    private var bitmap: Bitmap? = null
+    private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
+    override fun onDraw(canvas: Canvas) {
+        super.onDraw(canvas)
+        if (bitmap != null) {
+            canvas.drawBitmap(bitmap!!, 0f, 0f, paint)
         }
     }
 
-    @Override
-    protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        if (bitmap != null) {
-            canvas.drawBitmap(bitmap, 0,0, paint);
+    init {
+        val path = Environment.getExternalStorageDirectory()
+            .toString() + File.separator + "scenary_png.png"
+        try {
+            val fileInputStream = FileInputStream(path)
+            bitmap = BitmapFactory.decodeFileDescriptor(fileInputStream.fd)
+        } catch (e: Exception) {
+            e.printStackTrace()
         }
     }
 }
-
-/**
- * 总结：
- * 1，BitmapFactory.decodeFileDescriptor 解析的方式比使用 BitmapFactory.decodeFile 更节省内存。
- */

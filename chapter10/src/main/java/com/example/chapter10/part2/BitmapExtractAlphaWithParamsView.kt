@@ -1,19 +1,11 @@
-package com.example.chapter10.part2;
+package com.example.chapter10.part2
 
-
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.BlurMaskFilter;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.support.annotation.Nullable;
-import android.util.AttributeSet;
-import android.util.Log;
-import android.view.View;
-
-import com.example.chapter10.R;
+import android.content.Context
+import android.graphics.*
+import android.util.AttributeSet
+import android.util.Log
+import android.view.*
+import com.example.chapter10.R
 
 /**
  * 这个例子展示 Bitmap 的带参数的 extractAlpha 的用法
@@ -24,32 +16,30 @@ import com.example.chapter10.R;
  * @author wangzhichao
  * @date 2019/12/02
  */
-public class BitmapExtractAlphaWithParamsView extends View {
-    private Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG | Paint.DITHER_FLAG);
-    private final int[] offsetXY;
-    private final Bitmap bitmap;
-
-    public BitmapExtractAlphaWithParamsView(Context context, @Nullable AttributeSet attrs) {
-        super(context, attrs);
-        // 获取 Alpha Bitmap
-        Bitmap srcBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.cat_dog);
-        paint.setMaskFilter(new BlurMaskFilter(6, BlurMaskFilter.Blur.NORMAL));
-        offsetXY = new int[2];
-        Bitmap alphaBitmap = srcBitmap.extractAlpha(paint, offsetXY);
-        Log.d("wzc", "offsetX = " + offsetXY[0] + ", offsetY = " + offsetXY[1]);
-        // 创建 Bitmap
-        bitmap = Bitmap.createBitmap(alphaBitmap.getWidth(), alphaBitmap.getHeight(), Bitmap.Config.ARGB_8888);
-        Canvas c = new Canvas(bitmap);
-        // 清楚之前设置的值
-        paint.setMaskFilter(null);
-        paint.setColor(Color.CYAN);
-        c.drawBitmap(alphaBitmap, 0, 0, paint); // 这里给 alphaBitmap 填充天蓝色。
+class BitmapExtractAlphaWithParamsView(context: Context, attrs: AttributeSet?) :
+    View(context, attrs) {
+    private val paint = Paint(Paint.ANTI_ALIAS_FLAG or Paint.DITHER_FLAG)
+    private val offsetXY: IntArray
+    private val bitmap: Bitmap
+    override fun onDraw(canvas: Canvas) {
+        super.onDraw(canvas)
+        //        canvas.drawBitmap(bitmap, 0,0, paint);
+        canvas.drawBitmap(bitmap, -offsetXY[0].toFloat(), -offsetXY[1].toFloat(), paint)
     }
 
-    @Override
-    protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-//        canvas.drawBitmap(bitmap, 0,0, paint);
-        canvas.drawBitmap(bitmap, -offsetXY[0], -offsetXY[1], paint);
+    init {
+        // 获取 Alpha Bitmap
+        val srcBitmap = BitmapFactory.decodeResource(resources, R.drawable.cat_dog)
+        paint.maskFilter = BlurMaskFilter(6f, BlurMaskFilter.Blur.NORMAL)
+        offsetXY = IntArray(2)
+        val alphaBitmap = srcBitmap.extractAlpha(paint, offsetXY)
+        Log.d("wzc", "offsetX = " + offsetXY[0] + ", offsetY = " + offsetXY[1])
+        // 创建 Bitmap
+        bitmap = Bitmap.createBitmap(alphaBitmap.width, alphaBitmap.height, Bitmap.Config.ARGB_8888)
+        val c = Canvas(bitmap)
+        // 清楚之前设置的值
+        paint.maskFilter = null
+        paint.color = Color.CYAN
+        c.drawBitmap(alphaBitmap, 0f, 0f, paint) // 这里给 alphaBitmap 填充天蓝色。
     }
 }

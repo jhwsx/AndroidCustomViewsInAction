@@ -1,25 +1,14 @@
-package com.example.chapter10.part1;
+package com.example.chapter10.part1
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.BitmapShader;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.Shader;
-import android.graphics.drawable.ShapeDrawable;
-import android.graphics.drawable.shapes.OvalShape;
-import android.support.annotation.Nullable;
-import android.util.AttributeSet;
-import android.view.MotionEvent;
-import android.view.View;
-
-import com.example.chapter10.R;
-import com.example.chapter10.Utils;
+import android.content.Context
+import android.graphics.*
+import android.graphics.drawable.ShapeDrawable
+import android.graphics.drawable.shapes.OvalShape
+import android.util.AttributeSet
+import android.view.MotionEvent
+import android.view.View
+import com.example.chapter10.R
+import com.example.common.dp
 
 /**
  * 放大镜效果
@@ -32,53 +21,47 @@ import com.example.chapter10.Utils;
  * @author wangzhichao
  * @date 2019/10/13
  */
-public class MagnifierView extends View {
+class MagnifierView(context: Context, attrs: AttributeSet?) : View(context, attrs) {
+    private val sceneryBmp: Bitmap
+    private var bitmap: Bitmap? = null
+    private val currX = -1
+    private val currY = -1
+    private var drawable: ShapeDrawable? = null
+    private val mtx = Matrix()
 
-    private final Bitmap sceneryBmp;
-    private Bitmap bitmap;
-    private int currX = -1;
-    private int currY = -1;
-    private ShapeDrawable drawable;
-    private Matrix matrix = new Matrix();
-    // 放大倍数
-    private static final int FACTOR = 3;
-    private static final int RADIUS = Utils.dp2px(40);
-
-    public MagnifierView(Context context, @Nullable AttributeSet attrs) {
-        super(context, attrs);
-        setLayerType(View.LAYER_TYPE_SOFTWARE, null);
-        sceneryBmp = BitmapFactory.decodeResource(getResources(), R.drawable.scenery);
+    init {
+        setLayerType(LAYER_TYPE_SOFTWARE, null)
+        sceneryBmp = BitmapFactory.decodeResource(resources, R.drawable.scenery)
     }
 
-    @Override
-    protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
+    override fun onDraw(canvas: Canvas) {
+        super.onDraw(canvas)
         if (bitmap == null) {
-            bitmap = Bitmap.createScaledBitmap(sceneryBmp, getWidth(), getHeight(), false);
-            BitmapShader bitmapShader = new BitmapShader(Bitmap.createScaledBitmap(sceneryBmp, getWidth() * FACTOR,
-                    getHeight() * FACTOR, true), Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
-            drawable = new ShapeDrawable(new OvalShape());
-            drawable.getPaint().setShader(bitmapShader);
-            drawable.setBounds(0, 0, RADIUS * 2, RADIUS * 2);
+            bitmap = Bitmap.createScaledBitmap(sceneryBmp, width, height, false)
+            val bitmapShader = BitmapShader(Bitmap.createScaledBitmap(sceneryBmp, width * FACTOR,
+                height * FACTOR, true), Shader.TileMode.CLAMP, Shader.TileMode.CLAMP)
+            drawable = ShapeDrawable(OvalShape())
+            drawable!!.paint.shader = bitmapShader
+            drawable!!.setBounds(0, 0, RADIUS * 2, RADIUS * 2)
         }
-        canvas.drawBitmap(bitmap, 0, 0, null);
-        drawable.draw(canvas);
+        canvas.drawBitmap(bitmap!!, 0f, 0f, null)
+        drawable!!.draw(canvas)
     }
 
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        int x = (int) event.getX();
-        int y = (int) event.getY();
+    override fun onTouchEvent(event: MotionEvent): Boolean {
+        val x = event.x.toInt()
+        val y = event.y.toInt()
         // 这两行代码的作用很关键：移动 Shader 到要显示的地方。
-        matrix.setTranslate(RADIUS - x * FACTOR, RADIUS - y * FACTOR);
-        drawable.getPaint().getShader().setLocalMatrix(matrix);
-        drawable.setBounds(x - RADIUS, y - RADIUS, x + RADIUS, y + RADIUS);
-        invalidate();
-        return true;
+        mtx.setTranslate((RADIUS - x * FACTOR).toFloat(), (RADIUS - y * FACTOR).toFloat())
+        drawable!!.paint.shader.setLocalMatrix(mtx)
+        drawable!!.setBounds(x - RADIUS, y - RADIUS, x + RADIUS, y + RADIUS)
+        invalidate()
+        return true
+    }
+
+    companion object {
+        // 放大倍数
+        private const val FACTOR = 3
+        private val RADIUS = 40.dp.toInt()
     }
 }
-
-/**
- * 总结：
- * 1，关键是记得把 Shader 移动到需要显示的位置，因为 Shader 默认是在 ShapeDrawable 的左上角开始绘制的。
- */

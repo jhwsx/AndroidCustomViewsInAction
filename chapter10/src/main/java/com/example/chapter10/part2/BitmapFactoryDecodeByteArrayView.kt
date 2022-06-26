@@ -1,93 +1,82 @@
-package com.example.chapter10.part2;
+package com.example.chapter10.part2
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.support.annotation.Nullable;
-import android.util.AttributeSet;
-import android.view.View;
-
-import java.io.ByteArrayOutputStream;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
+import android.content.Context
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.graphics.Canvas
+import android.graphics.Paint
+import android.util.AttributeSet
+import android.view.View
+import java.io.ByteArrayOutputStream
+import java.io.InputStream
+import java.net.HttpURLConnection
+import java.net.URL
 
 /**
  * @author wangzhichao
  * @date 2019/10/20
  */
-public class BitmapFactoryDecodeByteArrayView extends View {
-    private Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
-    private Bitmap mBitmap;
-    public BitmapFactoryDecodeByteArrayView(Context context, @Nullable AttributeSet attrs) {
-        super(context, attrs);
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    byte[] data = getImage("http://172.16.40.10:8080/dog.jpg");
-                    if (data == null) {
-                        return;
-                    }
-                    final Bitmap bitmap = BitmapFactory.decodeByteArray(data, 0, data.length);
-                    post(new Runnable() {
-                        @Override
-                        public void run() {
-                            mBitmap = bitmap;
-                            invalidate();
-                        }
-                    });
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        }).start();
-    }
-
-    @Override
-    protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
+class BitmapFactoryDecodeByteArrayView(context: Context, attrs: AttributeSet?) :
+    View(context, attrs) {
+    private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
+    private var mBitmap: Bitmap? = null
+    override fun onDraw(canvas: Canvas) {
+        super.onDraw(canvas)
         if (mBitmap == null) {
-            return;
+            return
         }
-        canvas.drawBitmap(mBitmap,0,0,paint);
-
+        canvas.drawBitmap(mBitmap!!, 0f, 0f, paint)
     }
 
-    private byte[] getImage(String link) throws Exception {
-        byte[] result = null;
-        URL url = new URL(link);
-        HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
-        httpURLConnection.setRequestMethod("GET");
-        httpURLConnection.setReadTimeout(6 * 1000);
-        if (httpURLConnection.getResponseCode() == 200) {
-            InputStream inputStream = httpURLConnection.getInputStream();
-            result = readStream(inputStream);
-//            result = readStream2(inputStream);
-            inputStream.close();
+    @Throws(Exception::class)
+    private fun getImage(link: String): ByteArray? {
+        var result: ByteArray? = null
+        val url = URL(link)
+        val httpURLConnection = url.openConnection() as HttpURLConnection
+        httpURLConnection.requestMethod = "GET"
+        httpURLConnection.readTimeout = 6 * 1000
+        if (httpURLConnection.responseCode == 200) {
+            val inputStream = httpURLConnection.inputStream
+            result = readStream(inputStream)
+            //            result = readStream2(inputStream);
+            inputStream.close()
         }
-        return result;
+        return result
     }
 
-    private byte[] readStream(InputStream inputStream) throws Exception{
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        byte[] buffer = new byte[1024];
-        int length;
-        while((length = inputStream.read(buffer)) != -1) {
-            baos.write(buffer, 0, length);
+    @Throws(Exception::class)
+    private fun readStream(inputStream: InputStream): ByteArray {
+        val baos = ByteArrayOutputStream()
+        val buffer = ByteArray(1024)
+        var length: Int
+        while (inputStream.read(buffer).also { length = it } != -1) {
+            baos.write(buffer, 0, length)
         }
-        inputStream.close();
-        baos.close();
-        return baos.toByteArray();
+        inputStream.close()
+        baos.close()
+        return baos.toByteArray()
     }
 
-    private byte[] readStream2(InputStream inputStream) throws Exception{
-        byte[] result = new byte[inputStream.available()];
-        inputStream.read(result);
-        inputStream.close();
-        return result;
+    @Throws(Exception::class)
+    private fun readStream2(inputStream: InputStream): ByteArray {
+        val result = ByteArray(inputStream.available())
+        inputStream.read(result)
+        inputStream.close()
+        return result
+    }
+
+    init {
+        Thread(Runnable {
+            try {
+                val data = getImage("http://172.16.40.10:8080/dog.jpg") ?: return@Runnable
+                val bitmap = BitmapFactory.decodeByteArray(data, 0, data.size)
+                post {
+                    mBitmap = bitmap
+                    invalidate()
+                }
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }).start()
     }
 }

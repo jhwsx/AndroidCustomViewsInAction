@@ -1,19 +1,9 @@
-package com.example.chapter10.part1;
+package com.example.chapter10.part1
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapShader;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.PixelFormat;
-import android.graphics.RectF;
-import android.graphics.Shader;
-import android.graphics.drawable.Drawable;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.util.Log;
-
-import com.example.chapter10.Utils;
+import android.graphics.drawable.Drawable
+import android.graphics.*
+import android.util.Log
+import com.example.common.dp
 
 /**
  * 圆角 Drawable
@@ -24,52 +14,44 @@ import com.example.chapter10.Utils;
  * @author wangzhichao
  * @date 2019/10/15
  */
-public class CircledDrawable extends Drawable {
-    private static final String TAG = "CircledDrawable";
-    private Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
-    private Bitmap bitmap;
-    private RectF rect;
-    public CircledDrawable(Bitmap bitmap) {
-        this.bitmap = bitmap;
+class CircledDrawable(private val bitmap: Bitmap) : Drawable() {
+    private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
+    private var rect: RectF? = null
+    override fun setBounds(left: Int, top: Int, right: Int, bottom: Int) {
+        super.setBounds(left, top, right, bottom)
+        val shader =
+            BitmapShader(Bitmap.createScaledBitmap(bitmap, right - left, bottom - top, true),
+                Shader.TileMode.CLAMP, Shader.TileMode.CLAMP)
+        paint.shader = shader
+        rect = RectF(left.toFloat(), top.toFloat(), right.toFloat(), bottom.toFloat())
+        Log.d(TAG, "rect = " + rect!!.toShortString())
     }
 
-    @Override
-    public void setBounds(int left, int top, int right, int bottom) {
-        super.setBounds(left, top, right, bottom);
-        BitmapShader shader = new BitmapShader(Bitmap.createScaledBitmap(bitmap, right - left, bottom - top, true),
-                Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
-        paint.setShader(shader);
-        rect = new RectF(left, top, right, bottom);
-        Log.d(TAG, "rect = " + rect.toShortString());
+    override fun draw(canvas: Canvas) {
+        canvas.drawRoundRect(rect!!, 10.dp, 10.dp, paint)
     }
 
-    @Override
-    public void draw(@NonNull Canvas canvas) {
-        canvas.drawRoundRect(rect, Utils.dp2px(10), Utils.dp2px(10), paint);
+    override fun setAlpha(alpha: Int) {
+        paint.alpha = alpha
     }
 
-    @Override
-    public void setAlpha(int alpha) {
-        paint.setAlpha(alpha);
+    override fun setColorFilter(colorFilter: ColorFilter?) {
+        paint.colorFilter = colorFilter
     }
 
-    @Override
-    public void setColorFilter(@Nullable ColorFilter colorFilter) {
-        paint.setColorFilter(colorFilter);
+    override fun getOpacity(): Int {
+        return PixelFormat.TRANSLUCENT
     }
 
-    @Override
-    public int getOpacity() {
-        return PixelFormat.TRANSLUCENT;
+    override fun getIntrinsicWidth(): Int {
+        return bitmap.width
     }
 
-    @Override
-    public int getIntrinsicWidth() {
-        return bitmap.getWidth();
+    override fun getIntrinsicHeight(): Int {
+        return bitmap.height
     }
 
-    @Override
-    public int getIntrinsicHeight() {
-        return bitmap.getHeight();
+    companion object {
+        private const val TAG = "CircledDrawable"
     }
 }

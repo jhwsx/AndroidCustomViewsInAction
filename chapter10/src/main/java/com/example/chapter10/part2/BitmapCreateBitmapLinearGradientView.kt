@@ -1,18 +1,10 @@
-package com.example.chapter10.part2;
+package com.example.chapter10.part2
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.LinearGradient;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.Shader;
-import android.support.annotation.Nullable;
-import android.util.AttributeSet;
-import android.view.View;
-
-import com.example.chapter10.Utils;
+import android.content.Context
+import android.graphics.*
+import android.util.AttributeSet
+import android.view.*
+import com.example.common.dp
 
 /**
  * 自定义线性渐变带描边的 View
@@ -25,33 +17,40 @@ import com.example.chapter10.Utils;
  * @author wangzhichao
  * @date 2019/10/29
  */
-public class BitmapCreateBitmapLinearGradientView extends View {
-
-    private final Bitmap bitmap;
-    private Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG | Paint.DITHER_FLAG);
-    public BitmapCreateBitmapLinearGradientView(Context context, @Nullable AttributeSet attrs) {
-        super(context, attrs);
-        bitmap = Bitmap.createBitmap(Utils.dp2px(200), Utils.dp2px(300), Bitmap.Config.ARGB_8888);
-        Canvas canvas = new Canvas(bitmap);
-        LinearGradient linearGradient = new LinearGradient(0, 0, 0, Utils.dp2px(300), new int[]{0xffffffff, 0x00ffffff}, new float[]{0f, 1f}, Shader.TileMode.CLAMP);
-        Paint p = new Paint(Paint.ANTI_ALIAS_FLAG | Paint.DITHER_FLAG);
-        p.setShader(linearGradient);
-        Rect rect = new Rect(0, 0, Utils.dp2px(200), Utils.dp2px(300));
-        canvas.drawRect(rect, p);
+class BitmapCreateBitmapLinearGradientView(context: Context, attrs: AttributeSet?) :
+    View(context, attrs) {
+    private val bitmap: Bitmap
+    private val paint = Paint(Paint.ANTI_ALIAS_FLAG or Paint.DITHER_FLAG)
+    override fun onDraw(canvas: Canvas) {
+        super.onDraw(canvas)
+        val width = width
+        val height = height
+        val left = width / 2 - bitmap.width / 2
+        val top = height / 2 - bitmap.height / 2
+        canvas.drawBitmap(bitmap, left.toFloat(), top.toFloat(), paint)
+        paint.color = Color.RED
+        paint.style = Paint.Style.STROKE
+        paint.strokeWidth = 3.dp
+        canvas.drawRect(left.toFloat(),
+            top.toFloat(),
+            (left + bitmap.width).toFloat(),
+            (top + bitmap.height).toFloat(),
+            paint)
     }
 
-    @Override
-    protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        int width = getWidth();
-        int height = getHeight();
-        int left = width / 2 - bitmap.getWidth() / 2;
-        int top = height / 2 - bitmap.getHeight() / 2;
-        canvas.drawBitmap(bitmap, left, top, paint);
-
-        paint.setColor(Color.RED);
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(Utils.dp2px(3));
-        canvas.drawRect(left, top, left + bitmap.getWidth(), top + bitmap.getHeight(), paint);
+    init {
+        bitmap = Bitmap.createBitmap(200.dp.toInt(), 300.dp.toInt(), Bitmap.Config.ARGB_8888)
+        val canvas = Canvas(bitmap)
+        val linearGradient = LinearGradient(0f,
+            0f,
+            0f,
+            300.dp,
+            intArrayOf(-0x1, 0x00ffffff),
+            floatArrayOf(0f, 1f),
+            Shader.TileMode.CLAMP)
+        val p = Paint(Paint.ANTI_ALIAS_FLAG or Paint.DITHER_FLAG)
+        p.shader = linearGradient
+        val rect = Rect(0, 0, 200.dp.toInt(), 300.dp.toInt())
+        canvas.drawRect(rect, p)
     }
 }
