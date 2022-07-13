@@ -9,6 +9,8 @@ import android.os.Build
 import android.graphics.*
 import android.util.AttributeSet
 import android.view.*
+import androidx.core.graphics.drawable.toBitmap
+import androidx.core.graphics.drawable.toDrawable
 import com.example.common.dp
 
 /**
@@ -16,7 +18,7 @@ import com.example.common.dp
  * @author wangzhichao
  * @date 2019/10/15
  */
-class BitmapDrawableConvert(context: Context, attrs: AttributeSet?) : View(context, attrs) {
+class A_BitmapDrawableConvert(context: Context, attrs: AttributeSet?) : View(context, attrs) {
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
@@ -55,7 +57,11 @@ class BitmapDrawableConvert(context: Context, attrs: AttributeSet?) : View(conte
         // 1.3
         val drawable = L_RoundedCornerDrawable(bitmap)
         val bitmap1 = drawableToBitmap(drawable)
+        // ktx
+        val bitmap2 = drawable.toBitmap()
         // 2, Bitmap 转 Drawable
         val bitmapDrawable = BitmapDrawable(resources, bitmap)
+        // ktx
+        val bitmapDrawable1 = bitmap.toDrawable(resources)
     }
 }

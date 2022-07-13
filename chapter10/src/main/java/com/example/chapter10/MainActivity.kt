@@ -95,6 +95,7 @@ class MainActivity : AppCompatActivity() {
         }
         pageModels.add(PageModel(R.string.title_circled_drawable,
             R.layout.practice_circled_drawable_viewgroup))
+        // part2 bitmap
         pageModels.add(PageModel(R.string.title_bitmap_drawable_convert,
             R.layout.practice_bitmap_drawable_convert))
         pageModels.add(PageModel(R.string.title_bitmap_compress_format,

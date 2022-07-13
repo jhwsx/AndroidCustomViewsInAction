@@ -19,7 +19,7 @@ import java.io.IOException
  * @author wangzhichao
  * @date 2019/10/16
  */
-class BitmapCompressFormat(context: Context, attrs: AttributeSet?) : View(context, attrs) {
+class B_BitmapCompressFormat(context: Context, attrs: AttributeSet?) : View(context, attrs) {
     private val paint = TextPaint(Paint.ANTI_ALIAS_FLAG)
 
     init {
@@ -41,7 +41,7 @@ class BitmapCompressFormat(context: Context, attrs: AttributeSet?) : View(contex
   Bitmap.CompressFormat.PNG
  Bitmap.CompressFormat.JPEG
  Bitmap.CompressFormat.WEBP
-可以去 SD 卡根目录查看转化成的三种照片。""", paint,
+可以去外置私有目录查看转化成的三种照片。""", paint,
             width, Layout.Alignment.ALIGN_CENTER, 1f, 0f, true)
         staticLayout.draw(canvas)
     }
@@ -49,8 +49,7 @@ class BitmapCompressFormat(context: Context, attrs: AttributeSet?) : View(contex
     private fun save(fileName: String, bitmap: Bitmap, compressFormat: CompressFormat) {
         Thread {
             try {
-                val file = File(Environment.getExternalStorageDirectory()
-                    .toString() + File.separator + fileName)
+                val file = File(context.getExternalFilesDir(null), fileName)
                 val fos = FileOutputStream(file)
                 bitmap.compress(compressFormat, 100, fos)
                 fos.flush()

@@ -30,8 +30,9 @@ class L_RoundedCornerDrawableViewGroup(context: Context?, attrs: AttributeSet?) 
         val tv = findViewById<TextView>(R.id.tv)
         val tv1 = findViewById<TextView>(R.id.tv1)
         val bitmap = BitmapFactory.decodeResource(resources, R.drawable.avatar)
-        // 当使用 setlmageDrawable(drawable）函数来设 ImageView 数据源时，自定义 Drawab
+        // 当使用 setImageDrawable(drawable）函数来设 ImageView 数据源时，自定义 Drawab
         // 的位置和大小与 ImageView scaleType 关。
+        // ImageView.setImageDrawable -> ImageView.updateDrawable -> ImageView.configureBounds 内部会设置 Drawable 的边框（setBounds 四个参数的方法）以及 matrix，最终会在 onDraw 方法中生效。
         iv0.setImageDrawable(L_RoundedCornerDrawable(bitmap))
         iv1.setImageDrawable(L_RoundedCornerDrawable(bitmap))
         iv2.setImageDrawable(L_RoundedCornerDrawable(bitmap))
