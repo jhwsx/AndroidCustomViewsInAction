@@ -12,10 +12,12 @@ import java.io.File
 import java.io.FileInputStream
 
 /**
+ * BitmapFactory.decodeFileDescriptor
+ *
  * @author wangzhichao
  * @date 2019/10/20
  */
-class BitmapFactoryDecodeFileDescriptorView(context: Context, attrs: AttributeSet?) :
+class E_BitmapFactoryDecodeFileDescriptorView(context: Context, attrs: AttributeSet?) :
     View(context, attrs) {
     private var bitmap: Bitmap? = null
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
@@ -27,8 +29,7 @@ class BitmapFactoryDecodeFileDescriptorView(context: Context, attrs: AttributeSe
     }
 
     init {
-        val path = Environment.getExternalStorageDirectory()
-            .toString() + File.separator + "scenary_png.png"
+        val path = File(context.getExternalFilesDir(null), "scenary_png.png")
         try {
             val fileInputStream = FileInputStream(path)
             bitmap = BitmapFactory.decodeFileDescriptor(fileInputStream.fd)

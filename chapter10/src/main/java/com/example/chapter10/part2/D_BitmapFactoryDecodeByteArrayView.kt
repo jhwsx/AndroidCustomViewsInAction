@@ -13,10 +13,12 @@ import java.net.HttpURLConnection
 import java.net.URL
 
 /**
+ * BitmapFactory.decodeByteArray
+ *
  * @author wangzhichao
  * @date 2019/10/20
  */
-class BitmapFactoryDecodeByteArrayView(context: Context, attrs: AttributeSet?) :
+class D_BitmapFactoryDecodeByteArrayView(context: Context, attrs: AttributeSet?) :
     View(context, attrs) {
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
     private var mBitmap: Bitmap? = null
@@ -35,15 +37,16 @@ class BitmapFactoryDecodeByteArrayView(context: Context, attrs: AttributeSet?) :
         val httpURLConnection = url.openConnection() as HttpURLConnection
         httpURLConnection.requestMethod = "GET"
         httpURLConnection.readTimeout = 6 * 1000
-        if (httpURLConnection.responseCode == 200) {
+        if (httpURLConnection.responseCode == HttpURLConnection.HTTP_OK) {
             val inputStream = httpURLConnection.inputStream
             result = readStream(inputStream)
-            //            result = readStream2(inputStream);
+//            result = readStream2(inputStream)
             inputStream.close()
         }
         return result
     }
 
+    // 这是正常的代码：把输入流转换为字节内存输出流的字节数组形式，这才是 BitmapFactory.decodeByteArray 需要的。
     @Throws(Exception::class)
     private fun readStream(inputStream: InputStream): ByteArray {
         val baos = ByteArrayOutputStream()
@@ -57,6 +60,7 @@ class BitmapFactoryDecodeByteArrayView(context: Context, attrs: AttributeSet?) :
         return baos.toByteArray()
     }
 
+    // 这是有问题的代码
     @Throws(Exception::class)
     private fun readStream2(inputStream: InputStream): ByteArray {
         val result = ByteArray(inputStream.available())
@@ -68,12 +72,11 @@ class BitmapFactoryDecodeByteArrayView(context: Context, attrs: AttributeSet?) :
     init {
         Thread(Runnable {
             try {
-                val data = getImage("http://172.16.40.10:8080/dog.jpg") ?: return@Runnable
+                val data =
+                    getImage("https://profile.csdnimg.cn/7/C/B/1_willway_wang") ?: return@Runnable
                 val bitmap = BitmapFactory.decodeByteArray(data, 0, data.size)
-                post {
-                    mBitmap = bitmap
-                    invalidate()
-                }
+                mBitmap = bitmap
+                postInvalidate()
             } catch (e: Exception) {
                 e.printStackTrace()
             }

@@ -15,7 +15,7 @@ import java.net.URL
  * @author wangzhichao
  * @date 2019/10/20
  */
-class BitmapFactoryDecodeStreamView(context: Context, attrs: AttributeSet?) :
+class F_BitmapFactoryDecodeStreamView(context: Context, attrs: AttributeSet?) :
     View(context, attrs) {
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
     private var mBitmap: Bitmap? = null
@@ -36,39 +36,18 @@ class BitmapFactoryDecodeStreamView(context: Context, attrs: AttributeSet?) :
         httpURLConnection.readTimeout = 6 * 1000
         if (httpURLConnection.responseCode == 200) {
             result = httpURLConnection.inputStream
-            //            result = readStream(inputStream);
-//            result = readStream2(inputStream);
         }
         return result
-    } //    private byte[] readStream(InputStream inputStream) throws Exception{
+    }
 
-    //        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-    //        byte[] buffer = new byte[1024];
-    //        int length;
-    //        while((length = inputStream.read(buffer)) != -1) {
-    //            baos.write(buffer, 0, length);
-    //        }
-    //        inputStream.close();
-    //        baos.close();
-    //        return baos.toByteArray();
-    //    }
-    //
-    //    private byte[] readStream2(InputStream inputStream) throws Exception{
-    //        byte[] result = new byte[inputStream.available()];
-    //        inputStream.read(result);
-    //        inputStream.close();
-    //        return result;
-    //    }
     init {
         Thread(Runnable {
             try {
-                val data = getImage("http://172.16.40.10:8080/dog.jpg") ?: return@Runnable
+                val data = getImage("https://profile.csdnimg.cn/7/C/B/1_willway_wang") ?: return@Runnable
                 val bitmap = BitmapFactory.decodeStream(data)
                 data.close()
-                post {
-                    mBitmap = bitmap
-                    invalidate()
-                }
+                mBitmap = bitmap
+                postInvalidate()
             } catch (e: Exception) {
                 e.printStackTrace()
             }

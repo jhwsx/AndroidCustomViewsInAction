@@ -4,7 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.*
 import android.graphics.Bitmap.CompressFormat
-import android.os.Environment
+import android.os.Build
 import android.text.Layout
 import android.text.StaticLayout
 import android.text.TextPaint
@@ -30,7 +30,11 @@ class B_BitmapCompressFormat(context: Context, attrs: AttributeSet?) : View(cont
         val bitmap = BitmapFactory.decodeResource(resources, R.drawable.scenery)
         save("scenary_png.png", bitmap, CompressFormat.PNG)
         save("scenary_jpeg.jpeg", bitmap, CompressFormat.JPEG)
-        save("scenary_webp.webp", bitmap, CompressFormat.WEBP)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            save("scenary_webp.webp", bitmap, CompressFormat.WEBP_LOSSLESS)
+        } else {
+            save("scenary_webp.webp", bitmap, CompressFormat.WEBP)
+        }
     }
 
     @SuppressLint("DrawAllocation")
