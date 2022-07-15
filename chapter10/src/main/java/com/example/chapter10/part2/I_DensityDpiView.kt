@@ -9,12 +9,14 @@ import android.text.Layout
 import android.util.AttributeSet
 import android.view.*
 import com.example.common.dp
+import kotlin.math.pow
+import kotlin.math.sqrt
 
 /**
  * @author wangzhichao
  * @date 2019/10/22
  */
-class DensityDpiView(context: Context, attrs: AttributeSet?) : View(context, attrs) {
+class I_DensityDpiView(context: Context, attrs: AttributeSet?) : View(context, attrs) {
     private val info: String
     private val paint = TextPaint(Paint.ANTI_ALIAS_FLAG)
     override fun onDraw(canvas: Canvas) {
@@ -28,10 +30,12 @@ class DensityDpiView(context: Context, attrs: AttributeSet?) : View(context, att
         val displayMetrics = DisplayMetrics()
         val windowManager = context.getSystemService(Context.WINDOW_SERVICE) as WindowManager
         windowManager.defaultDisplay.getMetrics(displayMetrics)
+        // dpi: dot per inch, 屏幕像素密度，指每英寸上的像素点数。
+        // densityDpi: 以 dpi 形式表示的 density，即 density * 160 的值了。
         val widthInch = displayMetrics.widthPixels / displayMetrics.xdpi
         val heightInch = displayMetrics.heightPixels / displayMetrics.ydpi
         val screenInch =
-            Math.sqrt(Math.pow(widthInch.toDouble(), 2.0) + Math.pow(heightInch.toDouble(), 2.0))
+            sqrt(widthInch.toDouble().pow(2.0) + heightInch.toDouble().pow(2.0))
                 .toFloat()
         info = """
             density: ${displayMetrics.density}

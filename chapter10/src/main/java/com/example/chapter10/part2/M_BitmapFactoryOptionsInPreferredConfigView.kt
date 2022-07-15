@@ -16,7 +16,7 @@ import java.lang.StringBuilder
  * @author wangzhichao
  * @date 2019/10/23
  */
-class BitmapFactoryOptionsInPreferredConfigView(context: Context, attrs: AttributeSet?) :
+class M_BitmapFactoryOptionsInPreferredConfigView(context: Context, attrs: AttributeSet?) :
     View(context, attrs) {
     private val sb = StringBuilder()
     var paint = TextPaint(Paint.ANTI_ALIAS_FLAG)
@@ -54,8 +54,8 @@ class BitmapFactoryOptionsInPreferredConfigView(context: Context, attrs: Attribu
         sb.append("\n\n")
         sb.append("---------------结论--------------------")
         sb.append("\n")
-        sb.append("inPreferredConfig 参数表示设置像素的存储格式" +
-                "1,inPreferredConfig 参数默认设置是 Bitmap.Config.ARGB_8888。" +
+        sb.append("inPreferredConfig 参数表示设置像素的存储格式:\t" +
+                "1,inPreferredConfig 参数默认设置是 Bitmap.Config.ARGB_8888。\t" +
                 "2，inPreferredConfig 不会改变图片的宽高。")
     }
 }

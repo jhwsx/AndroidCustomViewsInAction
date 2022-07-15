@@ -15,7 +15,7 @@ import java.lang.StringBuilder
  * @author wangzhichao
  * @date 2019/10/23
  */
-class BitmapFactoryOptionsInScaledView(context: Context, attrs: AttributeSet?) :
+class K_BitmapFactoryOptionsInScaledView(context: Context, attrs: AttributeSet?) :
     View(context, attrs) {
     private val sb = StringBuilder()
     var paint = TextPaint(Paint.ANTI_ALIAS_FLAG)

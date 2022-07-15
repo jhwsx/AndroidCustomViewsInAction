@@ -12,31 +12,20 @@ import com.example.common.dp
  * @author wangzhichao
  * @date 2019/10/21
  */
-class BitmapFactoryOptionsInSampleSizeView(context: Context?, attrs: AttributeSet?) :
+class H_BitmapFactoryOptionsInSampleSizeView(context: Context?, attrs: AttributeSet?) :
     View(context, attrs) {
     private val bitmap: Bitmap?
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
     private val dstWidth = 200.dp.toInt()
     private val dstHeight = 200.dp.toInt()
+    private val rect = Rect(0, 0, dstWidth, dstHeight)
+
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
         if (bitmap == null) {
             return
         }
-        canvas.drawBitmap(bitmap, null, Rect(0, 0, dstWidth, dstHeight), paint)
-    }
-
-    private fun calSampleSize(options: BitmapFactory.Options, dstWidth: Int, dstHeight: Int): Int {
-        val rawWidth = options.outWidth
-        val rawHeight = options.outHeight
-        var inSampleSize = 1
-        if (rawWidth > dstWidth || rawHeight > dstHeight) {
-            val ratioHeight = rawHeight.toFloat() / dstHeight
-            val ratioWidth = rawWidth * 1f / dstWidth
-            Log.d("wzc", "ratioHeight: $ratioHeight, ratioWidth: $ratioWidth")
-            inSampleSize = Math.min(ratioHeight, ratioWidth).toInt()
-        }
-        return inSampleSize
+        canvas.drawBitmap(bitmap, null, rect, paint)
     }
 
     companion object {
@@ -70,8 +59,7 @@ class BitmapFactoryOptionsInSampleSizeView(context: Context?, attrs: AttributeSe
         BitmapFactory.decodeResource(resources, R.drawable.book, options)
         options.inJustDecodeBounds = false
         // 这里直接写成 1，会报错：java.lang.RuntimeException: Canvas: trying to draw too large(143327232bytes) bitmap.
-//        options.inSampleSize = 1;
-//        options.inSampleSize = calSampleSize(options, dstWidth, dstHeight);
+//        options.inSampleSize = 1
         options.inSampleSize = calculateInSampleSize(options, dstWidth, dstHeight)
         bitmap = BitmapFactory.decodeResource(resources, R.drawable.book, options)
     }

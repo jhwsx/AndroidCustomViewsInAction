@@ -18,7 +18,7 @@ import java.lang.StringBuilder
  * @author wangzhichao
  * @date 2019/10/23
  */
-class SDCardBitmapDrawableBitmapView(context: Context?, attrs: AttributeSet?) :
+class J_SDCardBitmapDrawableBitmapView(context: Context, attrs: AttributeSet?) :
     View(context, attrs) {
     var sb = StringBuilder()
     var paint = TextPaint(Paint.ANTI_ALIAS_FLAG)
@@ -39,13 +39,12 @@ class SDCardBitmapDrawableBitmapView(context: Context?, attrs: AttributeSet?) :
             .append("\t").append("内存：").append(bitmap.byteCount)
         sb.append("\n\n")
         // 直接从文件中读取是不存在缩放的，原本是多大，读进来就是多大尺寸
-        val externalStorageDirectory = Environment.getExternalStorageDirectory()
-        val path = externalStorageDirectory.absoluteFile.toString() + File.separator + "scenery.png"
-        val bmp = BitmapFactory.decodeFile(path)
+        val path = File( context.getExternalFilesDir(null), "scenery.png")
+        val bmp = BitmapFactory.decodeFile(path.absolutePath)
         if (bmp == null) {
-            Toast.makeText(context, "sd card 上没有 scenery.png", Toast.LENGTH_SHORT).show()
+            sb.append("sd card 应用私有目录上没有 scenery.png")
         } else {
-            sb.append("fileBmp_width:").append(bmp!!.width)
+            sb.append("fileBmp_width:").append(bmp.width)
                 .append("\t").append("fileBmp_height:").append(bmp.height)
                 .append("\t").append("内存：").append(bmp.byteCount)
             sb.append("\n\n")
