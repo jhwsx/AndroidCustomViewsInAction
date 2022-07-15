@@ -15,10 +15,10 @@ import com.example.chapter10.R
  * @author wangzhichao
  * @date 2019/10/29
  */
-class BitmapCreateBitmapClipImageView(context: Context, attrs: AttributeSet?) :
+class O_BitmapCreateBitmapClipImageView(context: Context, attrs: AttributeSet?) :
     View(context, attrs) {
     private val bitmap: Bitmap
-    private val source: Bitmap
+    private val source: Bitmap = BitmapFactory.decodeResource(resources, R.drawable.dog)
     private val bitmap2: Bitmap
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
@@ -28,21 +28,20 @@ class BitmapCreateBitmapClipImageView(context: Context, attrs: AttributeSet?) :
     }
 
     init {
-        source = BitmapFactory.decodeResource(resources, R.drawable.dog)
-        val width = source.width
-        val height = source.height
+        val srcWidth = source.width
+        val srcHeight = source.height
         // Bitmap createBitmap(@NonNull Bitmap source, int x, int y, int width, int height)
         // source 源图像
         // x, y 从源图像的哪个位置开始裁剪
         // width, height 从指定位置裁剪多少像素
-        bitmap = Bitmap.createBitmap(source, width / 3, height / 3, width / 3, height / 3)
+        bitmap = Bitmap.createBitmap(source, srcWidth / 3, srcHeight / 3, srcWidth / 3, srcHeight / 3)
         val matrix = Matrix()
-        matrix.setScale(2f, 1f)
+        matrix.setScale(1f, 2f)
         // Bitmap createBitmap(@NonNull Bitmap source, int x, int y, int width, int height, @Nullable Matrix m, boolean filter)
         // Matrix，对裁剪后的图像进行矩阵变换
         // filter, 对应 paint.setFilterBitmap(filter), 是否给图像添加滤波效果。
         // 自己测验了为 true 时，把图片放到最大，最小的格子是正方形；为 false 时，把图片放大到最大，最小的格子是矩形。
         bitmap2 =
-            Bitmap.createBitmap(source, width / 3, height / 3, width / 3, height / 3, matrix, true)
+            Bitmap.createBitmap(source, srcWidth / 3, srcHeight / 3, srcWidth / 3, srcHeight / 3, matrix, true)
     }
 }

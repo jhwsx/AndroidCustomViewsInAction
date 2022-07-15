@@ -7,13 +7,14 @@ import android.graphics.Canvas
 import android.util.AttributeSet
 import android.view.View
 import com.example.chapter10.R
+import com.example.common.dp
 
 /**
  * 缩放图片
  * @author wangzhichao
  * @date 2019/10/29
  */
-class BitmapCreateScaledBitmapView(context: Context, attrs: AttributeSet?) : View(context, attrs) {
+class Q_BitmapCreateScaledBitmapView(context: Context, attrs: AttributeSet?) : View(context, attrs) {
     private val scaledBitmap: Bitmap
     private val source: Bitmap
     override fun onDraw(canvas: Canvas) {
@@ -27,6 +28,6 @@ class BitmapCreateScaledBitmapView(context: Context, attrs: AttributeSet?) : Vie
         // Bitmap createScaledBitmap(@NonNull Bitmap src, int dstWidth, int dstHeight, boolean filter)
         // dstWidth, dstHeight, 缩放到多少尺寸
         // filter 是否给图像添加滤波效果
-        scaledBitmap = Bitmap.createScaledBitmap(source, 300, 200, true)
+        scaledBitmap = Bitmap.createScaledBitmap(source, 100.dp.toInt(), 100.dp.toInt(), true)
     }
 }

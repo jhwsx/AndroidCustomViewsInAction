@@ -17,19 +17,24 @@ import android.view.*
  * @author wangzhichao
  * @date 2019/10/31
  */
-class BitmapExtractAlphaView(context: Context?, attrs: AttributeSet?) : View(context, attrs) {
+class S_BitmapExtractAlphaView(context: Context?, attrs: AttributeSet?) : View(context, attrs) {
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG or Paint.DITHER_FLAG)
-    private val src: Bitmap
-    private val bitmap: Bitmap
+    private val src: Bitmap = BitmapFactory.decodeResource(resources, R.drawable.cat_dog)
+    private val bitmap: Bitmap = Bitmap.createBitmap(src.width, src.height, Bitmap.Config.ARGB_8888)
+    private val rect1 = Rect()
+    private val rect2 = Rect()
+    override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
+        super.onSizeChanged(w, h, oldw, oldh)
+        rect1.set(0, 0, width, height / 2)
+        rect2.set(0, height / 2, width, height)
+    }
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-        canvas.drawBitmap(src, null, Rect(0, 0, width, height / 2), null)
-        canvas.drawBitmap(bitmap, null, Rect(0, height / 2, width, height), null)
+        canvas.drawBitmap(src, null, rect1, null)
+        canvas.drawBitmap(bitmap, null, rect2, null)
     }
 
     init {
-        src = BitmapFactory.decodeResource(resources, R.drawable.cat_dog)
-        bitmap = Bitmap.createBitmap(src.width, src.height, Bitmap.Config.ARGB_8888)
         val c = Canvas(bitmap)
         paint.color = Color.CYAN
         c.drawBitmap(src.extractAlpha(), 0f, 0f, paint)
