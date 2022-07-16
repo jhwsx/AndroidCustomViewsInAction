@@ -9,6 +9,7 @@ import android.util.AttributeSet
 import android.widget.ImageView
 import android.widget.LinearLayout
 import com.example.chapter10.R
+import com.example.common.ImageUtils
 import com.example.common.dp
 
 /**
@@ -24,6 +25,9 @@ class B_WatermarkViewGroup @JvmOverloads constructor(
         val iv = findViewById<ImageView>(R.id.iv)
         val bitmap = createWatermarkBitmap(BitmapFactory.decodeResource(resources, R.drawable.scenery),
             BitmapFactory.decodeResource(resources, R.drawable.watermark))
+        // TODO 这种方式为什么不可以呢？
+//        val bitmap = createWatermarkBitmap(ImageUtils.decodeSampleBitmapFromResource(resources, R.drawable.scenery, 300.dp.toInt()),
+//            ImageUtils.decodeSampleBitmapFromResource(resources, R.drawable.watermark, 50.dp.toInt()))
         iv.setImageBitmap(bitmap)
     }
 
@@ -31,16 +35,15 @@ class B_WatermarkViewGroup @JvmOverloads constructor(
         if (src == null) {
             return null
         }
-        val paint = Paint(Paint.ANTI_ALIAS_FLAG)
         val srcWidth = src.width
         val srcHeight = src.height
         val watermarkWidth = watermark.width
         val watermarkHeight = watermark.height
         val bitmap = Bitmap.createBitmap(srcWidth, srcHeight, Bitmap.Config.ARGB_8888)
         val c = Canvas(bitmap)
-        c.drawBitmap(src, 0f, 0f, paint)
+        c.drawBitmap(src, 0f, 0f, null)
         val padding = 8.dp
-        c.drawBitmap(watermark, padding, padding, paint)
+        c.drawBitmap(watermark, padding, padding, null)
         return bitmap
     }
 }

@@ -148,5 +148,14 @@ class MainActivity : AppCompatActivity() {
             R.layout.practice_paint_antialiasflag_invalid_view))
         pageModels.add(PageModel(R.string.title_watermark,
             R.layout.practice_watermark_viewgroup))
+
+        pageModels.add(PageModel(R.string.title_surface_gesture,
+            R.layout.practice_surface_gesture))
+        pageModels.add(PageModel(R.string.title_surface_surfaceholder_gesture,
+            R.layout.practice_surface_surfaceholder_gesture))
+        pageModels.add(PageModel(R.string.title_animation_surfaceview,
+            R.layout.practice_animation_surfaceview))
+        pageModels.add(PageModel(R.string.title_double_buffering,
+            R.layout.practice_double_buffering))
     }
 }
