@@ -1,4 +1,4 @@
-package com.example.chapter10.part2
+package com.example.chapter10.part2.section5
 
 import android.content.Context
 import android.graphics.*
@@ -17,29 +17,33 @@ import com.example.common.dp
  * @author wangzhichao
  * @date 2019/12/02
  */
-class T_BitmapExtractAlphaWithParamsView(context: Context, attrs: AttributeSet?) :
+class C_BitmapExtractAlphaWithParamsView(context: Context, attrs: AttributeSet?) :
     View(context, attrs) {
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG or Paint.DITHER_FLAG)
     private val offsetXY: IntArray
     private val bitmap: Bitmap
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-        canvas.drawBitmap(bitmap, -offsetXY[0].toFloat(), -offsetXY[1].toFloat(), paint)
+        canvas.drawBitmap(bitmap, 0f, 0f, null)
     }
 
     init {
         // 获取 Alpha Bitmap
         val srcBitmap = BitmapFactory.decodeResource(resources, R.drawable.cat_dog)
-        paint.maskFilter = BlurMaskFilter(6.dp, BlurMaskFilter.Blur.NORMAL)
+        paint.maskFilter = BlurMaskFilter(10.dp, BlurMaskFilter.Blur.NORMAL)
         offsetXY = IntArray(2)
+        // offsetXY 就是相对源图像的建议绘制起始位置，其取值并不一定与 BlurMaskFilter 的模糊半径一致。
         val alphaBitmap = srcBitmap.extractAlpha(paint, offsetXY)
         Log.d("wzc", "offsetX = " + offsetXY[0] + ", offsetY = " + offsetXY[1])
-        // 创建 Bitmap
+        // 创建 Bitmap，在 onDraw 方法里面要用到的 Bitmap。
         bitmap = Bitmap.createBitmap(alphaBitmap.width, alphaBitmap.height, Bitmap.Config.ARGB_8888)
         val c = Canvas(bitmap)
         // 清除之前设置的值
         paint.maskFilter = null
         paint.color = Color.CYAN
+        // 绘制发光
         c.drawBitmap(alphaBitmap, 0f, 0f, paint) // 这里给 alphaBitmap 填充天蓝色。
+        // 绘制源图像
+        c.drawBitmap(srcBitmap, -offsetXY[0].toFloat(), -offsetXY[1].toFloat(), paint)
     }
 }

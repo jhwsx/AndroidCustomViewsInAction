@@ -146,5 +146,7 @@ class MainActivity : AppCompatActivity() {
             R.layout.practice_bitmap_compress_viewgroup))
         pageModels.add(PageModel(R.string.title_paint_antialiasflag_invalid,
             R.layout.practice_paint_antialiasflag_invalid_view))
+        pageModels.add(PageModel(R.string.title_watermark,
+            R.layout.practice_watermark_viewgroup))
     }
 }

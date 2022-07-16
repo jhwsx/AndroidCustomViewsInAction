@@ -3,7 +3,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.example.chapter10.part2.StrokeImage
+    <com.example.chapter10.part2.section5.D_StrokeImage
         android:clickable="true"
         android:padding="4dp"
         android:src="@drawable/cat_dog"

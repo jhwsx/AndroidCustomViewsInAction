@@ -1,4 +1,4 @@
-package com.example.chapter10.part2
+package com.example.chapter10.part2.section3
 
 import android.content.Context
 import com.example.chapter10.R
@@ -18,7 +18,7 @@ import java.lang.StringBuilder
  * @author wangzhichao
  * @date 2019/10/23
  */
-class L_BitmapFactoryOptionsInDensityInTargetDensityView(context: Context, attrs: AttributeSet?) :
+class D_BitmapFactoryOptionsInDensityInTargetDensityView(context: Context, attrs: AttributeSet?) :
     View(context, attrs) {
     var sb = StringBuilder()
     var paint = TextPaint(Paint.ANTI_ALIAS_FLAG)

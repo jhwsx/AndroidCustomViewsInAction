@@ -1,4 +1,4 @@
-package com.example.chapter10.part2
+package com.example.chapter10.part2.section4
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -14,7 +14,7 @@ import com.example.common.dp
  * @author wangzhichao
  * @date 2019/10/29
  */
-class Q_BitmapCreateScaledBitmapView(context: Context, attrs: AttributeSet?) : View(context, attrs) {
+class D_BitmapCreateScaledBitmapView(context: Context, attrs: AttributeSet?) : View(context, attrs) {
     private val scaledBitmap: Bitmap
     private val source: Bitmap
     override fun onDraw(canvas: Canvas) {

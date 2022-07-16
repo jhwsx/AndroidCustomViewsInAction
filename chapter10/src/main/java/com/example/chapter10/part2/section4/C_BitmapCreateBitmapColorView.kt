@@ -1,4 +1,4 @@
-package com.example.chapter10.part2
+package com.example.chapter10.part2.section4
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -16,7 +16,7 @@ import kotlin.math.min
  * @author wangzhichao
  * @date 2019/10/29
  */
-class P_BitmapCreateBitmapColorView(context: Context, attrs: AttributeSet?) : View(context, attrs) {
+class C_BitmapCreateBitmapColorView(context: Context, attrs: AttributeSet?) : View(context, attrs) {
     private val bitmap: Bitmap
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)

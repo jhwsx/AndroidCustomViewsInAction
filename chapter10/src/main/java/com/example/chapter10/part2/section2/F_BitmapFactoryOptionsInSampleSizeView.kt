@@ -1,10 +1,9 @@
-package com.example.chapter10.part2
+package com.example.chapter10.part2.section2
 
 import android.content.Context
 import com.example.chapter10.R
 import android.graphics.*
 import android.util.AttributeSet
-import android.util.Log
 import android.view.*
 import com.example.common.dp
 
@@ -12,7 +11,7 @@ import com.example.common.dp
  * @author wangzhichao
  * @date 2019/10/21
  */
-class H_BitmapFactoryOptionsInSampleSizeView(context: Context?, attrs: AttributeSet?) :
+class F_BitmapFactoryOptionsInSampleSizeView(context: Context?, attrs: AttributeSet?) :
     View(context, attrs) {
     private val bitmap: Bitmap?
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG)

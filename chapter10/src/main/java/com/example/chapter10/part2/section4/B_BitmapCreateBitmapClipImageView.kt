@@ -1,4 +1,4 @@
-package com.example.chapter10.part2
+package com.example.chapter10.part2.section4
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -15,7 +15,7 @@ import com.example.chapter10.R
  * @author wangzhichao
  * @date 2019/10/29
  */
-class O_BitmapCreateBitmapClipImageView(context: Context, attrs: AttributeSet?) :
+class B_BitmapCreateBitmapClipImageView(context: Context, attrs: AttributeSet?) :
     View(context, attrs) {
     private val bitmap: Bitmap
     private val source: Bitmap = BitmapFactory.decodeResource(resources, R.drawable.dog)

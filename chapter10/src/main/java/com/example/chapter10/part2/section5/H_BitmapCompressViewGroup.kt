@@ -1,4 +1,4 @@
-package com.example.chapter10.part2
+package com.example.chapter10.part2.section5
 
 import android.content.Context
 import android.graphics.Bitmap.CompressFormat
@@ -16,7 +16,7 @@ import java.util.concurrent.atomic.AtomicInteger
  * @author wangzhichao
  * @since 2019/12/10
  */
-class BitmapCompressViewGroup(context: Context?, attrs: AttributeSet?) :
+class H_BitmapCompressViewGroup(context: Context?, attrs: AttributeSet?) :
     LinearLayout(context, attrs) {
     private val h = Handler(Looper.getMainLooper())
     private val threadPoolExecutor: ThreadPoolExecutor = ThreadPoolExecutor(

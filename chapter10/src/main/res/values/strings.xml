@@ -39,4 +39,5 @@
     <string name="title_bitmap_setpixel">Bitmap setPixel(),getPixel()</string>
     <string name="title_bitmap_compress">Bitmap compress()</string>
     <string name="title_paint_antialiasflag_invalid">Paint ANTI_ALIAS_FLAG 无效问题</string>
+    <string name="title_watermark">生成水印</string>
 </resources>

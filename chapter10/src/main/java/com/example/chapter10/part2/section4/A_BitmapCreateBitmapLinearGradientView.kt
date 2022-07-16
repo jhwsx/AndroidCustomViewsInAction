@@ -1,4 +1,4 @@
-package com.example.chapter10.part2
+package com.example.chapter10.part2.section4
 
 import android.content.Context
 import android.graphics.*
@@ -17,7 +17,7 @@ import com.example.common.dp
  * @author wangzhichao
  * @date 2019/10/29
  */
-class N_BitmapCreateBitmapLinearGradientView(context: Context, attrs: AttributeSet?) :
+class A_BitmapCreateBitmapLinearGradientView(context: Context, attrs: AttributeSet?) :
     View(context, attrs) {
     // 1，先创建一个空白的bitmap；
     private val bitmapWidth = 200.dp

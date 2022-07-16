@@ -1,4 +1,4 @@
-package com.example.chapter10.part2
+package com.example.chapter10.part2.section2
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -18,7 +18,7 @@ import java.net.URL
  * @author wangzhichao
  * @date 2019/10/20
  */
-class D_BitmapFactoryDecodeByteArrayView(context: Context, attrs: AttributeSet?) :
+class B_BitmapFactoryDecodeByteArrayView(context: Context, attrs: AttributeSet?) :
     View(context, attrs) {
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
     private var mBitmap: Bitmap? = null

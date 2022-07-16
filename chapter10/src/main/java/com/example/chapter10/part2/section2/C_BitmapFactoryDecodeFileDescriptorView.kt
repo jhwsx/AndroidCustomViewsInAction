@@ -1,4 +1,4 @@
-package com.example.chapter10.part2
+package com.example.chapter10.part2.section2
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -17,7 +17,7 @@ import java.io.FileInputStream
  * @author wangzhichao
  * @date 2019/10/20
  */
-class E_BitmapFactoryDecodeFileDescriptorView(context: Context, attrs: AttributeSet?) :
+class C_BitmapFactoryDecodeFileDescriptorView(context: Context, attrs: AttributeSet?) :
     View(context, attrs) {
     private var bitmap: Bitmap? = null
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG)

@@ -1,4 +1,4 @@
-package com.example.chapter10.part2
+package com.example.chapter10.part2.section5
 
 import android.content.Context
 import com.example.chapter10.R
@@ -17,7 +17,7 @@ import android.view.*
  * @author wangzhichao
  * @date 2019/10/31
  */
-class S_BitmapExtractAlphaView(context: Context?, attrs: AttributeSet?) : View(context, attrs) {
+class B_BitmapExtractAlphaView(context: Context?, attrs: AttributeSet?) : View(context, attrs) {
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG or Paint.DITHER_FLAG)
     private val src: Bitmap = BitmapFactory.decodeResource(resources, R.drawable.cat_dog)
     private val bitmap: Bitmap = Bitmap.createBitmap(src.width, src.height, Bitmap.Config.ARGB_8888)

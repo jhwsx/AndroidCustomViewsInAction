@@ -1,4 +1,4 @@
-package com.example.chapter10.part2
+package com.example.chapter10.part2.section1
 
 import android.content.Context
 import com.example.chapter10.R

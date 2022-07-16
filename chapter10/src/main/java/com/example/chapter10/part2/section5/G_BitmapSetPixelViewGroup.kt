@@ -1,4 +1,4 @@
-package com.example.chapter10.part2
+package com.example.chapter10.part2.section5
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -13,7 +13,7 @@ import com.example.chapter10.R
  * @author wangzhichao
  * @since 2019/12/10
  */
-class BitmapSetPixelViewGroup(context: Context, attrs: AttributeSet?) :
+class G_BitmapSetPixelViewGroup(context: Context, attrs: AttributeSet?) :
     LinearLayout(context, attrs) {
     init {
         inflate(context, R.layout.layout_bitmap_setpixel_viewgroup, this)
@@ -22,10 +22,12 @@ class BitmapSetPixelViewGroup(context: Context, attrs: AttributeSet?) :
         val srcBmp = BitmapFactory.decodeResource(resources, R.drawable.dog)
         ivOriginal.setImageBitmap(srcBmp)
         // 变为可变的位图
-        val desBmp = srcBmp.copy(Bitmap.Config.ARGB_8888, true)
-        for (w in 0 until desBmp.width) {
-            for (h in 0 until desBmp.height) {
-                val originColor = desBmp.getPixel(w, h)
+        val destBmp = srcBmp.copy(Bitmap.Config.ARGB_8888, true)
+        // 只把右下角的部分变得更绿。
+        for (w in destBmp.width / 2 until destBmp.width) {
+            for (h in destBmp.height / 2 until destBmp.height) {
+                // 获取 Bitmap 某个位置的像素
+                val originColor = destBmp.getPixel(w, h)
                 val red = Color.red(originColor)
                 var green = Color.green(originColor)
                 val blue = Color.blue(originColor)
@@ -33,9 +35,10 @@ class BitmapSetPixelViewGroup(context: Context, attrs: AttributeSet?) :
                 if (green < 200) {
                     green += 30
                 }
-                desBmp.setPixel(w, h, Color.argb(alpha, red, green, blue))
+                // 设置 Bitmap 某个位置的像素。
+                destBmp.setPixel(w, h, Color.argb(alpha, red, green, blue))
             }
         }
-        ivNew.setImageBitmap(desBmp)
+        ivNew.setImageBitmap(destBmp)
     }
 }

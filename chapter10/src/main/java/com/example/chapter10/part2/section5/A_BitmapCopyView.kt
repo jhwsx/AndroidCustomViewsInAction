@@ -1,4 +1,4 @@
-package com.example.chapter10.part2
+package com.example.chapter10.part2.section5
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -19,7 +19,7 @@ import java.lang.StringBuilder
  * @author wangzhichao
  * @date 2019/10/31
  */
-class R_BitmapCopyView(context: Context, attrs: AttributeSet?) : View(context, attrs) {
+class A_BitmapCopyView(context: Context, attrs: AttributeSet?) : View(context, attrs) {
     private val sb = StringBuilder()
     private val textPaint = TextPaint()
     @SuppressLint("DrawAllocation")

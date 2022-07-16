@@ -1,4 +1,4 @@
-package com.example.chapter10.part2
+package com.example.chapter10.part2.section2
 
 import android.content.Context
 import android.graphics.BitmapFactory
@@ -12,7 +12,7 @@ import com.example.chapter10.R
  * @author wangzhichao
  * @date 2019/10/21
  */
-class G_BitmapFactoryOptionsInJustDecodeBoundsView(context: Context, attrs: AttributeSet?) :
+class E_BitmapFactoryOptionsInJustDecodeBoundsView(context: Context, attrs: AttributeSet?) :
     View(context, attrs) {
     init {
         val options = BitmapFactory.Options()

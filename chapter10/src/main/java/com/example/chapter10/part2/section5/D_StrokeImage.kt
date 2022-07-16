@@ -1,13 +1,13 @@
-package com.example.chapter10.part2
+package com.example.chapter10.part2.section5
 
 import android.content.Context
 import android.graphics.*
-import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.StateListDrawable
 import android.util.AttributeSet
 import android.widget.ImageView
 import androidx.appcompat.widget.AppCompatImageView
+import androidx.core.graphics.drawable.toDrawable
 
 /**
  * 单击描边效果
@@ -19,7 +19,7 @@ import androidx.appcompat.widget.AppCompatImageView
  * @author wangzhichao
  * @date 2019/12/02
  */
-class StrokeImage @JvmOverloads constructor(
+class D_StrokeImage @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null
 ) : AppCompatImageView(context, attrs) {
 
@@ -40,9 +40,9 @@ class StrokeImage @JvmOverloads constructor(
         val c = Canvas(bitmap)
         paint.color = Color.CYAN
         c.drawBitmap(alphaBitmap, 0f, 0f, paint)
-        // 添加状态
+        // 添加按压状态
         val stateListDrawable = StateListDrawable()
-        stateListDrawable.addState(intArrayOf(android.R.attr.state_pressed), BitmapDrawable(bitmap))
+        stateListDrawable.addState(intArrayOf(android.R.attr.state_pressed), bitmap.toDrawable(resources))
         background = stateListDrawable
     }
 

@@ -1,4 +1,4 @@
-package com.example.chapter10.part2
+package com.example.chapter10.part2.section3
 
 import android.content.Context
 import android.text.TextPaint
@@ -16,7 +16,7 @@ import kotlin.math.sqrt
  * @author wangzhichao
  * @date 2019/10/22
  */
-class I_DensityDpiView(context: Context, attrs: AttributeSet?) : View(context, attrs) {
+class A_DensityDpiView(context: Context, attrs: AttributeSet?) : View(context, attrs) {
     private val info: String
     private val paint = TextPaint(Paint.ANTI_ALIAS_FLAG)
     override fun onDraw(canvas: Canvas) {
