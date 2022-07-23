@@ -70,6 +70,7 @@ public class ImageUtils {
         options.inTargetDensity = requestSize;
         options.inDensity = options.outWidth;
         options.inJustDecodeBounds = false;
-        return BitmapFactory.decodeResource(res, resId, options);
+        Bitmap bitmap = BitmapFactory.decodeResource(res, resId, options);
+        return bitmap;
     }
 }

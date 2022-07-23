@@ -40,4 +40,9 @@
     <string name="title_bitmap_compress">Bitmap compress()</string>
     <string name="title_paint_antialiasflag_invalid">Paint ANTI_ALIAS_FLAG 无效问题</string>
     <string name="title_watermark">生成水印</string>
+
+    <string name="title_surface_gesture">SurfaceView手势轨迹</string>
+    <string name="title_surface_surfaceholder_gesture">SurfaceView手势轨迹(使用双缓冲 Canvas 绘图)</string>
+    <string name="title_animation_surfaceview">动态背景效果</string>
+    <string name="title_double_buffering">SurfaceView 双缓冲技术</string>
 </resources>
