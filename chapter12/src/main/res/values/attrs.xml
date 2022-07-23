@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomAttributeView">
+        <attr name="cav_id" format="reference" />
+        <attr name="cav_tag" format="string" />
+        <attr name="cav_padding" format="dimension" />
+        <attr name="cav_clickable" format="boolean" />
+        <attr name="cav_backgroundTint" format="color" />
+        <attr name="cav_visibility">
+            <enum name="visible" value="0" />
+            <enum name="invisible" value="1" />
+            <enum name="gone" value="2" />
+        </attr>
+        <attr name="cav_gravity" format="integer">
+            <flag name="top" value="0x30" />
+            <flag name="bottom" value="0x50" />
+            <flag name="left" value="0x03" />
+            <flag name="right" value="0x05" />
+        </attr>
+        <attr name="cav_alpha" format="float" />
+        <attr name="cav_pivotX" format="fraction" />
+        <attr name="cav_maxLines" format="integer" />
+    </declare-styleable>
+</resources>

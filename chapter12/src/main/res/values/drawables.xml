@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <drawable name="star">@android:drawable/star_on</drawable> 
+    <drawable name="whitecolor">#FFFFFF</drawable>
+</resources>

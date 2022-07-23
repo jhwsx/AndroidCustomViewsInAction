@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.example.chapter12.CustomAttributeView
+        android:id="@id/btn1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cav_backgroundTint="@color/colorAccent"
+        app:cav_clickable="true"
+        app:cav_gravity="bottom|top"
+        app:cav_id="@id/tv1"
+        app:cav_padding="16dp"
+        app:cav_tag="@string/current_progress"
+        app:cav_alpha="0.5"
+        app:cav_pivotX="@fraction/current_pivotX"
+        app:cav_visibility="gone" />
+</LinearLayout>
