@@ -1,11 +1,11 @@
-package com.example.chapter12
+package com.example.chapter12.part1
 
 import android.content.Context
-import android.graphics.Color
 import android.util.AttributeSet
 import android.util.Log
 import android.view.*
 import androidx.core.content.res.*
+import com.example.chapter12.R
 
 /**
  * https://mp.weixin.qq.com/s/lOxB91Fin3XyttzHn6y90A

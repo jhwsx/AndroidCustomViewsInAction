@@ -41,12 +41,12 @@ class F_Canvas2DTransformationView @JvmOverloads constructor(
 //        canvas.rotate(45f, 100.dp + avatar.width / 2f, avatar.height / 2f)
 //        canvas.drawBitmap(avatar, 0.dp, 0.dp, paint)
 
-        // OK 的代码 顺着看理解的思路，不好理解
+        // OK 的代码 顺着看理解的思路，不好理解。以 Canvas 坐标系为变换的参照物。
 //        canvas.translate(100.dp, 0f)
 //        canvas.rotate(45f, avatar.width / 2f, avatar.height / 2f)
 //        canvas.drawBitmap(avatar, 0.dp, 0.dp, paint)
 
-        // OK 的代码，倒着看理解的思路，好理解
+        // OK 的代码，倒着看理解的思路，好理解。以图形为变换的参照物。
         canvas.rotate(45f, 100.dp + avatar.width / 2f, avatar.height / 2f)
         canvas.translate(100.dp, 0f)
         canvas.drawBitmap(avatar, 0.dp, 0.dp, paint)

@@ -1,4 +1,4 @@
-package com.example.chapter12
+package com.example.chapter12.part1
 
 import android.content.Context
 import android.widget.LinearLayout
