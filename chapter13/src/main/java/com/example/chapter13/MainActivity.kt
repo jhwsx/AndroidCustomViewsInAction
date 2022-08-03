@@ -46,5 +46,6 @@ class MainActivity : AppCompatActivity() {
 
     init {
         pageModels.add(PageModel(R.string.practice_photo_view, R.layout.practice_photo_view))
+        pageModels.add(PageModel(R.string.practice_multitouch_view, R.layout.practice_multitouch_view))
     }
 }

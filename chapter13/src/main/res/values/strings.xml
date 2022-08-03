@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">第13章 控件高级属性</string>
     <string name="practice_photo_view">PhotoView</string>
+    <string name="practice_multitouch_view">多点触控</string>
 </resources>
