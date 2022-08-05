@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">第13章 控件高级属性</string>
     <string name="practice_photo_view">PhotoView</string>
-    <string name="practice_multitouch_view">多点触控</string>
+    <string name="practice_relay_multitouch_view">接力型多点触控</string>
+    <string name="practice_cooperate_multitouch_view">配合型多点触控</string>
+    <string name="practice_independent_multitouch_view">独立型多点触控</string>
 </resources>
