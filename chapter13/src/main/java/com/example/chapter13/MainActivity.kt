@@ -49,5 +49,6 @@ class MainActivity : AppCompatActivity() {
         pageModels.add(PageModel(R.string.practice_relay_multitouch_view, R.layout.practice_relay_multitouch_view))
         pageModels.add(PageModel(R.string.practice_cooperate_multitouch_view, R.layout.practice_cooperate_multitouch_view))
         pageModels.add(PageModel(R.string.practice_independent_multitouch_view, R.layout.practice_independent_multitouch_view))
+        pageModels.add(PageModel(R.string.practice_myviewpager, R.layout.practice_myviewpager))
     }
 }

@@ -4,4 +4,5 @@
     <string name="practice_relay_multitouch_view">接力型多点触控</string>
     <string name="practice_cooperate_multitouch_view">配合型多点触控</string>
     <string name="practice_independent_multitouch_view">独立型多点触控</string>
+    <string name="practice_myviewpager">我的ViewPager</string>
 </resources>
