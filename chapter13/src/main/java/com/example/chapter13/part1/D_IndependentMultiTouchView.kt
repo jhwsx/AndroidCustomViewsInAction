@@ -38,7 +38,7 @@ class D_IndependentMultiTouchView(context: Context, attrs: AttributeSet?) : View
             Log.d(TAG, "onTouchEvent: action=${MotionEvent.actionToString(it)}")
         }) {
             MotionEvent.ACTION_DOWN, MotionEvent.ACTION_POINTER_DOWN -> {
-                val path = Path()
+                val path = PathPool.obtainPath()
                 val actionIndex = event.actionIndex
                 path.moveTo(event.getX(actionIndex), event.getY(actionIndex))
                 val pointerId = event.getPointerId(actionIndex)
@@ -58,11 +58,37 @@ class D_IndependentMultiTouchView(context: Context, attrs: AttributeSet?) : View
             MotionEvent.ACTION_UP, MotionEvent.ACTION_POINTER_UP -> {
                 val actionIndex = event.actionIndex
                 val pointerId = event.getPointerId(actionIndex)
+                PathPool.releasePath(paths.get(pointerId))
                 paths.remove(pointerId)
                 invalidate()
             }
         }
         return true
+    }
+
+    object PathPool {
+        private val pathPool = mutableListOf<Path>()
+
+        fun obtainPath(): Path {
+            synchronized(pathPool) {
+                val size = pathPool.size
+                if (size > 0) {
+                    val path = pathPool.removeAt(size - 1)
+                    path.reset()
+                    return path
+                }
+            }
+            return Path()
+        }
+
+        fun releasePath(path: Path) {
+            path.reset()
+            synchronized(pathPool) {
+                if (pathPool.size < 20) {
+                    pathPool.add(path)
+                }
+            }
+        }
     }
 
     companion object {
