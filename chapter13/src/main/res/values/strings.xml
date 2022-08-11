@@ -5,4 +5,7 @@
     <string name="practice_cooperate_multitouch_view">配合型多点触控</string>
     <string name="practice_independent_multitouch_view">独立型多点触控</string>
     <string name="practice_myviewpager">我的ViewPager</string>
+    <string name="practice_ondraglistener_gridview">OnDragListener网格View</string>
+    <string name="practice_viewdraghelper_gridview">ViewDragHelper网格View</string>
+    <string name="practice_ondraglistener_collect_view">OnDragListenerCollectView</string>
 </resources>

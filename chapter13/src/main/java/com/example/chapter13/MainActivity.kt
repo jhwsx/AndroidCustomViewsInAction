@@ -50,5 +50,8 @@ class MainActivity : AppCompatActivity() {
         pageModels.add(PageModel(R.string.practice_cooperate_multitouch_view, R.layout.practice_cooperate_multitouch_view))
         pageModels.add(PageModel(R.string.practice_independent_multitouch_view, R.layout.practice_independent_multitouch_view))
         pageModels.add(PageModel(R.string.practice_myviewpager, R.layout.practice_myviewpager))
+        pageModels.add(PageModel(R.string.practice_ondraglistener_gridview, R.layout.practice_ondraglistener_gridview))
+        pageModels.add(PageModel(R.string.practice_viewdraghelper_gridview, R.layout.practice_viewdraghelper_gridview))
+        pageModels.add(PageModel(R.string.practice_ondraglistener_collect_view, R.layout.practice_ondraglistener_collect_view))
     }
 }
