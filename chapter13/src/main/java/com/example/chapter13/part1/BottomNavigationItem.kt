@@ -15,7 +15,7 @@ import com.example.chapter13.R
  */
 @SuppressLint("ResourceType")
 class BottomNavigationItem(context: Context, attrs: AttributeSet?) : LinearLayout(context, attrs) {
-    private val ATTRS = intArrayOf(android.R.attr.text, android.R.attr.src)
+    private val ATTRS = intArrayOf(android.R.attr.text, R.attr.srcCompat)
 
     init {
         inflate(context, R.layout.bottom_navigation_view, this)
