@@ -47,7 +47,7 @@ class H_OnDragListenerCollectView(context: Context, attrs: AttributeSet?) :
                     val contentDescription = clipData.getItemAt(0).text
                     flex.addView(TextView(context).apply {
                         text = contentDescription
-                        textSize = 12.dp
+                        textSize = 12f
                     })
                 }
             }

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.chapter13.part1.J_DingdingBottomNavigationView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/ll"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:background="#512DA8"
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+
+        <View
+            android:background="#D32F2F"
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+
+        <View
+            android:background="#0288D1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+
+
+    </LinearLayout>
+</com.example.chapter13.part1.J_DingdingBottomNavigationView>

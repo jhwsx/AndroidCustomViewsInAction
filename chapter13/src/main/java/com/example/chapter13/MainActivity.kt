@@ -53,5 +53,7 @@ class MainActivity : AppCompatActivity() {
         pageModels.add(PageModel(R.string.practice_ondraglistener_gridview, R.layout.practice_ondraglistener_gridview))
         pageModels.add(PageModel(R.string.practice_viewdraghelper_gridview, R.layout.practice_viewdraghelper_gridview))
         pageModels.add(PageModel(R.string.practice_ondraglistener_collect_view, R.layout.practice_ondraglistener_collect_view))
+        pageModels.add(PageModel(R.string.practice_viewdraghelper_updown_view, R.layout.practice_viewdraghelper_updown_view))
+        pageModels.add(PageModel(R.string.practice_dingding_bottomnavigationview, R.layout.practice_dingding_bottomnavigationview))
     }
 }

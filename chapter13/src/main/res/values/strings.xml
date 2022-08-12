@@ -8,4 +8,6 @@
     <string name="practice_ondraglistener_gridview">OnDragListener网格View</string>
     <string name="practice_viewdraghelper_gridview">ViewDragHelper网格View</string>
     <string name="practice_ondraglistener_collect_view">OnDragListenerCollectView</string>
+    <string name="practice_viewdraghelper_updown_view">ViewDragHelper上下拖拽View</string>
+    <string name="practice_dingding_bottomnavigationview">钉钉底部导航</string>
 </resources>
