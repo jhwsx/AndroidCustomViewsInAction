@@ -20,7 +20,7 @@ import kotlin.math.abs
  * @author wangzhichao
  * @since 2022/8/12
  */
-class J_DingdingBottomNavigationView(context: Context, attrs: AttributeSet?) :
+class J_DingdingBottomDrawer(context: Context, attrs: AttributeSet?) :
     ViewGroup(context, attrs) {
     private val dragHelper = ViewDragHelper.create(this, DragCallback())
     private lateinit var dragLayout: ConstraintLayout

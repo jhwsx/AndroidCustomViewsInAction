@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.example.chapter13.part1.J_DingdingBottomNavigationView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.example.chapter13.part1.J_DingdingBottomDrawer xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/bnv"
     android:layout_width="match_parent"
@@ -144,4 +144,4 @@
             app:layout_constraintTop_toBottomOf="@id/walk"
             app:srcCompat="@drawable/ic_baseline_train_24" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-</com.example.chapter13.part1.J_DingdingBottomNavigationView>
+</com.example.chapter13.part1.J_DingdingBottomDrawer>
