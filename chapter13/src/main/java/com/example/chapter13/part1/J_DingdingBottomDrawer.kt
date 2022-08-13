@@ -87,7 +87,7 @@ class J_DingdingBottomDrawer(context: Context, attrs: AttributeSet?) :
         }
 
         override fun getViewVerticalDragRange(child: View): Int {
-            return dragHelper.touchSlop
+            return dragLayout.height * 2 / 3
         }
     }
 

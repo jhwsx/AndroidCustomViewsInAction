@@ -28,8 +28,8 @@ class BottomNavigationItem(context: Context, attrs: AttributeSet?) : LinearLayou
             iv.setImageDrawable(src)
             tv.text = text
         }
-        setOnClickListener {
-            Toast.makeText(context, tv.text, Toast.LENGTH_SHORT).show()
-        }
+//        setOnClickListener {
+//            Toast.makeText(context, tv.text, Toast.LENGTH_SHORT).show()
+//        }
     }
 }
