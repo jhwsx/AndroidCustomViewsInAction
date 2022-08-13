@@ -70,7 +70,7 @@ class J_DingdingBottomDrawer(context: Context, attrs: AttributeSet?) :
             if (abs(yvel) < dragHelper.minVelocity) {
                 Log.d(TAG, "onViewReleased: releasedChild.top=${releasedChild.top}, releasedChild.bottom=${releasedChild.bottom}, height=$height")
                 // 依据释放位置决定最终位置
-                if (releasedChild.top > height - dragLayout.height * 2 / 3) {
+                if (releasedChild.top > height - dragLayout.height / 2) {
                     collapse()
                 } else {
                     expand()
