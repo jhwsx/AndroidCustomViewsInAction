@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.chapter13.part1.J_DingdingBottomNavigationView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bnv"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_constraintBottom_toBottomOf="parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#E91E63" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#3F51B5" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#CDDC39" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#009688" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#FF5722" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#03A9F4" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#8BC34A" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#512DA8" />
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#EEEEEE">
+
+        <com.example.chapter13.part1.BottomNavigationItem
+            android:id="@+id/bike"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bike"
+            app:layout_constraintEnd_toStartOf="@id/car"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_directions_bike_24" />
+
+        <com.example.chapter13.part1.BottomNavigationItem
+            android:id="@+id/car"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/car"
+            app:layout_constraintEnd_toStartOf="@id/bus"
+            app:layout_constraintStart_toEndOf="@id/bike"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_directions_car_24" />
+
+        <com.example.chapter13.part1.BottomNavigationItem
+            android:id="@+id/bus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bus"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/car"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_directions_bus_24" />
+
+        <com.example.chapter13.part1.BottomNavigationItem
+            android:id="@+id/plane"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/plane"
+            app:layout_constraintEnd_toEndOf="@id/bike"
+            app:layout_constraintStart_toStartOf="@id/bike"
+            app:layout_constraintTop_toBottomOf="@id/bike"
+            app:srcCompat="@drawable/ic_baseline_airplanemode_active_24" />
+
+        <com.example.chapter13.part1.BottomNavigationItem
+            android:id="@+id/walk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/walk"
+            app:layout_constraintEnd_toEndOf="@id/car"
+            app:layout_constraintStart_toStartOf="@id/car"
+            app:layout_constraintTop_toBottomOf="@id/car"
+            app:srcCompat="@drawable/ic_baseline_directions_walk_24" />
+
+        <com.example.chapter13.part1.BottomNavigationItem
+            android:id="@+id/run"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/run"
+            app:layout_constraintEnd_toEndOf="@id/bus"
+            app:layout_constraintStart_toStartOf="@id/bus"
+            app:layout_constraintTop_toBottomOf="@id/bus"
+            app:srcCompat="@drawable/ic_baseline_directions_run_24" />
+
+        <com.example.chapter13.part1.BottomNavigationItem
+            android:id="@+id/boat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/boat"
+            app:layout_constraintEnd_toEndOf="@id/plane"
+            app:layout_constraintStart_toStartOf="@id/plane"
+            app:layout_constraintTop_toBottomOf="@id/plane"
+            app:srcCompat="@drawable/ic_baseline_directions_boat_24" />
+
+        <com.example.chapter13.part1.BottomNavigationItem
+            android:id="@+id/train"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/train"
+            app:layout_constraintEnd_toEndOf="@id/walk"
+            app:layout_constraintStart_toStartOf="@id/walk"
+            app:layout_constraintTop_toBottomOf="@id/walk"
+            app:srcCompat="@drawable/ic_baseline_train_24" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.example.chapter13.part1.J_DingdingBottomNavigationView>

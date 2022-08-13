@@ -6,6 +6,7 @@ import android.util.AttributeSet
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import com.example.chapter13.R
 
 /**
@@ -16,16 +17,19 @@ import com.example.chapter13.R
 @SuppressLint("ResourceType")
 class BottomNavigationItem(context: Context, attrs: AttributeSet?) : LinearLayout(context, attrs) {
     private val ATTRS = intArrayOf(android.R.attr.text, R.attr.srcCompat)
-
+    private val tv: TextView
     init {
         inflate(context, R.layout.bottom_navigation_view, this)
         val iv: ImageView = findViewById(R.id.iv)
-        val tv: TextView = findViewById(R.id.tv)
+        tv = findViewById(R.id.tv)
         context.obtainStyledAttributes(attrs, ATTRS).use {
             val text = it.getString(0)
             val src = it.getDrawable(1)
             iv.setImageDrawable(src)
             tv.text = text
+        }
+        setOnClickListener {
+            Toast.makeText(context, tv.text, Toast.LENGTH_SHORT).show()
         }
     }
 }

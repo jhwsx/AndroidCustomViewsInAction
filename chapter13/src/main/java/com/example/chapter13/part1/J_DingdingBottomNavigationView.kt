@@ -24,10 +24,6 @@ class J_DingdingBottomNavigationView(context: Context, attrs: AttributeSet?) :
     ViewGroup(context, attrs) {
     private val dragHelper = ViewDragHelper.create(this, DragCallback())
     private lateinit var dragLayout: ConstraintLayout
-    private var dragTopMin = 0
-    private var dragTopMax = 0
-    private val viewConfiguration = ViewConfiguration.get(context)
-    private val minFlingVelocity = viewConfiguration.scaledMinimumFlingVelocity
 
     override fun onInterceptTouchEvent(ev: MotionEvent): Boolean {
         return dragHelper.shouldInterceptTouchEvent(ev)
@@ -46,21 +42,18 @@ class J_DingdingBottomNavigationView(context: Context, attrs: AttributeSet?) :
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         val widthSize = MeasureSpec.getSize(widthMeasureSpec)
-        measureChild(getChildAt(0), widthMeasureSpec, heightMeasureSpec)
-        setMeasuredDimension(widthSize, getChildAt(0).measuredHeight)
+        val heightSize = MeasureSpec.getSize(heightMeasureSpec)
+        measureChildren(widthMeasureSpec, heightMeasureSpec)
+        setMeasuredDimension(widthSize, heightSize)
     }
 
     override fun onLayout(changed: Boolean, l: Int, t: Int, r: Int, b: Int) {
-        val child = getChildAt(0)
-        val childLeft = 0
-        val childTop = 0
-        child.layout(childLeft, childTop, childLeft + child.measuredWidth, childTop + child.measuredHeight)
-    }
-
-    override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
-        super.onSizeChanged(w, h, oldw, oldh)
-        dragTopMin = 0
-        dragTopMax = (2 * height / 3f).toInt()
+        val contentView = getChildAt(0)
+        val bottomView = getChildAt(1)
+        contentView.layout(0, 0, contentView.measuredWidth,
+            contentView.measuredHeight - bottomView.measuredHeight / 3)
+        bottomView.layout(0, measuredHeight - bottomView.measuredHeight / 3,
+            bottomView.measuredWidth, measuredHeight + bottomView.measuredHeight * 2 / 3)
     }
 
     private inner class DragCallback : ViewDragHelper.Callback() {
@@ -69,15 +62,15 @@ class J_DingdingBottomNavigationView(context: Context, attrs: AttributeSet?) :
         }
 
         override fun clampViewPositionVertical(child: View, top: Int, dy: Int): Int {
-            return top.coerceAtLeast(dragTopMin).coerceAtMost(dragTopMax)
+            return top.coerceAtLeast(height - dragLayout.height).coerceAtMost(height - dragLayout.height / 3)
         }
 
         override fun onViewReleased(releasedChild: View, xvel: Float, yvel: Float) {
             super.onViewReleased(releasedChild, xvel, yvel)
-            if (abs(yvel) < minFlingVelocity) {
+            if (abs(yvel) < dragHelper.minVelocity) {
                 Log.d(TAG, "onViewReleased: releasedChild.top=${releasedChild.top}, releasedChild.bottom=${releasedChild.bottom}, height=$height")
                 // 依据释放位置决定最终位置
-                if ((releasedChild.top + releasedChild.bottom) / 2 > height) {
+                if (releasedChild.top > height - dragLayout.height * 2 / 3) {
                     collapse()
                 } else {
                     expand()
@@ -92,6 +85,10 @@ class J_DingdingBottomNavigationView(context: Context, attrs: AttributeSet?) :
             }
             postInvalidateOnAnimation()
         }
+
+        override fun getViewVerticalDragRange(child: View): Int {
+            return dragHelper.touchSlop
+        }
     }
 
     override fun computeScroll() {
@@ -102,11 +99,11 @@ class J_DingdingBottomNavigationView(context: Context, attrs: AttributeSet?) :
     }
 
     fun collapse() {
-        dragHelper.settleCapturedViewAt(0, dragTopMax)
+        dragHelper.smoothSlideViewTo(dragLayout, 0, height - dragLayout.height / 3)
     }
 
     fun expand() {
-        dragHelper.settleCapturedViewAt(0, dragTopMin)
+        dragHelper.smoothSlideViewTo(dragLayout, 0, height - dragLayout.height)
     }
     companion object {
         private const val TAG = "DingdingBottomNavi"
