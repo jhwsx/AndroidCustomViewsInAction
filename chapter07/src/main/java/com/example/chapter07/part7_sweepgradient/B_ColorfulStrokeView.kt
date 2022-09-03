@@ -4,15 +4,18 @@ import android.animation.ValueAnimator
 import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
+import android.util.Log
 import android.view.View
 import android.view.animation.LinearInterpolator
 import com.example.chapter07.R
 import com.example.common.dp
 
+private const val TAG = "ColorfulStrokeView"
+
 class B_ColorfulStrokeView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
-    defStyleAttr: Int = 0
+    defStyleAttr: Int = 0,
 ) : View(context, attrs, defStyleAttr) {
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
     private val rectF: RectF = RectF()
@@ -26,27 +29,29 @@ class B_ColorfulStrokeView @JvmOverloads constructor(
     private var isAutoStart = true
     private val colors: IntArray
     private val positions: FloatArray
-    private var sweepGradient: SweepGradient
+    private lateinit var sweepGradient: SweepGradient
     private val mtx = Matrix()
     private var valueAnimator: ValueAnimator? = null
 
     init {
         strokeWidth = defaultStrokeWidth
         radius = defaultRadius
-        colors = IntArray(13)
-        colors[0] = Color.parseColor("#FF000000")
-        colors[1] = Color.parseColor("#FFFBC85B")
-        colors[2] = Color.parseColor("#FFFBC85B")
-        colors[3] = Color.parseColor("#FFF1448A")
-        colors[4] = Color.parseColor("#FF8925FF")
-        colors[5] = Color.parseColor("#FF6DCDFC")
-        colors[6] = Color.parseColor("#FF000000")
-        colors[7] = Color.parseColor("#FF000000")
-        colors[8] = Color.parseColor("#FFFBC85B")
-        colors[9] = Color.parseColor("#FFFBC85B")
-        colors[10] = Color.parseColor("#FF6DCDFC")
-        colors[11] = Color.parseColor("#FF8925FF")
-        colors[12] = Color.parseColor("#FFF1448A")
+        colors = intArrayOf(
+            Color.parseColor("#FF000000"), // 黑 0.25f
+            Color.parseColor("#FFFF0000"), // 红 0.251f
+            Color.parseColor("#FFFF0000"), // 红 0.37f
+            Color.parseColor("#FF00FF00"), // 绿 0.41f
+            Color.parseColor("#FF0000FF"), // 蓝 0.46f
+            Color.parseColor("#FFFFFF00"), // 黄 0.5f
+            Color.parseColor("#FF000000"), // 黑 0.501f
+            Color.parseColor("#FF000000"), // 黑 0.75f
+            Color.parseColor("#FFFF0000"), // 红 0.751f
+            Color.parseColor("#FFFF0000"), // 红 0.87f
+            Color.parseColor("#FFFFFF00"), // 黄 0.91f
+            Color.parseColor("#FF0000FF"), // 蓝 0.96f
+            // Color.parseColor("#FF00FF00") // 绿 1.0f
+        )
+
         positions = floatArrayOf(0.25f,
             0.251f,
             0.37f,
@@ -58,23 +63,19 @@ class B_ColorfulStrokeView @JvmOverloads constructor(
             0.751f,
             0.87f,
             0.91f,
-            0.96f,
-            1.0f)
-        val cx = (measuredWidth / 2).toFloat()
-        val cy = (measuredHeight / 2).toFloat()
-        sweepGradient = SweepGradient(cx, cy, colors, positions)
+            0.96f/*,
+            1.0f*/)
+        Log.d(TAG, "colors: ${colors.size}, positions: ${positions.size}")
         parseTypeArray(context, attrs)
-
         paint.style = Paint.Style.STROKE
         paint.strokeWidth = strokeWidth
     }
 
     public override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
-        val cx = (measuredWidth / 2).toFloat()
-        val cy = (measuredHeight / 2).toFloat()
+        val cx = (w / 2).toFloat()
+        val cy = (h / 2).toFloat()
         sweepGradient = SweepGradient(cx, cy, colors, positions)
         paint.shader = sweepGradient
-        super.onSizeChanged(w, h, oldw, oldh)
     }
 
     public override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
